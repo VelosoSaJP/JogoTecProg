@@ -1,0 +1,3 @@
+/home/joao/Documents/TecProg/JOGO/JogoTecProg/build/_deps/sfml-subbuild/CMakeFiles/sfml-populate.dir
+/home/joao/Documents/TecProg/JOGO/JogoTecProg/build/_deps/sfml-subbuild/CMakeFiles/edit_cache.dir
+/home/joao/Documents/TecProg/JOGO/JogoTecProg/build/_deps/sfml-subbuild/CMakeFiles/rebuild_cache.dir

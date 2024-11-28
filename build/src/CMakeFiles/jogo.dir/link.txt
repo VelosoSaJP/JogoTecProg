@@ -1,0 +1,2 @@
+/usr/bin/ar qc libjogo.a CMakeFiles/jogo.dir/mainteste.cpp.o
+/usr/bin/ranlib libjogo.a
