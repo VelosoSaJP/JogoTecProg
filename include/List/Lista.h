@@ -7,7 +7,6 @@ namespace Lista
     
     template<class TL>
     class Lista{
-       
         private:
         //Classe elemento dentro de Lista
         template<class TE>
@@ -30,13 +29,11 @@ namespace Lista
                 }
 
                 void incluir(TE *p){
-                    if(p)
-                        pInfo = p;
+                    pInfo = p;
                 }
 
                 void setProx(Elemento<TE> *pE){
-                    if(pE)
-                        pPROX = pE;
+                    pPROX = pE;
                 }
 
                 Elemento<TE>* getPRoximo(){
@@ -47,30 +44,18 @@ namespace Lista
                     return pInfo;
                 }Caso for necessário, é só descomentar*/ 
 
-        };// Classe Elemento
+        }// Classe Elemento
 
                 Elemento<TL>* pPrimeiro;
                 Elemento<TL>* pUltimo;
 
             public:
 
-                Lista(){
-                    pPrimeiro = nullptr;
-                    pUltimo = nullptr;
-                }
+                Lista();
 
-                ~Lista(){
-                    pPrimeiro = nullptr;
-                    pUltimo = nullptr;
-                }
+                ~Lista();
 
-                void incluir(TL* p){
-                    if(p)
-                        Lista.push(p);
-                    else
-                        std::cout<<"Sem p para dar push em Lista.h"<<std::endl;
-
-                }
+                void incluir(TL* p);
 
                 void limpar();
 
