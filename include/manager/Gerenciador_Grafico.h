@@ -11,7 +11,10 @@ private:
     sf::VideoMode videoMode;
     sf::RenderWindow* pJanela;
     static Gerenciador_Grafico* instancia;
-    Gerenciador_Grafico(); //construtora private (para o singleton)
+
+
+private:    
+Gerenciador_Grafico(); //construtora private (para o singleton)
 
 
 public:

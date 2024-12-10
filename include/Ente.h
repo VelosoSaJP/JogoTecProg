@@ -7,10 +7,10 @@ using namespace std;
 class Ente{
 protected:
     int id;
-    sf::Vector2f tam;
-    sf ::Vector2f pos;
-    
     static int cont;
+    sf::Vector2f tamanho;
+    sf ::Vector2f posicao;
+    
     static Gerenciadores ::  Gerenciador_Grafico*  pGG;
     static Gerenciadores :: Gerenciador_Eventos*  pGE;
 
