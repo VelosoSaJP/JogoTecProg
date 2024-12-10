@@ -1,15 +1,21 @@
 #include "../include/Ente.h"
 
+int Ente :: cont (0);
+Gerenciadores :: Gerenciador_Grafico*  Ente  ::  pGG (NULL);
+Gerenciadores :: Gerenciador_Eventos*  Ente  ::  pGE (NULL);
+
 Ente::Ente():
     id(cont++)
-    /*pFig(NULL),
-    pGG(NULL)*/
 {
-}
 
+}
 
 Ente :: ~Ente(){
     cont--;
 }
 
-void desenhar();
+void Ente :: desenhar(){ //vai ser chamado no executar das herdadas
+    
+    pGG -> desenharEnte(pFig);
+
+}

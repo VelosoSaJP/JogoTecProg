@@ -1,19 +1,19 @@
 #include "../include/Jogo.h"
 
 Jogo :: Jogo():
-    pjog1(NULL),
-    GG()
+     pGG (Gerenciadores::Gerenciador_Grafico::getInstancia()),
+     pGE (Gerenciadores::Gerenciador_Eventos::getInstancia())
 {
-
 }
-Jogo :: ~Jogo(){
 
-}
+Jogo :: ~Jogo(){}
+
+
 void Jogo :: executar(){
-    while (GG.getWindow.isOpen()){
-        //gerenciador de eventos
+    while (pGG->janelaAberta()){
 
-        GG.desenharEnte();
-        GG.getWindow.display();
+        //gerenciador de eventos
+        pGG->desenharEnte();
+        pGG->display();
     }
 }

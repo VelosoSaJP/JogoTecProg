@@ -1,32 +1,42 @@
-#include "../../../include/manager/GraphicsManager.h"
+#include "../../../include/manager/Gerenciador_Grafico.h"
 
 namespace Gerenciadores{
+Gerenciador_Grafico* Gerenciador_Grafico :: instancia(NULL);
 
-GraphicsManager :: GraphicsManager():
-   pWindow(NULL)
+
+Gerenciador_Grafico* Gerenciador_Grafico ::getInstancia() const{
+    if (instancia == NULL){
+        instancia = new Gerenciador_Grafico();
+    }
+        return instancia;
+}
+
+Gerenciador_Grafico :: Gerenciador_Grafico():
+   pJanela(NULL)
 {
     setVideoMode();
-    setWindow();
+    setJanela();
     //executar();
 }
-GraphicsManager :: ~GraphicsManager(){
-    delete pWindow;
-    pWindow=NULL;
+Gerenciador_Grafico :: ~Gerenciador_Grafico(){
+    delete pJanela;
+    pJanela=NULL;
 }
 
-void GraphicsManager :: setWindow(){
+void Gerenciador_Grafico :: setJanela(){
     //Ao invés de criar uma variável, poderia só colocar as dimensões.
-    pWindow = new sf::RenderWindow(videoMode, "Título");
+    pJanela = new sf::RenderWindow(videoMode, "Título");
 }
 
-void GraphicsManager :: setVideoMode(){
+void Gerenciador_Grafico :: setVideoMode(){
     videoMode.height=400;
     videoMode.width=750;
 }
 
-sf::RenderWindow* :: GraphicsManager :: getWindow () const{
-    return pWindow;
+sf::RenderWindow*  Gerenciador_Grafico :: getJanela () const{
+    return pJanela;
 }
+
 //void GraphicsManager :: desenharEnte(Ente* pE){}
 
 //void GraphicsManager :: executar (){}
