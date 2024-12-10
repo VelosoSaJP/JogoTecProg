@@ -1,7 +1,8 @@
-#include "../include/Ente.h"
+#include "../include/Jogo.h"
 
 int main()
 {
-  
+ Jogo game;
+ game.executar(); 
     return 0;
 }
