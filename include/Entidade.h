@@ -2,7 +2,7 @@
 
 namespace Entidades {
 class Entidade : public Ente{
-private:
+protected:
         float x;
         float y;
         ostream buffer; //ostream para saída de dados.

@@ -2,7 +2,7 @@
 
 namespace Personagens {
 class Personagem : public Entidades :: Entidade{
-private:
+protected:
     int num_vidas;
 public:
     Personagem();
