@@ -14,13 +14,20 @@ protected:
     static Gerenciadores ::  Gerenciador_Grafico*  pGG;
     static Gerenciadores :: Gerenciador_Eventos*  pGE;
 
-    sf::Sprite* pFig; //equivalente ao Figura*
-
+    sf::Sprite* pSprite; //equivalente ao Figura*
+    sf::Texture* pText;
+   
 public:
 Ente();
 ~Ente();
+void atualizar();
+
 virtual void executar () = 0;
+
+
 void desenhar();
+void setTexture();
+void setSprite();
 
 };
 

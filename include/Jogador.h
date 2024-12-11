@@ -8,6 +8,6 @@ public:
     Jogador();
     ~Jogador();
     void executar();
-
 };
 }
+//lembrar que herda mover de personagem.

@@ -14,8 +14,8 @@ Gerenciador_Grafico* Gerenciador_Grafico ::getInstancia() const{
 Gerenciador_Grafico :: Gerenciador_Grafico():
    pJanela(NULL)
 {
-    setVideoMode();
     setJanela();
+    setVideoMode();
     //executar();
 }
 Gerenciador_Grafico :: ~Gerenciador_Grafico(){
@@ -23,29 +23,45 @@ Gerenciador_Grafico :: ~Gerenciador_Grafico(){
     pJanela=NULL;
 }
 
+bool Gerenciador_Grafico :: janelaAberta() const{
+    return pJanela->isOpen();
+}
+
 void Gerenciador_Grafico :: setJanela(){
-    //Ao invés de criar uma variável, poderia só colocar as dimensões.
-    pJanela = new sf::RenderWindow(videoMode, "Título");
+    pJanela = new sf::RenderWindow(videoMode, "Idade Média++");
 }
 
 void Gerenciador_Grafico :: setVideoMode(){
-    videoMode.height=400;
-    videoMode.width=750;
+    videoMode.height=HEIGTH;
+    videoMode.width=WIDTH;
 }
 
 sf::RenderWindow*  Gerenciador_Grafico :: getJanela () const{
     return pJanela;
 }
 
-//void GraphicsManager :: desenharEnte(Ente* pE){}
-
-//void GraphicsManager :: executar (){}
-
-
-
-
+void Gerenciador_Grafico :: fechaJanela(){
+    pJanela->close();
 }
 
+
+bool Gerenciador_Grafico :: eventoJanela(sf::Event& evento){ //ref escondida
+    return (pJanela->pollEvent(evento));
+}
+
+
+//Irá projetar em tela ente, menu e fases.
+void  Gerenciador_Grafico :: desenhar(sf::Sprite* pS) const{
+    if(pS){
+        pJanela->draw(*pS); //conteúdo apontado por pS;
+    }
+}
+
+void Gerenciador_Grafico :: display(){
+    pJanela->display();
+}
+
+}
 
 /*  
   while(window.isOpen()){
@@ -55,25 +71,5 @@ sf::RenderWindow*  Gerenciador_Grafico :: getJanela () const{
                 window.close();
             }
         }
-    }
-
-////////////////////////////////////////
-
-  sf::RenderWindow window(sf::VideoMode(800, 600), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Red);
-
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
-
-        window.clear();
-        window.draw(shape);
-        window.display();
     }
 */
