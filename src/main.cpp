@@ -1,5 +1,6 @@
 #include "../include/Jogo.h"
 
+<<<<<<< HEAD
 
 int main(){
     Jogo game;
@@ -21,6 +22,12 @@ int main(){
         window.draw(shape);
         window.display();
     }*/
+=======
+int main()
+{
+ Jogo game;
+ game.executar(); 
+>>>>>>> murilo
     return 0;
 
 }
