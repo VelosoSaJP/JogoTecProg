@@ -1,4 +1,5 @@
 #include"Lista.h"
+#include"../include/Entidade.h"
 #pragma once
 
 /*#include "../Entidades/Entidade.h"
@@ -10,14 +11,14 @@ namespace Lista{
     {
     private:
         
-        Lista <Entidade::Entidade> LEs;
+        Lista <Entidades::Entidade> LEs;
 
     public:
         ListaEntidade();
         
         ~ListaEntidade();
 
-        void incluir(Entidade* pE);
+        void incluir(Entidades::Entidade* pE);
 
         void percorrer();
 

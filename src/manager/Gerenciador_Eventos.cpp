@@ -1,4 +1,4 @@
-#include "../include/manager/Gerenciador_Eventos.h"
+#include "../../include/manager/Gerenciador_Eventos.h"
 namespace Gerenciadores{
 
 Gerenciador_Eventos* Gerenciador_Eventos :: instancia(NULL);

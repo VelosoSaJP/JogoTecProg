@@ -1,4 +1,5 @@
 #include "Personagem.h"
+#pragma once
 
 namespace Personagens{
 class Jogador : public Personagem{

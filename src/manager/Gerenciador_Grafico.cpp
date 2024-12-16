@@ -1,4 +1,4 @@
-#include "../../../include/manager/Gerenciador_Grafico.h"
+#include "../../include/manager/Gerenciador_Grafico.h"
 
 namespace Gerenciadores{
 Gerenciador_Grafico* Gerenciador_Grafico :: instancia(NULL);

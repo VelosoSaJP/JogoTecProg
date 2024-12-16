@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
-#include "Gerenciador_Grafico.h"
-#include "Gerenciador_Eventos.h"
+#include "manager/Gerenciador_Grafico.h"
+#include "manager/Gerenciador_Eventos.h"
 using namespace std;
 
 class Ente{

@@ -1,6 +1,6 @@
 #pragma once
-#include "../manager/Gerenciador_Grafico.h"
-#include "../manager/Gerenciador_Eventos.h"
+#include "manager/Gerenciador_Grafico.h"
+#include "manager/Gerenciador_Eventos.h"
 #include "Jogador.h"
 
 class Jogo{

@@ -1,6 +1,7 @@
-#include "Ente.h"
-#include "Jogador.h"
+#include "../Ente.h"
+#include "../Jogador.h"
 #include <SFML/Graphics.hpp>
+#pragma once
 
 namespace Gerenciadores{
 class Gerenciador_Entradas{

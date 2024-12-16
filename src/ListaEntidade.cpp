@@ -1,4 +1,5 @@
-#include "../include/List/ListaEntidade.h"  
+#include "../include/List/ListaEntidade.h" 
+#include "../include/Entidade.h" 
 
 namespace Lista{
 
