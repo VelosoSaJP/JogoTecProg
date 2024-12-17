@@ -1,5 +1,6 @@
-#include "Ente.h"
 #pragma once
+#include "Ente.h"
+
 
 namespace Entidades {
 class Entidade : public Ente{
@@ -8,6 +9,7 @@ protected:
         float y;
         //std::ostream& buffer; //ostream para saída de dados.
 public:
+
 Entidade();
 ~Entidade();
 virtual void executar()=0;
