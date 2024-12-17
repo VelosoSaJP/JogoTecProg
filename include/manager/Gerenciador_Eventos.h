@@ -1,9 +1,10 @@
+#pragma once
 #include <iostream>
-#include "../Ente.h"
+//#include "../Ente.h"
 #include "Gerenciador_Entradas.h"
 #include <SFML/Graphics.hpp>
 //#include "Gerenciador_Entradas.h"
-#pragma once
+
 
 namespace Gerenciadores{
 class Gerenciador_Eventos{

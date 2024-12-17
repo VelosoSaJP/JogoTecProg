@@ -1,12 +1,12 @@
-#include "../Ente.h"
-#include "../Jogador.h"
-#include <SFML/Graphics.hpp>
 #pragma once
+//#include "../Ente.h"
+//#include "../Jogador.h"
+#include <SFML/Graphics.hpp>
 
 namespace Gerenciadores{
 class Gerenciador_Entradas{
 private:
-    Personagens::Jogador* pJ;
+    //Personagens::Jogador* pJ;
     static Gerenciador_Entradas* instancia;
 
 private:

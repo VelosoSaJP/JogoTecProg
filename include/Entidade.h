@@ -1,8 +1,8 @@
-#include "Ente.h"
 #pragma once
+#include "Ente.h"
 
 namespace Entidades {
-class Entidade : public Ente{
+class Entidade : public Ente {
 protected:
         float x;
         float y;

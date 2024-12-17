@@ -2,7 +2,8 @@
 # Biblioteca do jogo
 add_library(jogo
   #Jogo.cpp
-  mainteste.cpp
+  #mainteste.cpp
+  
 )
 
 # Inclui os diretórios de cabeçalhos para a biblioteca
@@ -23,7 +24,7 @@ target_link_libraries(jogo
 
 # ---------------------------------------
 # Executável principal
-add_executable(simon mainteste.cpp)
+add_executable(medieval main.cpp)
 
 # Inclui os diretórios de cabeçalhos para o executável
 target_include_directories(simon
@@ -32,7 +33,7 @@ target_include_directories(simon
 )
 
 # Vincula o executável à biblioteca do jogo
-target_link_libraries(simon
+target_link_libraries(medieval
   PRIVATE
   jogo
 )
