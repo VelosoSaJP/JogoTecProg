@@ -17,7 +17,7 @@ private:
 Gerenciador_Colisoes();
 
 public:
-Gerenciador_Colisoes* getInstancia() const;
+static Gerenciador_Colisoes* getInstancia() ;
 ~Gerenciador_Colisoes();
 const bool verificarColisao(Entidades::Entidade* pE1,Entidades::Entidade* pE2);
 void tratarColisoesJogsObstacs();

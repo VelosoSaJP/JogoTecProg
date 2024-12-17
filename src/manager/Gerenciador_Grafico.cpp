@@ -1,10 +1,10 @@
-#include "../../include/manager/Gerenciador_Grafico.h"
+#include "Gerenciador_Grafico.h"
 
 namespace Gerenciadores{
 Gerenciador_Grafico* Gerenciador_Grafico :: instancia(NULL);
 
 
-Gerenciador_Grafico* Gerenciador_Grafico ::getInstancia() const{
+Gerenciador_Grafico* Gerenciador_Grafico ::getInstancia() {
     if (instancia == NULL){
         instancia = new Gerenciador_Grafico();
     }

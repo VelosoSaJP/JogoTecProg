@@ -24,7 +24,7 @@ Gerenciador_Grafico(); //construtora private (para o singleton)
 public:
 
 ~Gerenciador_Grafico();
-Gerenciador_Grafico* getInstancia() const;
+static Gerenciador_Grafico* getInstancia();
 
 //janela
 bool janelaAberta() const;

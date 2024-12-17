@@ -5,7 +5,7 @@
 /*#include "../Entidades/Entidade.h"
 #include "List/Lista.h"*/
 
-namespace Lista{
+namespace Listas{
 
     class ListaEntidade
     {

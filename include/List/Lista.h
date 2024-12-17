@@ -2,10 +2,10 @@
 
 #include <iostream>
 
-namespace Lista
+namespace Listas
 {
     
-    template<class TL>
+    template <class TL>
     class Lista{
         private:
         //Classe elemento dentro de Lista
@@ -36,7 +36,7 @@ namespace Lista
                     pPROX = pE;
                 }
 
-                Elemento<TE>* getPRoximo(){
+                Elemento<TE>* getProximo(){
                     return pPROX;
                 }
 
@@ -44,7 +44,7 @@ namespace Lista
                     return pInfo;
                 }Caso for necessário, é só descomentar*/ 
 
-        }// Classe Elemento
+        };// Classe Elemento
 
                 Elemento<TL>* pPrimeiro;
                 Elemento<TL>* pUltimo;

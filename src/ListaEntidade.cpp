@@ -1,7 +1,7 @@
 #include "../include/List/ListaEntidade.h" 
 #include "../include/Entidade.h" 
 
-namespace Lista{
+namespace Listas{
 
     ListaEntidade::ListaEntidade(){}
 
