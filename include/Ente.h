@@ -4,7 +4,6 @@
 #include "manager/Gerenciador_Eventos.h"
 using namespace std;
 
-
 class Ente{
 protected:
     int id;
@@ -12,8 +11,8 @@ protected:
     sf::Vector2f tamanho;
     sf ::Vector2f posicao;
     
-    static Gerenciadores::Gerenciador_Grafico*  pGG;
-    static Gerenciadores::Gerenciador_Eventos*  pGE;
+    static Gerenciadores ::  Gerenciador_Grafico*  pGG;
+    static Gerenciadores :: Gerenciador_Eventos*  pGE;
 
     sf::Sprite* pSprite; //equivalente ao Figura*
     sf::Texture* pText;
