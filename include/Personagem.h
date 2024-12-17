@@ -11,5 +11,6 @@ public:
     void salvarDataBuffer();
     virtual void mover();
     virtual void executar()=0;
+    int getVida() const;
 };
 }
