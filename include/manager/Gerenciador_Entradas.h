@@ -1,6 +1,6 @@
 #pragma once
-//#include "../Ente.h"
-//#include "../Jogador.h"
+//#include "Ente.h"
+//#include "Jogador.h"
 #include <SFML/Graphics.hpp>
 
 namespace Gerenciadores{
