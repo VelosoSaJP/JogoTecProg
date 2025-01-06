@@ -24,11 +24,12 @@ Gerenciador_Grafico(); //construtora private (para o singleton)
 public:
 
 ~Gerenciador_Grafico();
-Gerenciador_Grafico* getInstancia() const;
+static Gerenciador_Grafico* getInstancia();
 
 //janela
 bool janelaAberta() const;
 void setJanela();
+void limpaJanela();
 sf::RenderWindow* getJanela () const;
 void fechaJanela() ;
 bool eventoJanela(sf::Event& evento);//chama Gerenciador de Eventos.

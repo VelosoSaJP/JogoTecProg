@@ -1,5 +1,5 @@
-#include "Entidade.h"
 #pragma once
+#include "Entidade.h"
 
 namespace Personagens {
 class Personagem : public Entidades :: Entidade{

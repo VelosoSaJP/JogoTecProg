@@ -10,11 +10,12 @@ namespace Lista
         private:
         //Classe elemento dentro de Lista
         template<class TE>
+        
         class Elemento{
             private:
             
                 Elemento<TE> *pPROX;
-                TE *pInfo;
+                TE* pInfo;
             
             public:
 
@@ -40,12 +41,11 @@ namespace Lista
                     return pPROX;
                 }
 
-                /*Elemento<TE>* getInfo(){
-                    return pInfo;
-                }Caso for necessário, é só descomentar*/ 
+                TE* getInfo() const{
+                  return pInfo;
+                } 
 
-        }// Classe Elemento
-
+        }; 
                 Elemento<TL>* pPrimeiro;
                 Elemento<TL>* pUltimo;
 
@@ -59,11 +59,8 @@ namespace Lista
 
                 void limpar();
 
-
-
-
-
-
     };
 
-} // namespace Lista
+}
+
+

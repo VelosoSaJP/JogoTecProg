@@ -13,7 +13,7 @@ private:
 Gerenciador_Entradas();
 public:
 ~Gerenciador_Entradas();
-Gerenciador_Entradas* getInstancia() const;
+static Gerenciador_Entradas* getInstancia() ;
 void teclaApertada(sf::Keyboard::Key tecla);
 void teclaLiberada(sf::Keyboard::Key tecla);
 

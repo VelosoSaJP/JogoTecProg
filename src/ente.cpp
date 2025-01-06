@@ -1,4 +1,4 @@
-#include "../include/Ente.h"
+#include "Ente.h"
 
 int Ente :: cont (0);
 Gerenciadores :: Gerenciador_Grafico*  Ente  ::  pGG (NULL);

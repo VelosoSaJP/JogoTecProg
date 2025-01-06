@@ -1,10 +1,10 @@
-#include "../../include/manager/Gerenciador_Grafico.h"
+#include "Gerenciador_Grafico.h"
 
 namespace Gerenciadores{
 Gerenciador_Grafico* Gerenciador_Grafico :: instancia(NULL);
 
 
-Gerenciador_Grafico* Gerenciador_Grafico ::getInstancia() const{
+Gerenciador_Grafico* Gerenciador_Grafico ::getInstancia(){
     if (instancia == NULL){
         instancia = new Gerenciador_Grafico();
     }
@@ -19,12 +19,16 @@ Gerenciador_Grafico :: Gerenciador_Grafico():
     //executar();
 }
 Gerenciador_Grafico :: ~Gerenciador_Grafico(){
-    delete pJanela;
-    pJanela=NULL;
+    if(pJanela){
+        delete pJanela;
+    }
+        pJanela=NULL;
 }
 
 bool Gerenciador_Grafico :: janelaAberta() const{
-    return pJanela->isOpen();
+    if(pJanela){
+        return pJanela->isOpen();
+    }
 }
 
 void Gerenciador_Grafico :: setJanela(){
@@ -37,28 +41,45 @@ void Gerenciador_Grafico :: setVideoMode(){
 }
 
 sf::RenderWindow*  Gerenciador_Grafico :: getJanela () const{
-    return pJanela;
+    if(pJanela){
+        return pJanela;
+    }
+}
+
+void Gerenciador_Grafico :: limpaJanela(){
+    if(pJanela){
+     pJanela->clear();
+    }
 }
 
 void Gerenciador_Grafico :: fechaJanela(){
-    pJanela->close();
+    if(pJanela){
+        pJanela->close();
+    }
 }
 
 
 bool Gerenciador_Grafico :: eventoJanela(sf::Event& evento){ //ref escondida
-    return (pJanela->pollEvent(evento));
+    if(pJanela){
+        return (pJanela->pollEvent(evento));
+    }
+    else{
+        return 0;
+    }
 }
 
 
 //Irá projetar em tela ente, menu e fases.
 void  Gerenciador_Grafico :: desenhar(sf::Sprite* pS) const{
-    if(pS){
+    if(pS && pJanela){
         pJanela->draw(*pS); //conteúdo apontado por pS;
     }
 }
 
 void Gerenciador_Grafico :: display(){
-    pJanela->display();
+    if(pJanela){
+        pJanela->display();
+    }
 }
 
 }

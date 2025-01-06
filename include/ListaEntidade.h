@@ -1,6 +1,6 @@
-#include"Lista.h"
-#include"../include/Entidade.h"
 #pragma once
+#include"Lista.h"
+#include"Entidade.h"
 
 /*#include "../Entidades/Entidade.h"
 #include "List/Lista.h"*/

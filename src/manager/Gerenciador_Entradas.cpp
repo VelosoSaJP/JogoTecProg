@@ -3,7 +3,7 @@
 namespace Gerenciadores{
 Gerenciador_Entradas* Gerenciador_Entradas :: instancia(nullptr);
 
-Gerenciador_Entradas* Gerenciador_Entradas :: getInstancia() const{
+Gerenciador_Entradas* Gerenciador_Entradas :: getInstancia(){
     if (instancia == NULL){
         instancia = new Gerenciador_Entradas();
     }

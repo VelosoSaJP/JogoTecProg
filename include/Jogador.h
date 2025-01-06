@@ -1,5 +1,5 @@
-#include "Personagem.h"
 #pragma once
+#include "Personagem.h"
 
 namespace Personagens{
 class Jogador : public Personagem{

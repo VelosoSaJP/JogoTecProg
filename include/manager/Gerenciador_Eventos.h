@@ -2,6 +2,7 @@
 #include <iostream>
 //#include "Ente.h"
 #include "Gerenciador_Entradas.h"
+#include "Gerenciador_Grafico.h"
 #include <SFML/Graphics.hpp>
 //#include "Gerenciador_Entradas.h"
 
@@ -17,7 +18,7 @@ private:
     Gerenciador_Eventos();
 
 public:
-Gerenciador_Eventos* getInstancia() const;
+static Gerenciador_Eventos* getInstancia();
 ~Gerenciador_Eventos();
 void executar();
 
