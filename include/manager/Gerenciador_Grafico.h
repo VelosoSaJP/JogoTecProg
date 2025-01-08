@@ -31,7 +31,7 @@ bool janelaAberta() const;
 void setJanela();
 void limpaJanela();
 sf::RenderWindow* getJanela () const;
-void fechaJanela() ;
+void fechaJanela();
 bool eventoJanela(sf::Event& evento);//chama Gerenciador de Eventos.
 
 
@@ -40,6 +40,11 @@ void setVideoMode();
 
 
 void desenhar (sf::Sprite* pS) const ; //monitor Lucas Skora
+
+
+
+
+
 void display();
 
 

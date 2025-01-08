@@ -1,4 +1,4 @@
-#include "Gerenciador_Grafico.h"
+#include "../include/manager/Gerenciador_Grafico.h"
 
 namespace Gerenciadores{
 Gerenciador_Grafico* Gerenciador_Grafico :: instancia(NULL);
@@ -14,14 +14,13 @@ Gerenciador_Grafico* Gerenciador_Grafico ::getInstancia(){
 Gerenciador_Grafico :: Gerenciador_Grafico():
    pJanela(NULL)
 {
-    setJanela();
     setVideoMode();
+    setJanela();
     //executar();
 }
+
 Gerenciador_Grafico :: ~Gerenciador_Grafico(){
-    if(pJanela){
-        delete pJanela;
-    }
+
         pJanela=NULL;
 }
 
@@ -32,7 +31,7 @@ bool Gerenciador_Grafico :: janelaAberta() const{
 }
 
 void Gerenciador_Grafico :: setJanela(){
-    pJanela = new sf::RenderWindow(videoMode, "Idade Média++");
+    pJanela = new sf::RenderWindow(videoMode, "Idade Media++");
 }
 
 void Gerenciador_Grafico :: setVideoMode(){
@@ -68,7 +67,6 @@ bool Gerenciador_Grafico :: eventoJanela(sf::Event& evento){ //ref escondida
     }
 }
 
-
 //Irá projetar em tela ente, menu e fases.
 void  Gerenciador_Grafico :: desenhar(sf::Sprite* pS) const{
     if(pS && pJanela){
@@ -84,13 +82,3 @@ void Gerenciador_Grafico :: display(){
 
 }
 
-/*  
-  while(window.isOpen()){
-        sf::Event evento;
-        if (window.pollEvent(evento)){
-            if(evento.type== sf::Event::Closed){
-                window.close();
-            }
-        }
-    }
-*/
