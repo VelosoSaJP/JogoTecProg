@@ -9,7 +9,7 @@ namespace Personagens{
         pontos(0),
         Personagem(pos,tam) 
     {
-        setTextura("../assets/Bonecos/AncientMage/mago-removebg.png");
+        setTextura("../assets/Bonecos/Jogador1/guerreiro.png");
     }
 
     Jogador:: ~Jogador(){
