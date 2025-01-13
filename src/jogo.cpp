@@ -7,6 +7,7 @@ Jogo::Jogo():
 {
     // srand(time(NULL)); será útil para escolher aleatoriamente a posição dos entes, talvez seja melhor colocar em fase.h
     pJog1 = new Entidades::Personagens::Jogador(sf::Vector2f (300,150), sf::Vector2f (0.1,0.1));
+    //Será criado em listaEntidades posteriormente
 }
 
 Jogo::~Jogo(){
@@ -14,9 +15,6 @@ Jogo::~Jogo(){
     delete pGE;
     delete pGG;
     delete pJog1;
-
-    
-
 }
 
 
@@ -27,8 +25,9 @@ void Jogo::executar(){
                 
         pGE->executar();
         // pLista->percorrer();
-        pJog1->desenhar();
-        //pGG->desenhar(Ente::)
+        //é o desenhar de Ente
+        pJog1->desenhar();//vai para listaEntidades depois
+        //pGG->desenhar(Ente ::)
         //gerenciador de eventos
         pGG->display();
     }
