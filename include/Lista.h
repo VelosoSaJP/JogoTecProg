@@ -28,9 +28,6 @@ namespace Lista
                     pInfo = nullptr;
                 }
 
-                /*void incluir(TE *p){
-                    pInfo = p;
-                }*/
 
                 void setProx(Elemento<TE> *pE){
                     pProx = pE;
@@ -183,14 +180,14 @@ namespace Lista
                     else{
                         pAnterior->setProx(pNode->getProx());
                     }
+
                     delete pNode;
+                    pNode=nullptr;
+                    delete pAnterior;
+                    pAnterior=nullptr;
+                    tam--;
                 }
             }
-
-            delete pAnterior; //é necessário esse delete?
-            pNode=nullptr;
-            pAnterior=nullptr;
-            tam--;
         }
      }
 
