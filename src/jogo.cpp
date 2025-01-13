@@ -7,6 +7,7 @@ Jogo::Jogo():
 {
     // srand(time(NULL)); será útil para escolher aleatoriamente a posição dos entes, talvez seja melhor colocar em fase.h
     pJog1 = new Entidades::Personagens::Jogador(sf::Vector2f (300,150), sf::Vector2f (0.1,0.1));
+
 }
 
 Jogo::~Jogo(){

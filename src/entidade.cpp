@@ -20,4 +20,3 @@ float Entidade::getPosition(){
     return 0;
 }
 }
-
