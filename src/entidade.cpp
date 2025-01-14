@@ -5,7 +5,7 @@ Entidade:: Entidade(){
 
 }
 Entidade::Entidade(sf::Vector2f pos, sf::Vector2f tam):
-    Ente(pos,tam)
+    Ente(pos,tam,velocidade)
 {
 }
 
@@ -15,8 +15,8 @@ Entidade:: ~Entidade(){
 void Entidade::salvarDataBuffer(){
     
 }
-float Entidade::getPosition(){
+const sf::Vector2f Entidade::getPosicao() const{
     //return pSprite.vec();}
-    return 0;
+    return posicao;
 }
 }

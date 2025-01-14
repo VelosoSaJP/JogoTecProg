@@ -25,9 +25,10 @@ void Jogo::executar(){
     while (pGG->janelaAberta()){
         
         pGG->limpaJanela();
-                
+        pGG->atualizaDeltaTime();        
         pGE->executar();
         // pLista->percorrer();
+        pJog1->executar();
         pJog1->desenhar();
         //pGG->desenhar(Ente::)
         //gerenciador de eventos

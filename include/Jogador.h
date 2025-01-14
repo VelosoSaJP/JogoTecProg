@@ -6,6 +6,7 @@ namespace Personagens{
 class Jogador : public Personagem{
 private:
     int pontos;
+    sf::RectangleShape corpo;
     // 
 public:
     Jogador ();
@@ -13,9 +14,9 @@ public:
     ~Jogador();
     void executar();
     void salvar();
-    
+    void mover();
 };
 
 }
 }
-//lembrar que herda mover de personagem.
+//lembrar que herda mover de personagem(entidade).

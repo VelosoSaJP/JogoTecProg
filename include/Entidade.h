@@ -7,7 +7,7 @@ protected:
         // float x;
         // float y;
         //std::ostream& buffer; //ostream para saída de dados.
-        
+        float gravidade;
 public:
 Entidade();
 Entidade(sf::Vector2f pos, sf::Vector2f tam);
@@ -15,7 +15,8 @@ Entidade(sf::Vector2f pos, sf::Vector2f tam);
 virtual void executar()=0;
 virtual void salvar()=0;
 void salvarDataBuffer();
-virtual float getPosition(); 
+const sf::Vector2f getPosicao()const; 
+//|virtual void mover()=0;
 /*útil para pegar a posição da entidade para fins de mudança/movimento.Acessa o Ente e busca a postion do sprite*/
 };
 }

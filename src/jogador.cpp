@@ -16,10 +16,29 @@ namespace Personagens{
 
     }
     void   Jogador:: executar(){
-        
+        mover();
+       setPosicao (velocidade*pGG->getDeltaTime());
     }
     void Jogador :: salvar(){
 
+    }
+
+    void Entidades::Personagens::Jogador::mover(){
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+        {
+            //corpo.move(-getVel().x,0.0f);
+            velocidade.x -= pGG->getDeltaTime() * 0.01;
+            pSprite->setPosition(getPosicao());
+
+        }
+         if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+        {
+            //corpo.move(getVel().x,0.0f);
+            velocidade.x += pGG->getDeltaTime() * 0.01;
+            pSprite->setPosition(getPosicao());
+
+        }
+        //para o w vai ser diferente, pq é um pulo
     }
 }
 }
