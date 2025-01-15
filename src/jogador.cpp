@@ -16,7 +16,7 @@ namespace Personagens{
     Jogador:: ~Jogador(){
 
     }
-    void   Jogador:: executar(){
+    void Jogador:: executar(){
         
     }
     void Jogador :: salvar(){

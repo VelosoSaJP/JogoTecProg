@@ -30,11 +30,16 @@ namespace Lista{
     }
 
     void ListaEntidade::percorrer(){
-        Entidades:: Entidade* pPercorre= nullptr;
-
+        Lista <Entidades:: Entidade> :: Iterator it = LEs.getInicio();
+        
         for (int i=0; i< getTamanho(); i++){
+            Entidades::Entidade* pPercorre = *it;
+
             pPercorre->desenhar();
             pPercorre->executar();
+            
+            ++it; //sobrecarga do operator.
+
         }
     }
 

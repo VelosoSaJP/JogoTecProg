@@ -1,5 +1,4 @@
 #pragma once 
-
 #include <iostream>
 
 namespace Lista
@@ -45,11 +44,7 @@ namespace Lista
                 TE* getInfo() const{
                   return pInfo;
                 } 
-
-                int getTamanho()const {
-                    return tam;
-                }
-
+ 
         }; 
         //demais atributos da classe lista: (elem. acabou)
                 int tam;
@@ -139,14 +134,17 @@ namespace Lista
         Elemento<TL>* pNode = new Elemento<TL> ();
         pNode->setInfo(p);
 
+
         if(pUlt){
+            //printf("Entrouuu\n");
             pUlt->setProx(pNode);
             pUlt = pNode;
         }
-        else{//lista estava vazia.
+        else{
             pPrim = pNode;
             pUlt = pNode;
         }
+
         tam++;
         }
         else{

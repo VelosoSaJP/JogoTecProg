@@ -2,6 +2,8 @@
 #include "manager/Gerenciador_Grafico.h"
 #include "manager/Gerenciador_Eventos.h"
 #include "Jogador.h"
+#include "ListaEntidade.h"
+#include "Obstaculo.h"
 
 class Jogo{
 private:
@@ -10,6 +12,9 @@ private:
     Entidades::Personagens::Jogador* pJog1; 
     Gerenciadores:: Gerenciador_Grafico* pGG;
     Gerenciadores:: Gerenciador_Eventos* pGE;
+    Entidades::Obstaculos::Obstaculo* pObs;
+    Lista::ListaEntidade* pLE; //posso criar sem ser ponteiro também.
+
 
 public:
     Jogo();
