@@ -9,7 +9,7 @@ Ente::Ente(){
 
 }
 
-Ente::Ente(sf::Vector2f pos, sf::Vector2f tam):
+Ente::Ente(sf::Vector2f pos, sf::Vector2f tam, sf ::Vector2f velocidade):
     id(cont++),
     posicao(pos), //tam e pos passados de acordo com o ent em questão, dada a herança
     tamanho(tam)
@@ -46,3 +46,12 @@ void Ente :: desenhar(){ //vai ser chamado no executar das herdadas
 }
 
 //sprite é composto por imagem, posição, tamanho, textura e afins. A textura é a imagem (a foto do bonequinho).
+
+const sf::Vector2f Ente::getVel() const{
+    return velocidade;
+}
+
+void Ente::setPosicao(sf::Vector2f pos){
+    posicao += pos ;
+}
+        

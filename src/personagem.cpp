@@ -6,7 +6,6 @@ namespace Personagens{
     }
     Personagem::Personagem(sf::Vector2f pos, sf::Vector2f tam):
         Entidade(pos,tam),
-        velocidade(0),
         num_vidas(0)
     {
     }
@@ -15,11 +14,16 @@ namespace Personagens{
     }      
 
     int const Personagem::getVidas(){
-
+        return num_vidas;
     }
 
     // void Personagem::salvar (){}
    // void Personagem::executar(){}
     // Personagem:: salvarDataBuffer(){}
-    // Personagem::  void mover()=0{}
+    /*void Entidades::Entidade::mover(){
+        // aqui entra pos+=velocidade, tipo isso
+    }*/
+
+
+    
 }}

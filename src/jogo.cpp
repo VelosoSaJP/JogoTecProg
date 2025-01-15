@@ -12,6 +12,7 @@ Jogo::Jogo():
     pLE = new Lista::ListaEntidade();
     pLE->incluir (static_cast<Entidades::Entidade*>(pObs));
     pLE->incluir(static_cast<Entidades::Entidade*>(pJog1));
+
 }
 
 Jogo::~Jogo(){
@@ -28,13 +29,16 @@ void Jogo::executar(){
     while (pGG->janelaAberta()){
         
         pGG->limpaJanela();
-                
+        pGG->atualizaDeltaTime();        
         pGE->executar();
 
        pLE->percorrer();
         //é o desenhar de Ente
         //pJog1->desenhar();//vai para listaEntidades depois
         //pGG->desenhar(Ente ::)
+        // pLista->percorrer();
+
+        //pGG->desenhar(Ente::)
         //gerenciador de eventos
         pGG->display();
     }

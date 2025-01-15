@@ -12,7 +12,8 @@ protected:
     static int cont;
     sf::Vector2f tamanho;
     sf ::Vector2f posicao;
-    
+    sf ::Vector2f velocidade;
+
     static Gerenciadores ::  Gerenciador_Grafico*  pGG;
     // static Gerenciadores :: Gerenciador_Eventos*  pGE; acho que não será necessário.
 
@@ -21,7 +22,7 @@ protected:
    
 public:
 Ente(); //construtora vazia
-Ente(sf::Vector2f pos, sf::Vector2f tam);
+Ente(sf::Vector2f pos, sf::Vector2f tam, sf ::Vector2f velocidade);
 ~Ente();
 void atualizar();
 
@@ -32,8 +33,9 @@ void desenhar();
 void setTextura(const char* caminhoTextura);
 void setSprite();
 
-void setPosicao();
+void setPosicao(sf::Vector2f pos);
+
+const sf::Vector2f getVel() const;
 
 
 };
-

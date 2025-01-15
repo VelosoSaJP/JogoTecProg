@@ -15,7 +15,8 @@ private:
     sf::VideoMode videoMode;
     sf::RenderWindow* pJanela;
     static Gerenciador_Grafico* instancia;
-
+    float delta_time;
+    sf::Clock clock;
 
 private:    
 Gerenciador_Grafico(); //construtora private (para o singleton)
@@ -41,8 +42,8 @@ void setVideoMode();
 
 void desenhar (sf::Sprite* pS) const ; //monitor Lucas Skora
 
-
-
+const float getDeltaTime() const;
+void atualizaDeltaTime();
 
 
 void display();

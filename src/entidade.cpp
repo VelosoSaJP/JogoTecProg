@@ -5,7 +5,7 @@ Entidade:: Entidade(){
 
 }
 Entidade::Entidade(sf::Vector2f pos, sf::Vector2f tam):
-    Ente(pos,tam)
+    Ente(pos,tam,velocidade)
 {
 }
 
@@ -15,9 +15,26 @@ Entidade:: ~Entidade(){
 void Entidade::salvarDataBuffer(){
     
 }
-float Entidade::getPosition(){
+const sf::Vector2f Entidade::getPosicao() /*const*/{
     //return pSprite.vec();}
-    return 0;
-}
-}
+    if(posicao.x > WIDTH){
+        posicao.x = WIDTH*0.9;
+        // printf("\nENTROU");
 
+    }
+    else if(posicao.x<0){
+        posicao.x=WIDTH*0.03;
+    }
+
+    if(posicao.y > HEIGTH){
+        posicao.y = HEIGTH;
+    }     
+    else if( posicao.y<0){
+        posicao.y=HEIGTH*0.03;
+    }        
+    //    printf("\nX: %f",posicao.x);
+
+
+    return posicao;
+}
+}

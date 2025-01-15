@@ -80,5 +80,13 @@ void Gerenciador_Grafico :: display(){
     }
 }
 
+const float Gerenciador_Grafico::getDeltaTime()const{
+    return delta_time;
+}
+
+void Gerenciador_Grafico::atualizaDeltaTime(){
+    delta_time = clock.restart().asMilliseconds();
+}
+
 }
 

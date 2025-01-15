@@ -13,9 +13,9 @@ public:
     ~Jogador();
     void executar();
     void salvar();
-    
+    void mover();
 };
 
 }
 }
-//lembrar que herda mover de personagem.
+//lembrar que herda mover de personagem(entidade).
