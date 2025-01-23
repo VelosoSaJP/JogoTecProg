@@ -47,4 +47,5 @@ namespace Lista{
         return LEs.getTamanho();
     }
 
+    Lista<Entidades::Entidade> ListaEntidade::getLista(){return LEs;}
 }

@@ -61,6 +61,8 @@ namespace Lista
             void incluir(TL* p);
             void remover(TL* p);
             int getTamanho() const;
+            TL* Lista<TL>::operator[](int pos);
+
            
         class Iterator{
             private:
@@ -203,11 +205,25 @@ namespace Lista
         while (pNode){
             pAux = pNode->getProx();
             delete pNode;
-            pNode=pAux;
+            pNode=pAux; 
         }
 
         pPrim = nullptr;
         pUlt = nullptr;
 
      }
+
+     template<class TL>
+        TL* Lista<TL>::operator[](int pos){
+            if(pos >= (int)tam || pos < 0){
+                std::cout << "ERROR::Lista pos eh maior que o tamanho da lista" << std::endl;
+                exit(1);
+            }
+            Elemento<TL>* aux = pInicio;
+            for(int i = 0; i < pos; i++){
+                aux = aux->getProx();
+            }
+            return aux->getElemento();
+        }
+     
 }

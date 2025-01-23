@@ -30,6 +30,7 @@ namespace Lista{
 
         int getTamanho() const;
 
+        Lista<Entidades::Entidade> getLista();
     };
     
 }

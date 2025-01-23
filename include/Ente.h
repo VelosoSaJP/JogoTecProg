@@ -37,5 +37,8 @@ void setPosicao(sf::Vector2f pos);
 
 const sf::Vector2f getVel() const;
 
+const sf::Vector2f getTam() const;
+
+
 
 };

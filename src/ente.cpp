@@ -51,6 +51,11 @@ const sf::Vector2f Ente::getVel() const{
     return velocidade;
 }
 
+const sf::Vector2f Ente::getTam() const{
+    return tamanho;
+}
+
+
 void Ente::setPosicao(sf::Vector2f pos){
     posicao += pos ;
 }
