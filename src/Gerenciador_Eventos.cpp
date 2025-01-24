@@ -25,9 +25,10 @@ Gerenciador_Eventos* Gerenciador_Eventos::getInstancia(){
 void Gerenciador_Eventos::executar(){
     sf::Event evento;
 
-    if(pGG){ //TESTAR pGE QUANDO IMPLEMENTAR GER_EVENT
+    if(pGG){
+         if(pGG->janelaAberta()){
 
-        while (pGG->janelaAberta() && pGG->eventoJanela(evento)){
+        while (pGG->eventoJanela(evento)){
         
             if(evento.type== sf :: Event:: Closed){
                 pGG->fechaJanela();
@@ -40,6 +41,7 @@ void Gerenciador_Eventos::executar(){
             }
                 
         }
+      }
     }
  }
 }

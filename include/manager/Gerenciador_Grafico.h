@@ -4,8 +4,8 @@
 #include <SFML/Window.hpp>
 #include <SFML/Network.hpp>
 
-#define HEIGTH 400 
-#define WIDTH 750
+#define HEIGTH 400
+#define WIDTH 752 //HEIGTH e WIDTH ajustados para a proporção do TILED
 
 namespace Gerenciadores{
 class Gerenciador_Grafico{
