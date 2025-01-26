@@ -61,7 +61,7 @@ namespace Lista
             void incluir(TL* p);
             void remover(TL* p);
             int getTamanho() const;
-            TL* Lista<TL>::operator[](int pos);
+            TL* /*Lista<TL>::*/operator[](int pos);
 
            
         class Iterator{
@@ -219,7 +219,7 @@ namespace Lista
                 std::cout << "ERROR::Lista pos eh maior que o tamanho da lista" << std::endl;
                 exit(1);
             }
-            Elemento<TL>* aux = pInicio;
+            Elemento<TL>* aux = getInicio;
             for(int i = 0; i < pos; i++){
                 aux = aux->getProx();
             }

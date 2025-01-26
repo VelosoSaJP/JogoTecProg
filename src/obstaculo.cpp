@@ -20,5 +20,7 @@ namespace Entidades{
         void Obstaculo :: salvar(){
 
         }
+        void Entidades::Obstaculos::Obstaculo::colisao(Entidade* outraEntidade,sf::Vector2f distancia){}
+        //FALTA IMPLEMENTAR AINDA ^
     }
 }

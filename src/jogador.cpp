@@ -41,5 +41,8 @@ namespace Personagens{
         }
         //para o w vai ser diferente, pq é um pulo
     }
+        void Entidades::Personagens::Jogador::colisao(Entidade* outraEntidade,sf::Vector2f distancia){}
+        //FALTA IMPLEMENTAR AINDA ^
+
 }
 }

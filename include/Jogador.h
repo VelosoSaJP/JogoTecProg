@@ -14,6 +14,8 @@ public:
     void executar();
     void salvar();
     void mover();
+    virtual void colisao(Entidade* outraEntidade,sf::Vector2f distancia);
+
 };
 
 }
