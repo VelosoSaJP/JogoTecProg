@@ -25,6 +25,7 @@ const sf::Vector2f Gerenciador_Colisoes::gerenciaColisao(Entidades::Entidade* en
 }
 
 void Gerenciador_Colisoes::executar(){
+    
     for(int i = 0; i < listaPersonagem->getTamanho() - 1; i++){
         Entidades::Entidade* ent1 = listaPersonagem->getLista().operator[](i);
         for(int j = i + 1; j < listaPersonagem->getTamanho(); j++){
@@ -34,6 +35,7 @@ void Gerenciador_Colisoes::executar(){
                 ent1->colisao(ent2, ds);
             } //adicionei operator na listaEntidade mas esta dando erro
             //no return. Precisaria ter operator em Lista.
+            //agr tem :)
         }
     }
 
