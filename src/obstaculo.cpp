@@ -9,7 +9,7 @@ namespace Entidades{
             Entidade(pos,tam),
             danoso(false)
         {
-            setTextura("../assets/Fases/Fase1/props/arvore4.png");
+            setTextura("../assets/Fases/Fase1/props/tree04.png");
         }
         Obstaculo::~Obstaculo(){
 
@@ -20,5 +20,8 @@ namespace Entidades{
         void Obstaculo :: salvar(){
 
         }
+
+        void Obstaculo::colisao(Entidade* outraEntidade,sf::Vector2f distancia){}
+
     }
 }

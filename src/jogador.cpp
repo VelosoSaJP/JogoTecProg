@@ -28,18 +28,24 @@ namespace Personagens{
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
         {
             //corpo.move(-getVel().x,0.0f);
-            velocidade.x = -pGG->getDeltaTime() * 1;
+            velocidade.x = -pGG->getDeltaTime() * 1.5;
             pSprite->setPosition(getPosicao());
-
+            if(pSprite->getScale().x > 0)
+                pSprite->setScale(-1*pSprite->getScale().x,pSprite->getScale().y);
         }
          if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
         {
             //corpo.move(getVel().x,0.0f);
-            velocidade.x = pGG->getDeltaTime() * 1;
+            velocidade.x = pGG->getDeltaTime() * 1.5;
             pSprite->setPosition(getPosicao());
+            if(pSprite->getScale().x < 0)
+                pSprite->setScale(-1*pSprite->getScale().x,pSprite->getScale().y);
 
         }
         //para o w vai ser diferente, pq é um pulo
     }
+        void Entidades::Personagens::Jogador::colisao(Entidade* outraEntidade,sf::Vector2f distancia){}
+        //FALTA IMPLEMENTAR AINDA ^
+
 }
 }

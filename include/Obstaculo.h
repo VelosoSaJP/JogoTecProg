@@ -14,6 +14,7 @@ namespace Entidades{
                 void executar ();
                 void salvar();
                 //virtual void obstacular(Jogador*p)=0;
+                void colisao(Entidade* outraEntidade,sf::Vector2f distancia);
 
 
         };

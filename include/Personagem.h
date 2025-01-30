@@ -17,6 +17,8 @@ public:
     virtual void salvar()=0;
     virtual void executar()=0;
     int const getVidas();
+    virtual void colisao(Entidade* outraEntidade,sf::Vector2f distancia)=0;
+
 };
 }
 }

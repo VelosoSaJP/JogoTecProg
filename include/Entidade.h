@@ -17,6 +17,7 @@ virtual void salvar()=0;
 void salvarDataBuffer();
 const sf::Vector2f getPosicao()/*const*/; 
 //|virtual void mover()=0;
+virtual void colisao(Entidade* outraEntidade,sf::Vector2f distancia)=0;
 /*útil para pegar a posição da entidade para fins de mudança/movimento.Acessa o Ente e busca a postion do sprite*/
 };
 }
