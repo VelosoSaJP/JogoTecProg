@@ -2,13 +2,13 @@
 #include "Ente.h"//útil para as classes herdadas
 #include "json.hpp"
 #include "fstream"
-#include "ListaEntidade.h"
+#include "../Listas/ListaEntidade.h"
 #include "../Personagens/Jogador.h"
 #include "../Personagens/Orc.h"
 #include "../Personagens/Esqueleto.h"
 #include "../Personagens/Mago.h"
-#include "../manager/Gerenciador_Grafico.h"
-#include "../manager/Gerenciador_Eventos.h"
+#include "../Gerenciadores/Gerenciador_Grafico.h"
+#include "../Gerenciadores/Gerenciador_Eventos.h"
 
 
 // #include "Gerenciador_Colisoes.h"

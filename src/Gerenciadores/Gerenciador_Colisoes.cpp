@@ -1,4 +1,4 @@
-#include "../include/manager/Gerenciador_Colisoes.h"
+#include "../include/Gerenciadores/Gerenciador_Colisoes.h"
 
 Gerenciador_Colisoes::Gerenciador_Colisoes(Lista::ListaEntidade* listaPersonagem , Lista::ListaEntidade* listaObstaculo)
 {

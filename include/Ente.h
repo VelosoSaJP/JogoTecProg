@@ -2,7 +2,7 @@
 #include <iostream>
 // #include "manager/Gerenciador_Grafico.h"
 //  #include "manager/Gerenciador_Eventos.h"
-#include "manager/Gerenciador_Grafico.h"
+#include "Gerenciadores/Gerenciador_Grafico.h"
 
 using namespace std;
 

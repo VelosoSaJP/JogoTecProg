@@ -1,7 +1,7 @@
 #pragma once 
 
 #include <SFML/Graphics.hpp>
-#include "../ListaEntidade.h"
+#include "../Listas/ListaEntidade.h"
 #include <math.h>
 #include <list>
 #include <vector>

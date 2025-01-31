@@ -1,5 +1,5 @@
 #pragma once
-#include "manager/Gerenciador_Grafico.h"
+#include "Gerenciadores/Gerenciador_Grafico.h"
 // #include "manager/Gerenciador_Eventos.h"
 // #include "ListaEntidade.h"
 #include "Fases/Floresta.h"
