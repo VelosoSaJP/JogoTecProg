@@ -25,7 +25,7 @@ namespace Personagens{
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
         {
             //corpo.move(-getVel().x,0.0f);
-            velocidade.x = -pGG->getDeltaTime() * 1.5;
+            velocidade.x = -pGG->getDeltaTime() * 0.1;
             pSprite->setPosition(getPosicao());
             if(pSprite->getScale().x > 0)
                 pSprite->setScale(-1*pSprite->getScale().x,pSprite->getScale().y);
@@ -33,7 +33,7 @@ namespace Personagens{
          if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
         {
             //corpo.move(getVel().x,0.0f);
-            velocidade.x = pGG->getDeltaTime() * 1.5;
+            velocidade.x = pGG->getDeltaTime() * 0.1;
             pSprite->setPosition(getPosicao());
             if(pSprite->getScale().x < 0)
                 pSprite->setScale(-1*pSprite->getScale().x,pSprite->getScale().y);

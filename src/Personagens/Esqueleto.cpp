@@ -1,4 +1,4 @@
-#include "/home/murilo/code/JogoTecProg/include/Personagens/Esqueleto.h"
+#include "../include/Personagens/Esqueleto.h"
 namespace Entidades{
 namespace Personagens{
 
