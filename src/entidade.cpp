@@ -18,7 +18,7 @@ Entidade:: ~Entidade(){
 const sf::Vector2f Entidade::getPosicao() /*const*/{
     //return pSprite.vec();}
     if(posicao.x > WIDTH){
-        posicao.x = WIDTH*0.9;
+        posicao.x = WIDTH*0.93;
         // printf("\nENTROU");
 
     }

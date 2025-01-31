@@ -16,7 +16,7 @@ namespace Personagens{
     Inimigo:: ~Inimigo(){
 
     }
-    void Inimigo::mover(){
+    void Inimigo::andar(bool direita){
 
     }
 
