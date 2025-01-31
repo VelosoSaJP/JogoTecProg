@@ -1,0 +1,665 @@
+{ "compressionlevel":-1,
+ "height":25,
+ "infinite":false,
+ "layers":[
+        {
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 98, 71, 71, 99, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 333, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 98, 101, 120, 120, 102, 99, 0,
+            0, 0, 0, 333, 0, 0, 0, 204, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 334, 0, 0, 0, 0, 0, 115, 120, 120, 120, 120, 102, 0,
+            0, 0, 0, 0, 0, 0, 117, 236, 117, 117, 117, 0, 0, 0, 0, 117, 117, 117, 117, 0, 334, 0, 0, 0, 334, 0, 0, 334, 0, 0, 0, 0, 204, 0, 0, 0, 0, 0, 0, 117, 117, 117, 117, 117, 117, 117, 117,
+            0, 0, 220, 220, 220, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 204, 0, 0, 0, 0, 0, 0, 0, 0, 65, 236, 65, 65, 117, 117, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            223, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 117, 117, 236, 117, 117, 117, 117, 117, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            224, 223, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 224, 233, 0, 334, 0, 334, 0, 0, 0, 0, 0, 224, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 224, 223, 223, 223, 232, 223, 0, 0, 0, 306, 0, 224, 0, 0, 0, 334, 0, 0, 334, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 224, 224, 224, 224, 224, 0, 0, 117, 117, 214, 117, 117, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 333, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 266, 266, 117, 117, 117, 117, 117, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 266, 266, 266, 266, 266, 266, 266, 220, 220, 0, 0, 224, 224, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 0, 0, 204, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 220, 220, 220, 220, 220, 236, 220, 220, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 223, 232, 223,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 223, 224, 224, 224,
+            0, 0, 0, 0, 0, 0, 0, 224, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 224, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 223, 224, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 224, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 223, 224, 0, 0, 0, 0,
+            337, 0, 336, 0, 0, 224, 0, 0, 334, 0, 334, 0, 0, 0, 334, 0, 0, 0, 0, 334, 0, 334, 0, 334, 0, 0, 224, 0, 0, 333, 0, 333, 0, 334, 0, 0, 334, 0, 334, 0, 223, 224, 0, 0, 0, 0, 0,
+            74, 233, 74, 74, 224, 83, 223, 74, 223, 74, 74, 223, 74, 74, 74, 74, 83, 223, 223, 223, 223, 223, 83, 223, 74, 224, 74, 74, 74, 74, 74, 83, 74, 74, 74, 74, 74, 83, 74, 74, 224, 0, 0, 0, 0, 0, 0,
+            75, 75, 75, 75, 75, 75, 224, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 224, 75, 75, 75, 75, 75, 75, 75, 224, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "height":25,
+         "id":1,
+         "name":"Tudo que ser\u00e1 \"pisado\"",
+         "offsetx":0.297159,
+         "offsety":0.536174,
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":47,
+         "x":0,
+         "y":0
+        }],
+ "nextlayerid":8,
+ "nextobjectid":1,
+ "orientation":"orthogonal",
+ "renderorder":"right-down",
+ "tiledversion":"1.11.1",
+ "tileheight":16,
+ "tilesets":[
+        {
+         "columns":0,
+         "firstgid":1,
+         "grid":
+            {
+             "height":1,
+             "orientation":"orthogonal",
+             "width":1
+            },
+         "margin":0,
+         "name":"JogoTecProg",
+         "spacing":0,
+         "tilecount":96,
+         "tileheight":80,
+         "tiles":[
+                {
+                 "id":53,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/props\/arvore4.png",
+                 "imageheight":80,
+                 "imagewidth":78
+                }, 
+                {
+                 "id":54,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/props\/rocks1.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":55,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/props\/rocks2.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":56,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/props\/rocks3.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":57,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/props\/rocks4.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":58,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/props\/rocks5.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":59,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/props\/rocks6.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":60,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/props\/tree01.png",
+                 "imageheight":64,
+                 "imagewidth":32
+                }, 
+                {
+                 "id":61,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/props\/tree02.png",
+                 "imageheight":64,
+                 "imagewidth":48
+                }, 
+                {
+                 "id":62,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/props\/tree03.png",
+                 "imageheight":48,
+                 "imagewidth":32
+                }, 
+                {
+                 "id":63,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/00Atlas.png",
+                 "imageheight":80,
+                 "imagewidth":320
+                }, 
+                {
+                 "id":64,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/bridge1.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":65,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/bridge2.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":66,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/bridge3.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":67,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/bridge4.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":68,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/bridge5.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":69,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/bridge6.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":70,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/bridge7.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":71,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/bridge8.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":72,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/bridge9.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":73,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/grass1.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":74,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/grass2.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":75,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/grass3.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":76,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/grass4.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":77,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/grass5.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":78,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/grass6.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":79,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/grass7.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":80,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/grass8.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":81,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/grass9.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":82,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/grass10.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":83,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/grass11.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":84,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/grass12.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":85,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platforms1.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":86,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platforms2.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":87,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platforms3.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":88,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platforms4.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":89,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platforms5.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":90,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platforms6.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":91,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platforms7.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":92,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platforms8.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":93,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platforms9.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":94,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platforms10.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":95,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platforms11.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":96,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platforms12.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":97,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platvariation1.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":98,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platvariation2.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":99,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platvariation3.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                },
+            
+                {
+                 "id":100,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platvariation4.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":101,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platvariation5.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":102,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platvariation6.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":103,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platvariation7.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":104,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platvariation8.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":105,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platvariation9.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":106,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platvariation10.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":107,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platvariation11.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":108,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platvariation12.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":109,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platvariation13.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":110,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platvariation14.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":111,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platvariation15.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":112,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platvariation16.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":113,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platvariation17.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":114,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/platvariation18.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":115,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain1.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":116,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain2.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":117,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain3.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":118,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain4.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":119,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain5.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":120,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain6.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":121,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain7.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":122,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain8.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":123,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain9.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":124,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain10.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":125,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain11.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":126,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain12.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":127,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain13.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":128,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain14.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":129,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain15.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":130,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain16.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":131,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain17.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":132,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain18.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":133,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain19.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":134,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain20.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":135,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain21.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":136,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain22.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":137,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain23.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":138,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain24.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":139,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain25.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":140,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain26.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":141,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain27.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":142,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain28.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":143,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain29.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":144,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain30.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":145,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain31.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":146,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/tileMain32.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                },
+            
+                {
+                 "id":147,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/water1.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }, 
+                {
+                 "id":148,
+                 "image":"..\/..\/..\/..\/Desktop\/back Jogo TecProg 16 jan\/assets\/Fases\/Fase1\/Tileset\/water2.png",
+                 "imageheight":16,
+                 "imagewidth":16
+                }],
+         "tilewidth":320
+        }, 
+        {
+         "firstgid":150,
+         "source":"..\/..\/..\/..\/Desktop\/JogoTecProg.tsx"
+        }, 
+        {
+         "firstgid":300,
+         "source":"..\/..\/..\/..\/Desktop\/arvore4_reduzida_75.tsx"
+        }, 
+        {
+         "firstgid":309,
+         "source":"..\/..\/assets\/Fases\/Fase1\/Background\/background_F1.tsx"
+        }, 
+        {
+         "firstgid":326,
+         "source":"..\/..\/..\/..\/Desktop\/Nascimentos.tsx"
+        }],
+ "tilewidth":16,
+ "type":"map",
+ "version":"1.10",
+ "width":47
+}

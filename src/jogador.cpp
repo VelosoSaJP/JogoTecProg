@@ -1,4 +1,4 @@
-#include "../include/Jogador.h"
+#include "../include/Personagens/Jogador.h"
 
 namespace Entidades{
 namespace Personagens{
@@ -9,7 +9,7 @@ namespace Personagens{
         pontos(0),
         Personagem(pos,tam) 
     {
-        setTextura("../assets/Bonecos/Jogador1/guerreiro.png");
+        
     }
 
     Jogador:: ~Jogador(){
@@ -19,9 +19,6 @@ namespace Personagens{
     void Jogador:: executar(){
         mover();
        setPosicao (velocidade*pGG->getDeltaTime());
-    }
-    void Jogador :: salvar(){
-
     }
 
     void Entidades::Personagens::Jogador::mover(){
@@ -47,5 +44,7 @@ namespace Personagens{
         void Entidades::Personagens::Jogador::colisao(Entidade* outraEntidade,sf::Vector2f distancia){}
         //FALTA IMPLEMENTAR AINDA ^
 
+    
+    void Jogador :: salvar(){}
 }
 }

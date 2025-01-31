@@ -12,9 +12,9 @@ Entidade::Entidade(sf::Vector2f pos, sf::Vector2f tam):
 Entidade:: ~Entidade(){
 
 }
-void Entidade::salvarDataBuffer(){
-    
-}
+// void Entidade::salvar(){}
+// void Entidade :: executar(){}
+
 const sf::Vector2f Entidade::getPosicao() /*const*/{
     //return pSprite.vec();}
     if(posicao.x > WIDTH){

@@ -1,4 +1,4 @@
-#include "../include/Personagem.h"
+#include "../include/Personagens/Personagem.h"
 namespace Entidades{
 namespace Personagens{
     Personagem::Personagem(){

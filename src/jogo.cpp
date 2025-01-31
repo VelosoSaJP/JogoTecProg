@@ -1,46 +1,36 @@
 #include "Jogo.h"
 
 Jogo::Jogo():
-     pGG (Gerenciadores::Gerenciador_Grafico::getInstancia()),
-     pGE (Gerenciadores::Gerenciador_Eventos::getInstancia()),
-    pJog1(new Entidades::Personagens::Jogador(sf::Vector2f (300,150), sf::Vector2f (0.1,0.1))),
-    pObs(new Entidades::Obstaculos::Obstaculo(sf::Vector2f (200,150), sf::Vector2f (0.75,0.75))),
-     pLE()
+     pGG (Gerenciadores::Gerenciador_Grafico::getInstancia())
 {
 
-    // srand(time(NULL)); será útil para escolher aleatoriamente a posição dos entes, talvez seja melhor colocar em fase.h
-    pLE = new Lista::ListaEntidade();
-    pLE->incluir (static_cast<Entidades::Entidade*>(pObs));
-    pLE->incluir(static_cast<Entidades::Entidade*>(pJog1));
 
 }
 
 Jogo::~Jogo(){
-//os ponteiros foram aterrados nas destrutoras das respectivas classes
-    delete pGE;
+
     delete pGG;
-    delete pLE;
-    delete pObs;
-    delete pJog1;
+
 }
 
 
 void Jogo::executar(){
+    
+    //if(menu==1){
+    Fases::Floresta* pFaseAtual = new Fases::Floresta();
+    /*{else
+    Fases::Lava* pFaseAtual = new Fases::Lava();
+    }*/
+   
+
     while (pGG->janelaAberta()){
         
         pGG->limpaJanela();
-        pGG->atualizaDeltaTime();        
-        pGE->executar();
-
-       pLE->percorrer();
-        //é o desenhar de Ente
-        //pJog1->desenhar();//vai para listaEntidades depois
-        //pGG->desenhar(Ente ::)
-        // pLista->percorrer();
-
-        //pGG->desenhar(Ente::)
-        //gerenciador de eventos
+        pGG->carregarMapaa(pFaseAtual->getCaminhoMapa());
+        pFaseAtual->executar();
         pGG->display();
+        
+      
     }
     printf("Janela fechada!\n");
 }

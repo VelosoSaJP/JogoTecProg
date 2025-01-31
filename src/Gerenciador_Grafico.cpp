@@ -89,5 +89,20 @@ void Gerenciador_Grafico::atualizaDeltaTime(){
     delta_time = clock.restart().asMilliseconds();
 }
 
+void Gerenciador_Grafico::carregarMapaa(const char* caminhoMapa){
+    sf::Texture mapaTexture;
+    sf::Sprite mapaSprite;
+ 
+    
+   
+    mapaTexture.loadFromFile(caminhoMapa);
+
+    mapaSprite.setTexture(mapaTexture);
+    pJanela->draw(mapaSprite);
+
+}
+
+
+
 }
 

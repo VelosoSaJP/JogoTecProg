@@ -1,8 +1,8 @@
 #pragma once
-//#include "../Ente.h"
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Network.hpp>
+#include <iostream>
 
 #define HEIGTH 400
 #define WIDTH 752 //HEIGTH e WIDTH ajustados para a proporção do TILED
@@ -34,7 +34,7 @@ void limpaJanela();
 sf::RenderWindow* getJanela () const;
 void fechaJanela();
 bool eventoJanela(sf::Event& evento);//chama Gerenciador de Eventos.
-
+void carregarMapaa(const char* caminhoMapa);
 
 void setVideoMode();
 
