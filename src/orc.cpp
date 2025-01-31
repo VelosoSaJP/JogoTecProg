@@ -23,6 +23,7 @@ void Orc :: danificar(Jogador* p){
 void Orc :: salvar(){
     
 }
+void Orc::colisao(Entidade* outraEntidade,sf::Vector2f distancia){}
 
 }
 }

@@ -25,6 +25,10 @@ void Esqueleto :: danificar(Jogador* p){
 void Esqueleto::salvar(){
 
 }
+void Esqueleto::colisao(Entidade* outraEntidade,sf::Vector2f distancia){
+    
+}
+
 
 
 }

@@ -24,6 +24,7 @@ void Mago :: danificar(Jogador* p){
 void Mago :: salvar(){
     
 }
+void Mago::colisao(Entidade* outraEntidade,sf::Vector2f distancia){}
 
 }
 }

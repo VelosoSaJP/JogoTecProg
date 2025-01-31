@@ -15,6 +15,8 @@ class Mago : public Inimigo{
     void executar();
     void salvar();
     void danificar(Jogador* p);
+    void colisao(Entidade* outraEntidade,sf::Vector2f distancia);
+    
 };
 
 }
