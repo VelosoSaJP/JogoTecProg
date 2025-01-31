@@ -28,6 +28,7 @@ bool Gerenciador_Grafico :: janelaAberta() const{
     if(pJanela){
         return pJanela->isOpen();
     }
+    return false;
 }
 
 void Gerenciador_Grafico :: setJanela(){

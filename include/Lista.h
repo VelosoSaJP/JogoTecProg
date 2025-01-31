@@ -219,11 +219,12 @@ namespace Lista
                 std::cout << "ERROR::Lista pos eh maior que o tamanho da lista" << std::endl;
                 exit(1);
             }
-            Elemento<TL>* aux = getInicio;
+            //Elemento<TL>* aux = getInicio();
+            Lista<TL>::Iterator aux = getInicio();
             for(int i = 0; i < pos; i++){
-                aux = aux->getProx();
+                ++aux;
             }
-            return aux->getElemento();
+            return *aux;
         }
      
 }
