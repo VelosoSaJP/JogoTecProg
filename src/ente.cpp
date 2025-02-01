@@ -58,4 +58,5 @@ const sf::Vector2f Ente::getTam() const{
 void Ente::setPosicao(sf::Vector2f pos){
     posicao += pos ;
 }
-        
+
+const int Ente:: getID() const{ return id; };

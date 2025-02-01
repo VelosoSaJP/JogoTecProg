@@ -13,7 +13,8 @@ public:
     ~Jogador();
     void executar();
     void salvar();
-    void mover();
+    void saltar();
+    void andar(bool direita);
     void colisao(Entidade* outraEntidade,sf::Vector2f distancia);
 
 };

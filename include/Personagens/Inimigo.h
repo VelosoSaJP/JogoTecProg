@@ -11,7 +11,7 @@ class Inimigo : public Personagem{
     Inimigo(sf::Vector2f pos, sf::Vector2f tam);
     Inimigo();
     ~Inimigo();
-    void mover(); //não vou levar para as classes filhas, porque todas vão se locomover do mesmo jeito.
+    void andar(bool direita); //não vou levar para as classes filhas, porque todas vão se locomover do mesmo jeito.
     virtual void executar() = 0;
     virtual void salvar()=0;
     virtual void danificar(Jogador* p)=0;

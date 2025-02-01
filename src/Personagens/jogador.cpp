@@ -15,31 +15,44 @@ namespace Personagens{
     Jogador:: ~Jogador(){
 
     }
+
+    void Jogador::saltar(){
+
+    }
         
     void Jogador:: executar(){
-        mover();
        setPosicao (velocidade*pGG->getDeltaTime());
     }
 
-    void Entidades::Personagens::Jogador::mover(){
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-        {
-            //corpo.move(-getVel().x,0.0f);
-            velocidade.x = -pGG->getDeltaTime() * 0.1;
-            pSprite->setPosition(getPosicao());
-            if(pSprite->getScale().x > 0)
-                pSprite->setScale(-1*pSprite->getScale().x,pSprite->getScale().y);
-        }
-         if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-        {
-            //corpo.move(getVel().x,0.0f);
-            velocidade.x = pGG->getDeltaTime() * 0.1;
-            pSprite->setPosition(getPosicao());
-            if(pSprite->getScale().x < 0)
-                pSprite->setScale(-1*pSprite->getScale().x,pSprite->getScale().y);
+    void Entidades::Personagens::Jogador::andar(bool direita){
+
+        if (direita){
+            velocidade.x = pGG->getDeltaTime() *0.75;
+            if (pSprite->getPosition().x < 752) {
+                pSprite -> move(velocidade.x,velocidade.y );
+                if(pSprite->getScale().x < 0){
+                    pSprite->setScale(-1*pSprite->getScale().x,pSprite->getScale().y);
+                }
+            }
+            else{
+                pSprite->setPosition(getPosicao());
+            }
 
         }
-        //para o w vai ser diferente, pq é um pulo
+        else{
+            //corpo.move(-getVel().x,0.0f);
+            velocidade.x = -pGG->getDeltaTime() * 0.75;
+            if(pSprite->getPosition().x>0){
+                pSprite -> move(velocidade.x,velocidade.y );
+                if(pSprite->getScale().x > 0){
+                    pSprite->setScale(-1*pSprite->getScale().x,pSprite->getScale().y);
+                }
+            }
+            else{
+                pSprite->setPosition(getPosicao());
+            }
+        }
+   
     }
         void Entidades::Personagens::Jogador::colisao(Entidade* outraEntidade,sf::Vector2f distancia){}
         //FALTA IMPLEMENTAR AINDA ^

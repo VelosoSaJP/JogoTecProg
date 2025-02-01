@@ -3,6 +3,7 @@
 // #include "manager/Gerenciador_Grafico.h"
 //  #include "manager/Gerenciador_Eventos.h"
 #include "Gerenciadores/Gerenciador_Grafico.h"
+#include "stdafx.h"
 
 using namespace std;
 
@@ -38,6 +39,6 @@ void setPosicao(sf::Vector2f pos);
 const sf::Vector2f getVel() const;
 const sf::Vector2f getTam() const;
 
-
+const int getID() const;
 
 };
