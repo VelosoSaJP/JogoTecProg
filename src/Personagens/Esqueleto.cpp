@@ -2,8 +2,8 @@
 namespace Entidades{
 namespace Personagens{
 
-Esqueleto :: Esqueleto(sf::Vector2f pos, sf::Vector2f tam):
-    Inimigo(pos,tam),
+Esqueleto :: Esqueleto(sf::Vector2f pos, sf::Vector2f tam, int ID):
+    Inimigo(pos,tam,idESQUELETO),
     vida(100){
 }
 

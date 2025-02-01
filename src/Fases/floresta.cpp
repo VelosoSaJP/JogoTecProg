@@ -77,14 +77,14 @@ void Floresta::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
     
     switch(id){
         case 333:{
-            Entidades::Personagens::Orc* pOrc = new Entidades::Personagens::Orc(posicao, sf::Vector2f(0.1,0.1));
+            Entidades::Personagens::Orc* pOrc = new Entidades::Personagens::Orc(posicao, sf::Vector2f(0.1,0.1),idORC);
             pOrc->setTextura("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProg/assets/Bonecos/Orc/orc.png");
             pLE->incluir(static_cast<Entidades::Entidade *>(pOrc));
 
             break;
         }
         case 334:{
-            Entidades::Personagens::Esqueleto* pEsq = new Entidades::Personagens::Esqueleto(posicao,sf::Vector2f(0.075,0.075));
+            Entidades::Personagens::Esqueleto* pEsq = new Entidades::Personagens::Esqueleto(posicao,sf::Vector2f(0.075,0.075),idESQUELETO);
             pEsq->setTextura("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProg/assets/Bonecos/Esqueleto/esqueleto.png");
             pLE->incluir(static_cast<Entidades::Entidade *>(pEsq));
 

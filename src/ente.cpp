@@ -9,8 +9,8 @@ Ente::Ente(){
 
 }
 
-Ente::Ente(sf::Vector2f pos, sf::Vector2f tam, sf ::Vector2f velocidade):
-    id(cont++),
+Ente::Ente(sf::Vector2f pos, sf::Vector2f tam, sf ::Vector2f velocidade, int ID):
+    id(ID),
     posicao(pos), //tam e pos passados de acordo com o ent em questão, dada a herança
     tamanho(tam)
 

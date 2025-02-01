@@ -10,7 +10,7 @@ protected:
         float gravidade;
 public:
 Entidade();
-Entidade(sf::Vector2f pos, sf::Vector2f tam);
+Entidade(sf::Vector2f pos, sf::Vector2f tam, int ID);
 ~Entidade();
 virtual void executar() = 0; //ERA PARA SER VIRTUAL AQUI HEIN
 const sf::Vector2f getPosicao()/*const*/; 

@@ -9,7 +9,7 @@ namespace Entidades{
             
             public:
                 Obstaculo();
-                Obstaculo(sf::Vector2f pos, sf::Vector2f tam);
+                Obstaculo(sf::Vector2f pos, sf::Vector2f tam, int ID);
                 ~Obstaculo();
                 void executar ();
                void salvar();

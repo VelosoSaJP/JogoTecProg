@@ -23,7 +23,7 @@ protected:
    
 public:
 Ente(); //construtora vazia
-Ente(sf::Vector2f pos, sf::Vector2f tam, sf ::Vector2f velocidade);
+Ente(sf::Vector2f pos, sf::Vector2f tam, sf ::Vector2f velocidade, int ID);
 ~Ente();
 void atualizar();
 

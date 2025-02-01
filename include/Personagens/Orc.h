@@ -8,7 +8,7 @@ class Orc : public Inimigo{
         int vida;
 
     public:
-    Orc(sf::Vector2f pos, sf::Vector2f tam);
+    Orc(sf::Vector2f pos, sf::Vector2f tam, int ID);
     Orc();
     ~Orc();
     void executar();

@@ -9,7 +9,7 @@ private:
     // 
 public:
     Jogador ();
-    Jogador(sf::Vector2f pos, sf::Vector2f tam);
+    Jogador(sf::Vector2f pos, sf::Vector2f tam, int ID);
     ~Jogador();
     void executar();
     void salvar();

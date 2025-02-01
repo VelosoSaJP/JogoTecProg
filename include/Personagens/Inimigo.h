@@ -8,7 +8,7 @@ class Inimigo : public Personagem{
         int nivel_maldade;
         
     public:
-    Inimigo(sf::Vector2f pos, sf::Vector2f tam);
+    Inimigo(sf::Vector2f pos, sf::Vector2f tam, int ID);
     Inimigo();
     ~Inimigo();
     void andar(bool direita); //não vou levar para as classes filhas, porque todas vão se locomover do mesmo jeito.

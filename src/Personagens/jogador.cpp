@@ -5,9 +5,9 @@ namespace Personagens{
     Jogador::Jogador(){
 
     }
-    Jogador::Jogador(sf::Vector2f pos, sf::Vector2f tam):
+    Jogador::Jogador(sf::Vector2f pos, sf::Vector2f tam, int ID):
         pontos(0),
-        Personagem(pos,tam) 
+        Personagem(pos,tam,idJOGADOR) 
     {
         
     }
@@ -54,7 +54,27 @@ namespace Personagens{
         }
    
     }
-        void Entidades::Personagens::Jogador::colisao(Entidade* outraEntidade,sf::Vector2f distancia){}
+        void Entidades::Personagens::Jogador::colisao(Entidade* outraEntidade,sf::Vector2f distancia){
+            
+            int opt = outraEntidade->getID();
+            switch (opt)
+            {
+            case (idOBSTACULO): 
+                {
+                    if(posicao.x > outraEntidade->getPosicao().x)
+                        setPosicao(sf::Vector2f(posicao.x+distancia.x,posicao.y));
+                }
+                break;
+            
+            case(idESQUELETO): 
+                {
+                    
+                }
+            default:
+                break;
+            }
+
+        }
         //FALTA IMPLEMENTAR AINDA ^
 
     

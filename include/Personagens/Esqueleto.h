@@ -9,7 +9,7 @@ class Esqueleto : public Inimigo{
         int vida;
 
     public:
-    Esqueleto(sf::Vector2f pos, sf::Vector2f tam);
+    Esqueleto(sf::Vector2f pos, sf::Vector2f tam, int ID);
     Esqueleto();
     ~Esqueleto();
     void executar();

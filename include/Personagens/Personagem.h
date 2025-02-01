@@ -10,7 +10,7 @@ protected:
     //float velocidade;
 public:
     Personagem();
-    Personagem(sf::Vector2f pos, sf::Vector2f tam);
+    Personagem(sf::Vector2f pos, sf::Vector2f tam, int ID);
     ~Personagem();      
     // salvarDataBuffer();
     virtual void andar(bool direita)=0;

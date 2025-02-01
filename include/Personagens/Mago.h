@@ -9,7 +9,7 @@ class Mago : public Inimigo{
         int vida;
 
     public:
-    Mago(sf::Vector2f pos, sf::Vector2f tam);
+    Mago(sf::Vector2f pos, sf::Vector2f tam, int ID);
     Mago();
     ~Mago();
     void executar();

@@ -73,14 +73,14 @@ void Lava::criarPlataformas(sf::Vector2f posicao, sf::Vector2f tamanho){
 void Lava::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
     switch(id){
         case 423:{
-            Entidades::Personagens::Orc* pOrc = new Entidades::Personagens::Orc(posicao, sf::Vector2f(0.1,0.1));
+            Entidades::Personagens::Orc* pOrc = new Entidades::Personagens::Orc(posicao, sf::Vector2f(0.1,0.1),idORC);
             pOrc->setTextura("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProg/assets/Bonecos/Orc/orc.png");
             pLE->incluir(static_cast<Entidades::Entidade *>(pOrc));
 
             break;
         }
         case 424:{
-            Entidades::Personagens::Esqueleto* pEsq = new Entidades::Personagens::Esqueleto(posicao,sf::Vector2f(0.075,0.075));
+            Entidades::Personagens::Esqueleto* pEsq = new Entidades::Personagens::Esqueleto(posicao,sf::Vector2f(0.075,0.075),idESQUELETO);
             pEsq->setTextura("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProg/assets/Bonecos/Esqueleto/esqueleto.png");
             pLE->incluir(static_cast<Entidades::Entidade *>(pEsq));
             
@@ -88,7 +88,7 @@ void Lava::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
 
         }
         case 425:{
-            Entidades::Personagens::Mago* pMago = new Entidades::Personagens::Mago(posicao,sf::Vector2f(0.06,0.06));
+            Entidades::Personagens::Mago* pMago = new Entidades::Personagens::Mago(posicao,sf::Vector2f(0.06,0.06),idESQUELETO);
             pMago->setTextura("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProg/assets/Bonecos/Mago/mago.png");
             pLE->incluir(static_cast<Entidades::Entidade *>(pMago));
 
