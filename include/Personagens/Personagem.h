@@ -13,9 +13,10 @@ public:
     Personagem(sf::Vector2f pos, sf::Vector2f tam, int ID);
     ~Personagem();      
     // salvarDataBuffer();
-    virtual void andar(bool direita)=0;
     virtual void salvar()=0;
     virtual void executar()=0;
+    virtual void andar(bool direita);
+    virtual bool ehInimigo();
     int const getVidas();
     virtual void colisao(Entidade* outraEntidade,sf::Vector2f distancia)=0;
 

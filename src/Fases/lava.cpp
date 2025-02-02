@@ -43,13 +43,13 @@ void Lava::criarFase(){
                         criarJogadores(2,posicao,tamanho);
                     }
                     
-                    else if(tileId==423 || tileId==424 || tileId==425){
+                    else if(tileId==149 || tileId==423 || tileId==424 || tileId==425){
                         //orc, esq, mago
                         criarInimigos(tileId,posicao,tamanho);
                     }
                     
                     else if(tileId==269){
-                        lava=true;
+                        criarObstaculo(tileId,posicao,tamanho);
                     }
                     else if(tileId==362){
                         //escada
@@ -66,43 +66,62 @@ void Lava::criarFase(){
     }
 
 
-
-void Lava::criarPlataformas(sf::Vector2f posicao, sf::Vector2f tamanho){
-
-}
 void Lava::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
     switch(id){
-        case 423:{
-            Entidades::Personagens::Orc* pOrc = new Entidades::Personagens::Orc(posicao, sf::Vector2f(0.1,0.1),idORC);
-            pOrc->setTextura("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProg/assets/Bonecos/Orc/orc.png");
-            pLE->incluir(static_cast<Entidades::Entidade *>(pOrc));
+       case 149:{
+            int aux = rand()%2;
+            if (aux){
+                Entidades::Personagens::Mago* pMago = new Entidades::Personagens::Mago(posicao,sf::Vector2f(0.06,0.06),idMAGO);
+                if (pMago){
+                    pMago->setTextura("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProgs/assets/Bonecos/Mago/mago.png");
+                    pLEPersonagens->incluir(static_cast<Entidades::Entidade *>(pMago));
+                }
+                
+            break;
+            }
+       } 
+       case 423:{
+            int aux = rand()%2;
+            if (aux){
+                Entidades::Personagens::Esqueleto* pEsq = new Entidades::Personagens::Esqueleto(posicao,sf::Vector2f(0.075,0.075),idESQUELETO);
+                if(pEsq){
+                    pEsq->setTextura("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProg/assets/Bonecos/Esqueleto/esqueleto.png");
+                    pLEPersonagens->incluir(static_cast<Entidades::Entidade *>(pEsq));
+                }
+            }
 
             break;
         }
+
         case 424:{
             Entidades::Personagens::Esqueleto* pEsq = new Entidades::Personagens::Esqueleto(posicao,sf::Vector2f(0.075,0.075),idESQUELETO);
-            pEsq->setTextura("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProg/assets/Bonecos/Esqueleto/esqueleto.png");
-            pLE->incluir(static_cast<Entidades::Entidade *>(pEsq));
-            
+            if(pEsq){
+                pEsq->setTextura("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProg/assets/Bonecos/Esqueleto/esqueleto.png");
+                pLEPersonagens->incluir(static_cast<Entidades::Entidade *>(pEsq));
+            }
             break;
 
         }
         case 425:{
-            Entidades::Personagens::Mago* pMago = new Entidades::Personagens::Mago(posicao,sf::Vector2f(0.06,0.06),idESQUELETO);
-            pMago->setTextura("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProg/assets/Bonecos/Mago/mago.png");
-            pLE->incluir(static_cast<Entidades::Entidade *>(pMago));
-
+            Entidades::Personagens::Mago* pMago = new Entidades::Personagens::Mago(posicao,sf::Vector2f(0.06,0.06),idMAGO);
+            if (pMago){
+                pMago->setTextura("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProg/assets/Bonecos/Mago/mago.png");
+                pLEPersonagens->incluir(static_cast<Entidades::Entidade *>(pMago));
+            }
             break;
         }
     }
 
 
 }
-void Lava::criarObstaculo(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
-
+void Lava::criarObstaculo(int id,sf::Vector2f posicao, sf::Vector2f tamanho){   
+    Entidades::Obstaculos::Fogo* pFogo = new Entidades::Obstaculos::Fogo(posicao,tamanho,idOBSTACULO);
+    pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pFogo));
 }
+
+
 const char* Lava::getCaminhoMapa(){
     return ("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProg/assets/Fases/Fase2/Fase2.png");
 }
 
-}
+} 

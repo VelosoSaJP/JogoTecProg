@@ -24,6 +24,10 @@ namespace Personagens{
        setPosicao (velocidade*pGG->getDeltaTime());
     }
 
+    bool Jogador::ehInimigo(){
+        return false;
+    }
+
     void Entidades::Personagens::Jogador::andar(bool direita){
 
         if (direita){
@@ -31,13 +35,13 @@ namespace Personagens{
             if (pSprite->getPosition().x < 752) {
                 pSprite -> move(velocidade.x,velocidade.y );
                 if(pSprite->getScale().x < 0){
+                    pSprite->setOrigin(pSprite->getLocalBounds().width / 2, pSprite->getOrigin().y); 
                     pSprite->setScale(-1*pSprite->getScale().x,pSprite->getScale().y);
                 }
             }
             else{
                 pSprite->setPosition(getPosicao());
             }
-
         }
         else{
             //corpo.move(-getVel().x,0.0f);
@@ -45,6 +49,7 @@ namespace Personagens{
             if(pSprite->getPosition().x>0){
                 pSprite -> move(velocidade.x,velocidade.y );
                 if(pSprite->getScale().x > 0){
+                    pSprite->setOrigin(pSprite->getLocalBounds().width / 2, pSprite->getOrigin().y); 
                     pSprite->setScale(-1*pSprite->getScale().x,pSprite->getScale().y);
                 }
             }

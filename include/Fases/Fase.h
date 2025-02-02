@@ -12,6 +12,10 @@
 #include "../Gerenciadores/Gerenciador_Entradas.h"
 #include "../Gerenciadores/Gerenciador_Colisoes.h"
 
+#include "../Obstaculos/Plataforma.h"
+#include "../Obstaculos/Pedra.h"
+#include "../Obstaculos/Fogo.h"
+
 
 
 // #include "Gerenciador_Colisoes.h"
@@ -20,7 +24,8 @@ namespace Fases{
         protected:
             //static ? -> singleton Gerenciadores::Gerenciador_Colisoes* pGC;
 
-            Lista::ListaEntidade* pLE;
+            Lista::ListaEntidade* pLEPersonagens;
+            Lista::ListaEntidade* pLEEstaticas;
             Gerenciadores::Gerenciador_Grafico* pGG;
             Gerenciadores::Gerenciador_Eventos* pGE;
             Gerenciadores::Gerenciador_Entradas* pGEntradas;
@@ -35,10 +40,9 @@ namespace Fases{
             void executar();
             void criarJogadores(int jog,sf::Vector2f posicao, sf::Vector2f tamanho);
             virtual void criarFase()=0;
-            virtual void criarPlataformas(sf::Vector2f posicao, sf::Vector2f tamanho)=0;
             virtual void criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho)=0;
             virtual void criarObstaculo(int id,sf::Vector2f posicao, sf::Vector2f tamanho)=0;
-            
+            void criarPlataforma(int id,sf::Vector2f posicao, sf::Vector2f tamanho);
     };
 }
 

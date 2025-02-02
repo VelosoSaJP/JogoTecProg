@@ -53,11 +53,12 @@ try {
                         criarJogadores(2,posicao,tamanho);
                     }
                     
-                    else if(tileId== 334 || tileId==333){
+                    else if(tileId==335|| tileId==298||tileId== 334 || tileId==333){
                         criarInimigos(tileId,posicao,tamanho);
                     }
                     
-                    else if(tileId==204){
+                    else if(tileId==204){//pedra;
+                        criarObstaculo(tileId,posicao,tamanho);
                     }
                     
                     else{
@@ -70,23 +71,41 @@ try {
         }
     }
 
-void Floresta::criarPlataformas(sf::Vector2f posicao, sf::Vector2f tamanho){
-    
-}
+
 void Floresta::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
     
     switch(id){
+        case 335:{
+            int aux = rand()%2;
+            if(aux){
+                Entidades::Personagens::Orc* pOrc = new Entidades::Personagens::Orc(posicao, sf::Vector2f(0.1,0.1),idORC);
+                pOrc->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Orc/orc.png");
+                pLEPersonagens->incluir(static_cast<Entidades::Entidade *>(pOrc));
+
+            }
+            break;
+        }
+
+        case 298:{
+            int aux = rand()%2;
+            if(aux){
+                Entidades::Personagens::Esqueleto* pEsq = new Entidades::Personagens::Esqueleto(posicao,sf::Vector2f(0.075,0.075),idESQUELETO);
+                pEsq->setTextura("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProg/assets/Bonecos/Esqueleto/esqueleto.png");
+                pLEPersonagens->incluir(static_cast<Entidades::Entidade *>(pEsq));
+            }
+            break;
+        }
         case 333:{
             Entidades::Personagens::Orc* pOrc = new Entidades::Personagens::Orc(posicao, sf::Vector2f(0.1,0.1),idORC);
             pOrc->setTextura("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProg/assets/Bonecos/Orc/orc.png");
-            pLE->incluir(static_cast<Entidades::Entidade *>(pOrc));
+            pLEPersonagens->incluir(static_cast<Entidades::Entidade *>(pOrc));
 
             break;
         }
         case 334:{
             Entidades::Personagens::Esqueleto* pEsq = new Entidades::Personagens::Esqueleto(posicao,sf::Vector2f(0.075,0.075),idESQUELETO);
             pEsq->setTextura("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProg/assets/Bonecos/Esqueleto/esqueleto.png");
-            pLE->incluir(static_cast<Entidades::Entidade *>(pEsq));
+            pLEPersonagens->incluir(static_cast<Entidades::Entidade *>(pEsq));
 
             break;
         }
@@ -95,8 +114,11 @@ void Floresta::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
     
 }
 void Floresta::criarObstaculo(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
-    
+    Entidades::Obstaculos::Pedra* pPedra = new Entidades::Obstaculos::Pedra(posicao,tamanho,idOBSTACULO);
+    pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pPedra));
 }
+
+
 const char* Floresta::getCaminhoMapa(){
     return ("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProg/assets/Fases/Fase1/Fase1.png");
 }
