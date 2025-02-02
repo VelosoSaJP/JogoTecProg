@@ -17,6 +17,12 @@ namespace Personagens{
         return num_vidas;
     }
 
+    void Personagem::andar(bool direita){
+        
+    }
+    bool Personagem::ehInimigo(){
+        
+    }
     // void Personagem::salvar (){}
    // void Personagem::executar(){}
     // Personagem:: salvarDataBuffer(){}

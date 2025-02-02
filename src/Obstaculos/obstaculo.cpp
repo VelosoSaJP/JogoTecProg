@@ -1,4 +1,4 @@
-#include "Obstaculo.h"
+#include "../include/Obstaculos//Obstaculo.h"
 
 namespace Entidades{
     namespace Obstaculos{
@@ -9,7 +9,7 @@ namespace Entidades{
             Entidade(pos,tam),
             danoso(false)
         {
-            setTextura("../assets/Fases/Fase1/props/tree04.png");
+;
         }
         Obstaculo::~Obstaculo(){
 

@@ -35,6 +35,9 @@ namespace Lista{
         for (int i=0; i< getTamanho(); i++){
             Entidades::Entidade* pPercorre = *it;
 
+           if(pPercorre->ehInimigo()){
+                pPercorre->andar(true);
+            }
             pPercorre->desenhar();
             pPercorre->executar();
             
