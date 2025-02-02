@@ -1,12 +1,15 @@
 #include "../include/Gerenciadores/Gerenciador_Colisoes.h"
 
-Gerenciador_Colisoes::Gerenciador_Colisoes(Lista::ListaEntidade* listaPersonagem , Lista::ListaEntidade* listaObstaculo)
+Gerenciador_Colisoes::Gerenciador_Colisoes(Lista::ListaEntidade* listaPersonagem , Lista::ListaEntidade* listaObstaculo):
+listaPersonagem(listaPersonagem), listaObstaculo(listaObstaculo)
 {
 
 }
 
 Gerenciador_Colisoes::~Gerenciador_Colisoes()
 {
+    /*delete listaObstaculo;
+    delete listaPersonagem;*/
 }
 
 const sf::Vector2f Gerenciador_Colisoes::gerenciaColisao(Entidades::Entidade* ent1, Entidades::Entidade* ent2){
@@ -25,7 +28,8 @@ const sf::Vector2f Gerenciador_Colisoes::gerenciaColisao(Entidades::Entidade* en
 }
 
 void Gerenciador_Colisoes::executar(){
-   
+   printf("entrei no execu");
+   //PERSONAGEM COM PERSONAGEM
     for(int i = 0; i < listaPersonagem->getTamanho() - 1; i++){
         Entidades::Entidade* ent1 = listaPersonagem->getLista().operator[](i);
         for(int j = i + 1; j < listaPersonagem->getTamanho(); j++){
@@ -33,12 +37,14 @@ void Gerenciador_Colisoes::executar(){
             sf::Vector2f ds = gerenciaColisao(ent1, ent2);
             if(ds.x < 0.0f && ds.y < 0.0f){
                 ent1->colisao(ent2, ds);
+                printf("ENTREII");
             } //adicionei operator na listaEntidade mas esta dando erro
             //no return. Precisaria ter operator em Lista.
             //agr tem :)
         }
     }
 
+    //PERSONAGEM COM OBSTÁCULO
     for(int i = 0; i < listaPersonagem->getTamanho(); i++){
         Entidades::Entidade* ent1 = listaPersonagem->getLista().operator[](i);
         for(int j = 0; j < listaObstaculo->getTamanho(); j++){

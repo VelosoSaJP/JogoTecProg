@@ -6,9 +6,10 @@ Fase :: Fase():
 pGG (Gerenciadores::Gerenciador_Grafico::getInstancia()),
 pGE (Gerenciadores::Gerenciador_Eventos::getInstancia()),
 pGEntradas(Gerenciadores::Gerenciador_Entradas::getInstancia()),
-pLE (new Lista::ListaEntidade())
+pLE (new Lista::ListaEntidade()), listaPersonagens(new Lista::ListaEntidade()), listaObstaculos(new Lista::ListaEntidade()),
+pGColisor(new Gerenciador_Colisoes(listaPersonagens, listaObstaculos))
+//pGColisor()
 {
-
 
 }
 Fase :: ~Fase(){
@@ -25,6 +26,12 @@ void Fase ::executar(){
     pGG->atualizaDeltaTime();        
     pGE->executar();
     pLE->percorrer();
+    
+    if(pGColisor){
+    printf("criou fi\n");
+    //pGColisor->executar();//aqui ta dando seg fault
+
+    }
 }
 
 void Fase::criarJogadores(int jog,sf::Vector2f posicao, sf::Vector2f tamanho){

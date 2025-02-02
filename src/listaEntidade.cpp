@@ -30,8 +30,8 @@ namespace Lista{
     }
 
     void ListaEntidade::percorrer(){
-        Lista <Entidades:: Entidade> :: Iterator it = LEs.getInicio();
-        
+        Lista <Entidades:: Entidade> :: Iterator it = LEs.getInicio();   
+             
         for (int i=0; i< getTamanho(); i++){
             Entidades::Entidade* pPercorre = *it;
 

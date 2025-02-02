@@ -10,6 +10,8 @@
 #include "../Gerenciadores/Gerenciador_Grafico.h"
 #include "../Gerenciadores/Gerenciador_Eventos.h"
 #include "../Gerenciadores/Gerenciador_Entradas.h"
+#include "../Gerenciadores/Gerenciador_Colisoes.h"
+
 
 
 // #include "Gerenciador_Colisoes.h"
@@ -22,7 +24,9 @@ namespace Fases{
             Gerenciadores::Gerenciador_Grafico* pGG;
             Gerenciadores::Gerenciador_Eventos* pGE;
             Gerenciadores::Gerenciador_Entradas* pGEntradas;
-           
+            Gerenciador_Colisoes* pGColisor;
+            Lista::ListaEntidade* listaPersonagens;
+            Lista::ListaEntidade* listaObstaculos;
 
         public:
             Fase();
