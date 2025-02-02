@@ -28,7 +28,7 @@ void Fase ::executar(){
     pLE->percorrer();
     
     if(pGColisor){
-    printf("criou fi\n");
+    //printf("criou fi\n");
     //pGColisor->executar();//aqui ta dando seg fault
 
     }
