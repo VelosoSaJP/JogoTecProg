@@ -31,9 +31,7 @@ namespace Fases{
             Gerenciadores::Gerenciador_Grafico* pGG;
             Gerenciadores::Gerenciador_Eventos* pGE;
             Gerenciadores::Gerenciador_Entradas* pGEntradas;
-            Gerenciador_Colisoes* pGColisor;
-            Lista::ListaEntidade* listaPersonagens;
-            Lista::ListaEntidade* listaObstaculos;
+            Gerenciadores::Gerenciador_Colisoes* pGColisor;
 
         public:
             Fase();
@@ -44,7 +42,7 @@ namespace Fases{
             virtual void criarFase()=0;
             virtual void criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho)=0;
             virtual void criarObstaculo(int id,sf::Vector2f posicao, sf::Vector2f tamanho)=0;
-            void criarPlataforma(int id,sf::Vector2f posicao, sf::Vector2f tamanho);
+            void criarPlataforma(sf::Vector2f posicao, sf::Vector2f tamanho);
             virtual string getCaminhoMapa()=0;
     };
 }

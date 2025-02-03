@@ -15,7 +15,7 @@ Lava :: ~Lava(){
 }
 
 void Lava::criarFase(){
- std::ifstream arquivo("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProg/src/Fases/Fase2.json");
+ std::ifstream arquivo("/home/murilo/code/JogoTecProg/src/Fases/Fase2.json");
         using json = nlohmann::json; // alias para facilitar a compreensão da máquina
         json matriz;
 
@@ -53,7 +53,8 @@ void Lava::criarFase(){
                     else if(tileId==269 || tileId==207 || tileId==232 || tileId==224){ //224 = árvore e =árvore fake 269 lama que queima e 232 = lava que não queima.
                         criarObstaculo(tileId,posicao,tamanho);
                     }
-                    else{
+                    else if (tileId==379){
+                        criarPlataforma(posicao,tamanho);
                         //tudo que será pisado.
                     }
                 
@@ -71,7 +72,7 @@ void Lava::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
             if (aux){
                 Entidades::Personagens::Mago* pMago = new Entidades::Personagens::Mago(posicao,sf::Vector2f(0.06,0.06),idMAGO);
                 if (pMago){
-                    pMago->setTextura("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProgs/assets/Bonecos/Mago/mago.png");
+                    pMago->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Mago/mago.png");
                     pLEPersonagens->incluir(static_cast<Entidades::Entidade *>(pMago));
                 }
                 
@@ -83,7 +84,7 @@ void Lava::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
             if (aux){
                 Entidades::Personagens::Esqueleto* pEsq = new Entidades::Personagens::Esqueleto(posicao,sf::Vector2f(0.075,0.075),idESQUELETO);
                 if(pEsq){
-                    pEsq->setTextura("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProg/assets/Bonecos/Esqueleto/esqueleto.png");
+                    pEsq->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Esqueleto/esqueleto.png");
                     pLEPersonagens->incluir(static_cast<Entidades::Entidade *>(pEsq));
                 }
             }
@@ -94,7 +95,7 @@ void Lava::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
         case 424:{
             Entidades::Personagens::Esqueleto* pEsq = new Entidades::Personagens::Esqueleto(posicao,sf::Vector2f(0.075,0.075),idESQUELETO);
             if(pEsq){
-                pEsq->setTextura("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProg/assets/Bonecos/Esqueleto/esqueleto.png");
+                pEsq->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Esqueleto/esqueleto.png");
                 pLEPersonagens->incluir(static_cast<Entidades::Entidade *>(pEsq));
             }
             break;
@@ -103,7 +104,7 @@ void Lava::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
         case 425:{
             Entidades::Personagens::Mago* pMago = new Entidades::Personagens::Mago(posicao,sf::Vector2f(0.06,0.06),idMAGO);
             if (pMago){
-                pMago->setTextura("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProg/assets/Bonecos/Mago/mago.png");
+                pMago->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Mago/mago.png");
                 pLEPersonagens->incluir(static_cast<Entidades::Entidade *>(pMago));
             }
             break;

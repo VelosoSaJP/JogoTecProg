@@ -17,7 +17,7 @@ Jogo::~Jogo(){
 void Jogo::executar(){
     
     //if(menu==1){
-    Fases::Lava* pFaseAtual = new Fases::Lava();
+    Fases::Floresta* pFaseAtual = new Fases::Floresta();
     /*{else
     Fases::Lava* pFaseAtual = new Fases::Lava();
     }*/

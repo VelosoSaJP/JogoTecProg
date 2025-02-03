@@ -13,7 +13,7 @@ namespace Fases
     {
     }
     void Floresta::criarFase(){
-        std::ifstream arquivo("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProg/src/Fases/Fase1.json");
+        std::ifstream arquivo("/home/murilo/code/JogoTecProg/src/Fases/Fase1.json");
 
 
         using json = nlohmann::json; // alias para facilitar a compreensão da máquina
@@ -63,8 +63,8 @@ try {
                         criarObstaculo(tileId,posicao,tamanho);
                     }
                     
-                    else{ //406 é a tocha que sinalizará o fim da fase e aí o boneco entrará no portal.
-                        //tudo que será pisado.
+                    else if(tileId==75){ //406 é a tocha que sinalizará o fim da fase e aí o boneco entrará no portal.
+                        criarPlataforma(posicao,tamanho); //tudo que será pisado.
                     }
                 
 
@@ -92,21 +92,21 @@ void Floresta::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
             int aux = rand()%2;
             if(aux){
                 Entidades::Personagens::Esqueleto* pEsq = new Entidades::Personagens::Esqueleto(posicao,sf::Vector2f(0.075,0.075),idESQUELETO);
-                pEsq->setTextura("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProg/assets/Bonecos/Esqueleto/esqueleto.png");
+                pEsq->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Esqueleto/esqueleto.png");
                 pLEPersonagens->incluir(static_cast<Entidades::Entidade *>(pEsq));
             }
             break;
         }
         case 333:{
             Entidades::Personagens::Orc* pOrc = new Entidades::Personagens::Orc(posicao, sf::Vector2f(0.1,0.1),idORC);
-            pOrc->setTextura("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProg/assets/Bonecos/Orc/orc.png");
+            pOrc->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Orc/orc.png");
             pLEPersonagens->incluir(static_cast<Entidades::Entidade *>(pOrc));
 
             break;
         }
         case 334:{
             Entidades::Personagens::Esqueleto* pEsq = new Entidades::Personagens::Esqueleto(posicao,sf::Vector2f(0.075,0.075),idESQUELETO);
-            pEsq->setTextura("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProg/assets/Bonecos/Esqueleto/esqueleto.png");
+            pEsq->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Esqueleto/esqueleto.png");
             pLEPersonagens->incluir(static_cast<Entidades::Entidade *>(pEsq));
 
             break;
