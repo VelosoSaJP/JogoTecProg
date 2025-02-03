@@ -29,9 +29,15 @@ Ente :: ~Ente(){
     pGG=NULL;
 }
 
-void Ente :: setTextura(const char* caminhoTextura){
-    pText->loadFromFile(caminhoTextura); 
-    setSprite();
+void Ente::setTextura(const char* caminhoTextura) {
+    try {
+        if (!pText->loadFromFile(caminhoTextura)) {  // Verifica se o carregamento falhou
+            throw std::runtime_error("Erro ao carregar a textura: " + std::string(caminhoTextura));
+        }
+        setSprite();
+    } catch (const std::exception& e) {
+        std::cerr << "Exceção capturada: " << e.what() << std::endl;
+    }
 }
 
 void Ente::setSprite(){

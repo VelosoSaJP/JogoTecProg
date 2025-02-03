@@ -3,8 +3,10 @@
 namespace Fases
 {
     Floresta::Floresta():
-        Fase() //é preciso isso aqui?
-    {
+        Fase(), //é preciso isso aqui?
+        criaArvore_alteatoria(true),
+        aux_arv_floresta(rand()%2)
+    {   
         criarFase();
     }
     Floresta::~Floresta()
@@ -57,11 +59,11 @@ try {
                         criarInimigos(tileId,posicao,tamanho);
                     }
                     
-                    else if(tileId==204){//pedra;
+                    else if(tileId==204 || tileId==407 || tileId==297 || tileId==224){//pedra os 2 primeiros e tileId=297;
                         criarObstaculo(tileId,posicao,tamanho);
                     }
                     
-                    else{
+                    else{ //406 é a tocha que sinalizará o fim da fase e aí o boneco entrará no portal.
                         //tudo que será pisado.
                     }
                 
@@ -114,12 +116,43 @@ void Floresta::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
     
 }
 void Floresta::criarObstaculo(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
-    Entidades::Obstaculos::Pedra* pPedra = new Entidades::Obstaculos::Pedra(posicao,tamanho,idOBSTACULO);
-    pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pPedra));
+    
+    if(id==224){//ESCADAS DAS ÁRVORES.
+            Entidades::Obstaculos::Arvore* pArvore = new Entidades::Obstaculos::Arvore(posicao,sf::Vector2f(1,1),idOBSTACULO);
+            pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pArvore));
+    }
+    
+    else if(id==297){
+        
+        if (aux_arv_floresta){
+            Entidades::Obstaculos::Arvore* pArvore = new Entidades::Obstaculos::Arvore(posicao,sf::Vector2f(1,1),idOBSTACULO);     
+            if(criaArvore_alteatoria){ //Só o primeiro bloco cria a imagem.
+                pArvore->setTextura("/home/murilo/code/JogoTecProg/assets/Fases/Fase1/props/arvore4.png");  
+                criaArvore_alteatoria=false;
+            }
+            pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pArvore));
+        }
+    }
+    else if(id==407){  //PEDRA ALEATÓRIA
+        int aux = rand()%2;
+        if (aux){
+            Entidades::Obstaculos::Pedra* pPedra = new Entidades::Obstaculos::Pedra(posicao,sf::Vector2f(1,1),idDANOSO);
+            pPedra->setTextura("/home/murilo/code/JogoTecProg/assets/Fases/Fase1/props/rocks1.png");  
+            pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pPedra));
+            
+        }
+
+    }
+    
+    
+    else{
+        Entidades::Obstaculos::Pedra* pPedra = new Entidades::Obstaculos::Pedra(posicao,tamanho,idDANOSO);
+        pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pPedra));
+    }
 }
 
 
-const char* Floresta::getCaminhoMapa(){
-    return ("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProg/assets/Fases/Fase1/Fase1.png");
+string Floresta::getCaminhoMapa(){
+    return ("/home/murilo/code/JogoTecProg/assets/Fases/Fase1/Fase1.png");
 }
 }

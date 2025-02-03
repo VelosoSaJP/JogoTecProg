@@ -17,7 +17,7 @@ Jogo::~Jogo(){
 void Jogo::executar(){
     
     //if(menu==1){
-    Fases::Floresta* pFaseAtual = new Fases::Floresta();
+    Fases::Lava* pFaseAtual = new Fases::Lava();
     /*{else
     Fases::Lava* pFaseAtual = new Fases::Lava();
     }*/
@@ -26,7 +26,7 @@ void Jogo::executar(){
     while (pGG->janelaAberta()){
         
         pGG->limpaJanela();
-        pGG->carregarMapaa(pFaseAtual->getCaminhoMapa());
+        pGG->carregarMapa(pFaseAtual->getCaminhoMapa());
         pFaseAtual->executar();
         pGG->display();
         

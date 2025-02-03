@@ -2,7 +2,9 @@
 
 namespace Fases{
 Lava :: Lava():
-    Fase() //é precisso disso aqui?
+    Fase(), //é precisso disso aqui?
+    aux_arvore(rand()%2),
+    cria_textura_arv(true)
 {
     // pGG->carregarMapaa("/home/murilo/code/JogoTecProg/assets/Fases/Fase2/Fase2.png");
     criarFase();
@@ -48,13 +50,9 @@ void Lava::criarFase(){
                         criarInimigos(tileId,posicao,tamanho);
                     }
                     
-                    else if(tileId==269){
+                    else if(tileId==269 || tileId==207 || tileId==232 || tileId==224){ //224 = árvore e =árvore fake 269 lama que queima e 232 = lava que não queima.
                         criarObstaculo(tileId,posicao,tamanho);
                     }
-                    else if(tileId==362){
-                        //escada
-                    }
-                    
                     else{
                         //tudo que será pisado.
                     }
@@ -115,13 +113,36 @@ void Lava::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
 
 }
 void Lava::criarObstaculo(int id,sf::Vector2f posicao, sf::Vector2f tamanho){   
-    Entidades::Obstaculos::Fogo* pFogo = new Entidades::Obstaculos::Fogo(posicao,tamanho,idOBSTACULO);
-    pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pFogo));
+    
+        if(id == 269){
+            Entidades::Obstaculos::Fogo* pFogo = new Entidades::Obstaculos::Fogo(posicao,tamanho,idDANOSO);
+            pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pFogo));            
+        }
+        else if(id == 232){ //lava fake
+            if(rand()%2){
+                Entidades::Obstaculos::Fogo* pFogo = new Entidades::Obstaculos::Fogo(posicao,tamanho,idDANOSO);
+                pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pFogo));   
+            }
+        }
+        else if(id == 207){ //arvore fake
+            if (aux_arvore){
+                Entidades::Obstaculos::Arvore* pArvore = new Entidades::Obstaculos::Arvore(posicao,sf::Vector2f(0.65,0.65),idOBSTACULO);     
+                if(cria_textura_arv){ //Só o primeiro bloco cria a imagem.
+                    pArvore->setTextura("/home/murilo/code/JogoTecProg/assets/Fases/Fase1/props/tree01.png");  
+                    cria_textura_arv=false;
+                }
+            pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pArvore));
+        }
+        }
+        else if(id == 224){
+            Entidades::Obstaculos::Arvore* pArvore = new Entidades::Obstaculos::Arvore(posicao,tamanho,idOBSTACULO);
+            pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pArvore));    
+        }
+    }
+
+
+string Lava::getCaminhoMapa(){
+    return ("/home/murilo/code/JogoTecProg/assets/Fases/Fase2/Fase2.png");
 }
 
-
-const char* Lava::getCaminhoMapa(){
-    return ("/home/joao/Documents/TecProg/JOGO/JogoTecProg/JogoTecProg/assets/Fases/Fase2/Fase2.png");
 }
-
-} 

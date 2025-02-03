@@ -27,6 +27,7 @@ Fase :: ~Fase(){
 void Fase ::executar(){
     pGG->atualizaDeltaTime();        
     pGE->executar();
+    pLEEstaticas->percorrer();
     // pLEEstaticas->checar(); TEM QUE CRIAR ESTE MÉTODO LÁ EM LISTA DE ENTIDADES.
     pLEPersonagens->percorrer();
     

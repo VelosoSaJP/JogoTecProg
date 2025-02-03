@@ -2,6 +2,7 @@
 #include "Ente.h"//útil para as classes herdadas
 #include "json.hpp"
 #include "fstream"
+#include <string>
 #include "../Listas/ListaEntidade.h"
 #include "../Personagens/Jogador.h"
 #include "../Personagens/Orc.h"
@@ -15,7 +16,8 @@
 #include "../Obstaculos/Plataforma.h"
 #include "../Obstaculos/Pedra.h"
 #include "../Obstaculos/Fogo.h"
-
+#include "../Obstaculos/Arvore.h"
+using namespace std;
 
 
 // #include "Gerenciador_Colisoes.h"
@@ -43,6 +45,7 @@ namespace Fases{
             virtual void criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho)=0;
             virtual void criarObstaculo(int id,sf::Vector2f posicao, sf::Vector2f tamanho)=0;
             void criarPlataforma(int id,sf::Vector2f posicao, sf::Vector2f tamanho);
+            virtual string getCaminhoMapa()=0;
     };
 }
 

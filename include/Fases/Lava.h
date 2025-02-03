@@ -4,7 +4,8 @@
 namespace Fases{
     class Lava : public Fase{
         private:
-            bool lava;
+            int aux_arvore;
+            bool cria_textura_arv;
 
 
          public:
@@ -13,6 +14,6 @@ namespace Fases{
             void criarFase();
             void criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho);
             void criarObstaculo(int id,sf::Vector2f posicao, sf::Vector2f tamanho);
-            const char* getCaminhoMapa();
+            string getCaminhoMapa();
     };
 }

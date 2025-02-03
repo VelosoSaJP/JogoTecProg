@@ -89,7 +89,7 @@ void Gerenciador_Grafico::atualizaDeltaTime(){
     delta_time = clock.restart().asMilliseconds();
 }
 
-void Gerenciador_Grafico::carregarMapaa(const char* caminhoMapa){
+void Gerenciador_Grafico::carregarMapa(string caminhoMapa){
     sf::Texture mapaTexture;
     sf::Sprite mapaSprite;
  

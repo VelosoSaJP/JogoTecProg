@@ -4,7 +4,7 @@
 namespace Lista
 {
     
-    template<class TL>
+    template<class TL>  
     class Lista{
         private:
         //Classe elemento dentro de Lista

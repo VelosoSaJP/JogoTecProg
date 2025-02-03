@@ -3,7 +3,7 @@
 namespace Entidades{
 namespace Obstaculos{
 Pedra :: Pedra(sf::Vector2f pos, sf::Vector2f tam, int ID):
-    Obstaculo(pos,tam,idOBSTACULO)
+    Obstaculo(pos,tam,ID)
 {
     
 }

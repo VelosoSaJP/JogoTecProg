@@ -3,6 +3,8 @@
 #include <SFML/Window.hpp>
 #include <SFML/Network.hpp>
 #include <iostream>
+#include <string>
+using namespace std;
 
 #define HEIGTH 400
 #define WIDTH 752 //HEIGTH e WIDTH ajustados para a proporção do TILED
@@ -34,7 +36,7 @@ void limpaJanela();
 sf::RenderWindow* getJanela () const;
 void fechaJanela();
 bool eventoJanela(sf::Event& evento);//chama Gerenciador de Eventos.
-void carregarMapaa(const char* caminhoMapa);
+void carregarMapa(string caminhoMapa);
 
 void setVideoMode();
 

@@ -5,4 +5,5 @@
 #define idORC 3 
 #define idMAGO 4
 #define idOBSTACULO 5 
+#define idDANOSO 6
 

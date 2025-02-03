@@ -26,7 +26,6 @@ namespace Personagens{
     void Inimigo::andar(bool parede){
          float limite_mov=(tam_plataforma/2)-tamanho.x;
          
-
       if (direita){
             velocidade.x = pGG->getDeltaTime() *0.025;
                 pSprite -> move(velocidade.x,velocidade.y );
