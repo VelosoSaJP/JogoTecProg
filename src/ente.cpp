@@ -20,11 +20,16 @@ Ente::Ente(sf::Vector2f pos, sf::Vector2f tam, sf ::Vector2f velocidade, int ID)
 }
 
 Ente :: ~Ente(){
+    if(pSprite){
+        delete pSprite;
+        if(pText){
+            delete pText;
 
-    delete pSprite;
-    delete pText;
-    cont--; //SERÁ ÚTIL?
+        }  
+    }
+    
     pSprite=NULL;
+    cont--; //SERÁ ÚTIL?
     pText=NULL;
     pGG=NULL;
 }

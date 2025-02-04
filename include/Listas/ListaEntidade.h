@@ -14,7 +14,7 @@ namespace Lista{
     class ListaEntidade
     {
     private:
-        
+            
         Lista <Entidades::Entidade> LEs;
 
     public:
@@ -30,7 +30,7 @@ namespace Lista{
 
         int getTamanho() const;
 
-        Lista<Entidades::Entidade> getLista();
+        Lista<Entidades::Entidade>& getLista();
     };
     
 }

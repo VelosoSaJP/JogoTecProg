@@ -8,8 +8,9 @@ Jogo::Jogo():
 }
 
 Jogo::~Jogo(){
-
-    delete pGG;
+    if(pGG){
+        delete pGG;
+    }
 
 }
 

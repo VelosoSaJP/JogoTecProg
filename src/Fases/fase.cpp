@@ -6,38 +6,69 @@ Fase :: Fase():
 pGG (Gerenciadores::Gerenciador_Grafico::getInstancia()),
 pGE (Gerenciadores::Gerenciador_Eventos::getInstancia()),
 pGEntradas(Gerenciadores::Gerenciador_Entradas::getInstancia()),
-pLEPersonagens(new Lista::ListaEntidade()),
-pLEEstaticas(new Lista :: ListaEntidade()),
+pLEPersonagens(nullptr),
+pLEEstaticas(nullptr),
 pGColisor(Gerenciadores::Gerenciador_Colisoes::getInstancia())
 
 {
-  
+  pLEPersonagens=new Lista::ListaEntidade();
+  pLEEstaticas=new Lista :: ListaEntidade();
+
 }
+
 Fase :: ~Fase(){
-    delete pLEPersonagens; //isso vai pra destrutora e limpa tudo.
-    delete pLEEstaticas;
+    if(pLEPersonagens){
+        delete pLEPersonagens; //isso vai pra destrutora e limpa tudo.
+       
+        if(pLEEstaticas){
+            delete pLEEstaticas;
+
+        }
+    }
     pGG = nullptr;
     pGE = nullptr;
     pGEntradas=nullptr;
     pGColisor=nullptr;
+
 
 }
 
 
      
 void Fase ::executar(){
-    pGG->atualizaDeltaTime();        
-    pGColisor->setListas(pLEPersonagens,pLEEstaticas);
-    pGE->executar();
-    pLEEstaticas->percorrer();
-    // pLEEstaticas->checar(); TEM QUE CRIAR ESTE MÉTODO LÁ EM LISTA DE ENTIDADES.
-    pLEPersonagens->percorrer();
+    if (pGG)
+    {
+        pGG->atualizaDeltaTime();        
     
-    if(pGColisor){
-
-      // pGColisor->executar();//aqui ta dando seg fault
+        if(pGColisor)
+        {
+            // pGColisor->setListas(pLEPersonagens,pLEEstaticas);
+            if (pGE)
+            {
+                pGE->executar();
+                if (pLEEstaticas != NULL)
+                {
+                   pLEEstaticas->percorrer();
+                    if(pLEPersonagens != NULL)
+                    {
+                        
+                        pLEPersonagens->percorrer();
+                        
+                    }
+                } 
+            }
+            
+        }
     }
-}
+    if(pGColisor){
+      pGColisor->executar(pLEPersonagens,pLEEstaticas);//aqui ta dando seg fault
+    }
+        }
+        
+
+    
+
+
 
 void Fase::criarJogadores(int jog,sf::Vector2f posicao, sf::Vector2f tamanho){
     if(jog==1){
@@ -55,6 +86,7 @@ void Fase::criarJogadores(int jog,sf::Vector2f posicao, sf::Vector2f tamanho){
 
     }
 }
+
 void Fase::criarPlataforma(sf::Vector2f posicao, sf::Vector2f tamanho){
     Entidades::Obstaculos::Plataforma* pPlataforma = new Entidades::Obstaculos::Plataforma(posicao,tamanho,idOBSTACULO);
     pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pPlataforma));

@@ -23,6 +23,7 @@ namespace Lista
                 }
 
                 ~Elemento(){
+                    delete pInfo;
                     pProx = nullptr;
                     pInfo = nullptr;
                 }
@@ -154,42 +155,47 @@ namespace Lista
         }
      }
 
-     template <class TL>
-     void Lista<TL>::remover(TL* p){ //está passando o elemento que deve ser removido
-        
-        if(!pPrim || !p){
-            return; //lista vazia ou parâmetro passado inválido
-        }
-        else{
-            Elemento<TL>* pNode = pPrim;
-            Elemento<TL>* pAnterior = nullptr;
 
-            while(pNode!=nullptr){
+template <class TL>
+void Lista<TL>::remover(TL* p) {  
+    if (!pPrim || !p) {
+        return; // Lista vazia ou parâmetro inválido
+    }
 
-                if(pNode->getInfo()!=p){
-                    pAnterior=pNode;
-                    pNode=pNode->getProx();
-                }
-                else{
-                    if(pNode==pUlt){
-                        pUlt=pAnterior; //tenho que atribuir pUlt aqui, pois vou apagar o node ao final
-                    }
-                    else if(pNode==pPrim){
-                        pPrim=pNode->getProx();
-                    }
-                    else{
-                        pAnterior->setProx(pNode->getProx());
-                    }
+    Elemento<TL>* pNode = pPrim;
+    Elemento<TL>* pAnterior = nullptr;
 
-                    delete pNode;
-                    pNode=nullptr;
-                    delete pAnterior;
-                    pAnterior=nullptr;
-                    tam--;
-                }
+    while (pNode != nullptr) {
+       
+        if (pNode->getInfo() == p) {  // Encontrou o elemento
+            Elemento<TL>* pTemp = pNode->getProx(); // Guarda o próximo nó
+
+            if (pNode == pPrim) {
+                pPrim = pTemp; // Se for o primeiro, ajusta o início
+            } else {
+                pAnterior->setProx(pTemp);
             }
+
+            if (pNode == pUlt) {
+                pUlt = pAnterior; // Se for o último, ajusta o ponteiro final
+            }
+
+            delete pNode; // Libera a memória do elemento removido
+            tam--;
+
+            if (tam == 0) { // Se a lista ficou vazia, zera os ponteiros
+                pPrim = nullptr;
+                pUlt = nullptr;
+            }
+
+            return;  // Sai da função após remover
         }
-     }
+
+        pAnterior = pNode;
+        pNode = pNode->getProx();
+    }
+}
+
 
      template <class TL>
      int Lista <TL> :: getTamanho() const{
@@ -197,29 +203,26 @@ namespace Lista
      }
 
      template <class TL>
-     void Lista<TL>::limpar(){
-
+    void Lista<TL>::limpar() {
         Elemento<TL>* pNode = pPrim;
         Elemento<TL>* pAux;
 
-        while (pNode){
+        while (pNode) {
             pAux = pNode->getProx();
             delete pNode;
-            pNode=pAux; 
+            pNode = pAux;
         }
 
         pPrim = nullptr;
         pUlt = nullptr;
-
-     }
+        tam = 0; // Evita acessar tamanho incorreto depois
+    }
 
      template<class TL>
         TL* Lista<TL>::operator[](int pos){
             if(pos >= (int)tam || pos < 0){
-                std::cout << "ERROR::Lista pos eh maior que o tamanho da lista" << std::endl;
-                exit(1);
+                  throw std::out_of_range("Erro: índice fora do intervalo da lista.");
             }
-            //Elemento<TL>* aux = getInicio();
             Lista<TL>::Iterator aux = getInicio();
             for(int i = 0; i < pos; i++){
                 ++aux;

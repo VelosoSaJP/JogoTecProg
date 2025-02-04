@@ -11,19 +11,26 @@ Gerenciador_Colisoes* Gerenciador_Colisoes :: getInstancia(){
         return instancia;
 }
 Gerenciador_Colisoes::Gerenciador_Colisoes(){
-    
+// listaPersonagem(nullptr),
+// listaObstaculo(nullptr){
 }
-
+ /*
 void Gerenciador_Colisoes::setListas(Lista::ListaEntidade* lPers, Lista::ListaEntidade* lObs){
-    listaPersonagem = lPers;
-    listaObstaculo = lObs;
-
-}
+   if (lPers){
+        listaPersonagem = lPers;
+    }
+    if(lObs){
+        listaObstaculo = lObs;
+    }
+    
+}*/
 
 Gerenciador_Colisoes::~Gerenciador_Colisoes()
 {
-    delete listaObstaculo; //vai direto para o método limpar das listas.
-    delete listaPersonagem;
+    // listaPersonagem=nullptr;
+    // listaObstaculo=nullptr;
+    // delete listaObstaculo; //vai direto para o método limpar das listas.
+    // delete listaPersonagem;
 }
 
 const sf::Vector2f Gerenciador_Colisoes::gerenciaColisao(Entidades::Entidade* ent1, Entidades::Entidade* ent2){
@@ -41,24 +48,22 @@ const sf::Vector2f Gerenciador_Colisoes::gerenciaColisao(Entidades::Entidade* en
     return sf::Vector2f(distanciaEntreCentros.x - somaMetadeRetangulo.x, distanciaEntreCentros.y - somaMetadeRetangulo.y);
 }
 
-void Gerenciador_Colisoes::executar(){
-   //PERSONAGEM COM PERSONAGEM
-
+void Gerenciador_Colisoes::executar(Lista::ListaEntidade* listaPersonagem, Lista::ListaEntidade* listaObstaculo){
+  
+   if(listaPersonagem && listaObstaculo){
+       //PERSONAGEM COM PERSONAGEM
     for(int i = 0; i < listaPersonagem->getTamanho() - 1; i++){
         Entidades::Entidade* ent1 = listaPersonagem->getLista().operator[](i);
         for(int j = i + 1; j < listaPersonagem->getTamanho(); j++){
-        printf("Entrou no for.\n");
+        
             Entidades::Entidade* ent2 = listaPersonagem->getLista().operator[](j); //O SEG FAULT TÁ AQUI.
             sf::Vector2f ds = gerenciaColisao(ent1, ent2);
             if(ds.x < 0.0f && ds.y < 0.0f){
                 ent1->colisao(ent2, ds);
-                printf("ENTREII");
-            } //adicionei operator na listaEntidade mas esta dando erro
-            //no return. Precisaria ter operator em Lista.
-            //agr tem :)
+            } 
         }
     }
-
+    
     //PERSONAGEM COM OBSTÁCULO
     for(int i = 0; i < listaPersonagem->getTamanho(); i++){
         Entidades::Entidade* ent1 = listaPersonagem->getLista().operator[](i);
@@ -71,6 +76,35 @@ void Gerenciador_Colisoes::executar(){
         }
     }
 
+ }}
+}
 
- }
-  }
+
+
+
+   /*
+   auto ent1 = listaPersonagem->getLista().getInicio();
+        printf("Saiu 1\n"); 
+        if(ent1 != listaPersonagem->getLista().getFim()){
+            printf("ajhdas\n");
+        }   
+        printf("Saiu 2\n"); 
+
+
+    for (auto ent1 = listaPersonagem->getLista().getInicio(); ent1 != listaPersonagem->getLista().getFim(); ++ent1) {
+         Entidades::Entidade* entidade1 = (*ent1);
+
+         for (auto ent2 = listaPersonagem->getLista().getInicio(); ent2 != listaPersonagem->getLista().getFim(); ++ent2 ){
+            
+            Entidades::Entidade* entidade2 = (*ent2);
+                if(entidade1 && entidade2){
+                    if(entidade1 != entidade2){
+                        sf::Vector2f ds = gerenciaColisao(entidade1, entidade2);
+                         if(ds.x < 0.0f && ds.y < 0.0f){
+                            entidade1->colisao(entidade2, ds);
+                         } 
+                    }
+                }
+
+         }
+    }*/

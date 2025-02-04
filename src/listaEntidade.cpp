@@ -30,19 +30,20 @@ namespace Lista{
     }
 
     void ListaEntidade::percorrer(){
-        Lista <Entidades:: Entidade> :: Iterator it = LEs.getInicio();   
-             
+         auto it = LEs.getInicio(); 
+        
         for (int i=0; i< getTamanho(); i++){
             Entidades::Entidade* pPercorre = *it;
-
-           if(pPercorre->ehInimigo()){
-                pPercorre->andar(true);
+            if(pPercorre){
+                if(pPercorre->ehInimigo()){
+                    pPercorre->andar(true);
+                }
+                pPercorre->desenhar();
+                pPercorre->executar(); 
+                
             }
-            pPercorre->desenhar();
-            pPercorre->executar();
-            
             ++it; //sobrecarga do operator.
-
+        
         }
     }
 
@@ -50,8 +51,13 @@ namespace Lista{
         return LEs.getTamanho();
     }
 
-    Lista<Entidades::Entidade> ListaEntidade::getLista(){
+   Lista<Entidades::Entidade>& ListaEntidade::getLista() {
+    if (LEs.getTamanho() > 0) {
         return LEs;
+    } else {
+        throw std::runtime_error("Lista vazia!");
     }
+}
+
 
 }
