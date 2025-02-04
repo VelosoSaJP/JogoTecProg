@@ -42,7 +42,7 @@ void Fase ::executar(){
     
         if(pGColisor)
         {
-            // pGColisor->setListas(pLEPersonagens,pLEEstaticas);
+             pGColisor->setListas(pLEPersonagens,pLEEstaticas);
             if (pGE)
             {
                 pGE->executar();
@@ -61,7 +61,7 @@ void Fase ::executar(){
         }
     }
     if(pGColisor){
-      pGColisor->executar(pLEPersonagens,pLEEstaticas);//aqui ta dando seg fault
+      pGColisor->executar();//aqui ta dando seg fault
     }
         }
         

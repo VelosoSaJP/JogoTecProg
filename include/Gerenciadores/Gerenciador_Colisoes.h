@@ -13,8 +13,8 @@ class Gerenciador_Colisoes
 {
 private:
     static Gerenciador_Colisoes* instancia;
-    // Lista::ListaEntidade* listaPersonagem;
-    // Lista::ListaEntidade* listaObstaculo; 
+    Lista::ListaEntidade* listaPersonagem;
+    Lista::ListaEntidade* listaObstaculo; 
     Lista::Lista<Entidades::Entidade> ListaEntidade;
     std::list<Entidades::Entidade*> LP;   
 
@@ -23,14 +23,13 @@ private:
 
 public:
     ~Gerenciador_Colisoes();
-    // void setListas(Lista::ListaEntidade* lPers, Lista::ListaEntidade* lObs);
+     void setListas(Lista::ListaEntidade* lPers, Lista::ListaEntidade* lObs);
     static Gerenciador_Colisoes* getInstancia() ;
-    // Gerenciador_Colisoes(Lista::ListaEntidade* listaPersonagem , Lista::ListaEntidade* listaObstaculo);
     
 
     const sf::Vector2f gerenciaColisao(Entidades::Entidade* ent1, Entidades::Entidade* ent2);
 
-    void executar(Lista::ListaEntidade* listaPersonagem, Lista::ListaEntidade* listaObstaculo);
+    void executar();
 };
 
 
