@@ -3,8 +3,10 @@
 
 namespace Lista{
 
-    ListaEntidade::ListaEntidade(){
+    ListaEntidade::ListaEntidade()
+    {
         LEs.getInicio();
+        
     }
 
     ListaEntidade::~ListaEntidade(){
@@ -35,11 +37,14 @@ namespace Lista{
         for (int i=0; i< getTamanho(); i++){
             Entidades::Entidade* pPercorre = *it;
             if(pPercorre){
-                if(pPercorre->ehInimigo()){
+                if(pPercorre->getID()==2||pPercorre->getID()==3 || pPercorre->getID()==4){ //iD dos inimigos
                     pPercorre->andar(true);
                 }
-                pPercorre->desenhar();
-                pPercorre->executar(); 
+                if(pPercorre->getID()==1){
+                    pPercorre->efeitoGravidade();
+                }
+                    pPercorre->executar(); 
+                    pPercorre->desenhar();
                 
             }
             ++it; //sobrecarga do operator.

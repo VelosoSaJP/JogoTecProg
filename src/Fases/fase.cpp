@@ -51,9 +51,8 @@ void Fase ::executar(){
                    pLEEstaticas->percorrer();
                     if(pLEPersonagens != NULL)
                     {
-                        
                         pLEPersonagens->percorrer();
-                        
+                        // pLEPersonagens->atualizar(pGG->getDeltaTime());
                     }
                 } 
             }
@@ -64,11 +63,6 @@ void Fase ::executar(){
       pGColisor->executar();//aqui ta dando seg fault
     }
         }
-        
-
-    
-
-
 
 void Fase::criarJogadores(int jog,sf::Vector2f posicao, sf::Vector2f tamanho){
     if(jog==1){

@@ -28,6 +28,8 @@ namespace Lista{
 
         void percorrer();
 
+        // void atualizar(float tempo);
+
         int getTamanho() const;
 
         Lista<Entidades::Entidade>& getLista();

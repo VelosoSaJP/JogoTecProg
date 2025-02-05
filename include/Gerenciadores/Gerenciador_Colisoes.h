@@ -7,6 +7,7 @@
 #include <list>
 #include <vector>
 #include <set>
+#include <Ente.h>
 
 namespace Gerenciadores{
 class Gerenciador_Colisoes
@@ -25,7 +26,7 @@ public:
     ~Gerenciador_Colisoes();
      void setListas(Lista::ListaEntidade* lPers, Lista::ListaEntidade* lObs);
     static Gerenciador_Colisoes* getInstancia() ;
-    
+    bool NoChao(Entidades::Entidade* ent1);
 
     const sf::Vector2f gerenciaColisao(Entidades::Entidade* ent1, Entidades::Entidade* ent2);
 

@@ -16,7 +16,6 @@ class Inimigo : public Personagem{
     ~Inimigo();
     void andar(bool direita); //não vou levar para as classes filhas, porque todas vão se locomover do mesmo jeito.
     virtual void executar() = 0;
-    bool ehInimigo();
     virtual void salvar()=0;
     virtual void danificar(Jogador* p)=0;
     // void salvarDataBuffer();

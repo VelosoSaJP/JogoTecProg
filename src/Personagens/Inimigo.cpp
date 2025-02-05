@@ -19,9 +19,6 @@ namespace Personagens{
 
     }
 
-   bool Inimigo::ehInimigo(){
-        return true;
-    }
 
     void Inimigo::andar(bool parede){
          float limite_mov=(tam_plataforma/2)-tamanho.x;

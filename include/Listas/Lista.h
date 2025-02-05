@@ -139,7 +139,6 @@ namespace Lista
 
 
         if(pUlt){
-            //printf("Entrouuu\n");
             pUlt->setProx(pNode);
             pUlt = pNode;
         }
