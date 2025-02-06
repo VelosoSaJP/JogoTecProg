@@ -12,7 +12,9 @@ Entidade();
 Entidade(sf::Vector2f pos, sf::Vector2f tam, int ID);
 ~Entidade();
 virtual void executar() = 0; //ERA PARA SER VIRTUAL AQUI HEIN
-const sf::Vector2f getPosicao()/*const*/; 
+const sf::Vector2f getPosicaoMovel()/*const*/; 
+const sf::Vector2f getPosicaoEstatica();
+const sf::Vector2f getOrigem();
 virtual void colisao(Entidade* outraEntidade,sf::Vector2f distancia)=0;
 virtual void salvar()=0; 
 void efeitoGravidade();

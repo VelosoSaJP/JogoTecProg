@@ -42,7 +42,7 @@ namespace Fases{
             virtual void criarFase()=0;
             virtual void criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho)=0;
             virtual void criarObstaculo(int id,sf::Vector2f posicao, sf::Vector2f tamanho)=0;
-            void criarPlataforma(sf::Vector2f posicao, sf::Vector2f tamanho);
+            void criarPlataforma(sf::Vector2f posicao, sf::Vector2f tamanho, int id);
             virtual string getCaminhoMapa()=0;
     };
 }

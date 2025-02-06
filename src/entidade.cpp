@@ -6,7 +6,7 @@ Entidade:: Entidade(){
 }
 Entidade::Entidade(sf::Vector2f pos, sf::Vector2f tam, int ID):
     Ente(pos,tam,velocidade, ID),
-    gravidade(981.0f),
+    gravidade(0.0001f),
     altura_pulo(0.5f)
 {
 }
@@ -17,24 +17,28 @@ Entidade:: ~Entidade(){
 }
 void Entidade::efeitoGravidade(){
     // std::cout << "Posição do jogador: " << pSprite->getPosition().x << ", " << pSprite->getPosition().y << std::endl;
-    if(pSprite->getPosition().y>0 && pSprite->getPosition().y<304){
         
-        velocidade.y=  sqrtf(0.0005f * gravidade * altura_pulo);
-        pSprite -> move(velocidade.x,velocidade.y );
+        // velocidade.y=  sqrtf(0.0005f * gravidade * altura_pulo);
         velocidade.y += gravidade*pGG->getDeltaTime();
-    }
+        pSprite -> move(velocidade.x,velocidade.y );
+    
 
 }   
 void Entidade::  andar(bool direita){
 
 }
 
+const sf::Vector2f Entidade::getOrigem(){
+    return pSprite->getOrigin();
+}
 
-
-const sf::Vector2f Entidade::getPosicao(){
-    //return pSprite.vec();}
+const sf::Vector2f Entidade::getPosicaoEstatica(){
+     return posicao;
+}
+const sf::Vector2f Entidade::getPosicaoMovel(){
+/*
     if(posicao.x > WIDTH){
-        posicao.x = WIDTH*0.93;
+         posicao.x = WIDTH*0.93;
 
     }
     else if(posicao.x<0){
@@ -47,9 +51,7 @@ const sf::Vector2f Entidade::getPosicao(){
     else if( posicao.y<0){
         posicao.y=HEIGTH*0.03;
     }        
-    //    printf("\nX: %f",posicao.x);
-
-
-    return posicao;
+*/
+    return pSprite->getPosition();
 }
 }

@@ -62,9 +62,13 @@ try {
                     else if(tileId==204 || tileId==407 || tileId==297 || tileId==224){//pedra os 2 primeiros e tileId=297;
                         criarObstaculo(tileId,posicao,tamanho);
                     }
+                    else if(tileId==231){
+                        criarPlataforma(posicao,tamanho,1);
+                    }
                     
                     else if(tileId==75){ //406 é a tocha que sinalizará o fim da fase e aí o boneco entrará no portal.
-                        criarPlataforma(posicao,tamanho); //tudo que será pisado.
+                         
+                        criarPlataforma(posicao,tamanho,0); //tudo que será pisado.
                     }
                 
 

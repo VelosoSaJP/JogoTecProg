@@ -60,5 +60,28 @@ void Gerenciador_Entradas:: teclaApertada(sf::Keyboard::Key tecla){
 void Gerenciador_Entradas:: teclaLiberada(sf::Keyboard::Key tecla){
 
     
+      if (tecla == sf::Keyboard::W){ 
+         if(pJog2!=nullptr){pJog2->parar(true);}
+     }
+    if (tecla == sf::Keyboard::A){
+        if(pJog2!=nullptr){pJog2->parar(false);}
+    }
+  
+    if (tecla == sf::Keyboard::D){
+        if(pJog2!=nullptr){pJog2->parar(false);}
+    }
+
+     if (tecla == sf::Keyboard::Up){ 
+         if(pJog1!=nullptr){pJog1->parar(true);}
+    }
+  
+    if (tecla == sf::Keyboard::Left){
+        if(pJog1!=nullptr){pJog1->parar(false);}
+
+    }
+      if (tecla == sf::Keyboard::Right){ 
+        if(pJog1!=nullptr){pJog1->parar(false);}
+
+    }
 }
 }

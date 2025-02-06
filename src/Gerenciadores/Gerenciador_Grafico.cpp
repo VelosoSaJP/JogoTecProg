@@ -16,7 +16,6 @@ Gerenciador_Grafico :: Gerenciador_Grafico():
 {
     setVideoMode();
     setJanela();
-    //executar();
 }
 
 Gerenciador_Grafico :: ~Gerenciador_Grafico(){

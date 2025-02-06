@@ -1,5 +1,4 @@
 #include "../include/Ente.h"
-
 int Ente :: cont (0);
 Gerenciadores :: Gerenciador_Grafico* Ente:: pGG = Gerenciadores ::Gerenciador_Grafico :: getInstancia();
 
@@ -58,16 +57,17 @@ void Ente :: desenhar(){ //vai ser chamado no executar das herdadas
 
 //sprite é composto por imagem, posição, tamanho, textura e afins. A textura é a imagem (a foto do bonequinho).
 
-const sf::Vector2f Ente::getVel() const{
-    return velocidade;
-}
 
 const sf::Vector2f Ente::getTam() const{
     return tamanho;
 }
 
-void Ente::setPosicao(sf::Vector2f pos){
-    posicao += pos ;
+void Ente::setPosicao(sf::Vector2f pos,const std::string& chamador){
+  
+        posicao=pos;
+    if(chamador=="jogador"){
+           pSprite->setPosition(pos);
+    }
 }
 
 const int Ente:: getID() const{ return id; };

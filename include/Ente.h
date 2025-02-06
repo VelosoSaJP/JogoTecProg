@@ -25,7 +25,7 @@ public:
 Ente(); //construtora vazia
 Ente(sf::Vector2f pos, sf::Vector2f tam, sf ::Vector2f velocidade, int ID);
 ~Ente();
-void atualizar();
+// void atualizar();
 
 virtual void executar () = 0;
 
@@ -34,9 +34,8 @@ void desenhar();
 void setTextura(const char* caminhoTextura);
 void setSprite();
 
-void setPosicao(sf::Vector2f pos);
+void setPosicao(sf::Vector2f pos,const std::string& chamador);
 
-const sf::Vector2f getVel() const;
 const sf::Vector2f getTam() const;
 
 const int getID() const;

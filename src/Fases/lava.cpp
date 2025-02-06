@@ -54,7 +54,7 @@ void Lava::criarFase(){
                         criarObstaculo(tileId,posicao,tamanho);
                     }
                     else if (tileId==379){
-                        criarPlataforma(posicao,tamanho);
+                        criarPlataforma(posicao,tamanho,0);
                         //tudo que será pisado.
                     }
                 

@@ -3,12 +3,13 @@
 namespace Entidades{
 namespace Obstaculos{
 Plataforma :: Plataforma(sf::Vector2f pos, sf::Vector2f tam, int ID):
-    Obstaculo(pos,tam,idOBSTACULO)
+    Obstaculo(pos,tam,ID)
 {
+
     
 }
 Plataforma :: Plataforma(){
-    
+  
 }
 Plataforma :: ~Plataforma(){
     
