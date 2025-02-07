@@ -10,5 +10,15 @@ namespace Obstaculos{
     Arvore:: ~Arvore(){
 
     }
+
+void Arvore::executar(){
+    
+}
+void Arvore::salvar(){
+    
+} 
+
+void Arvore::colisao(Entidade* outraEntidade,sf::Vector2f distancia){}
+
 }
 }

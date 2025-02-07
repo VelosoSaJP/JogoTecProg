@@ -1,4 +1,4 @@
-#include "../include/Obstaculos//Obstaculo.h"
+#include "../include/Obstaculos/Obstaculo.h"
 
 namespace Entidades{
     namespace Obstaculos{
@@ -9,19 +9,20 @@ namespace Entidades{
             Entidade(pos,tam,idOBSTACULO),
             danoso(false)
         {
+            // cout<<"pSprite: "<<pSprite<<endl;
+            //   pSprite->setPosition(pos);
 ;
         }
         Obstaculo::~Obstaculo(){
 
         }
         void Obstaculo :: executar(){
-
         }
         void Obstaculo :: salvar(){
 
         }
 
-        void Obstaculo::colisao(Entidade* outraEntidade,sf::Vector2f distancia){}
+
 
     }
 }

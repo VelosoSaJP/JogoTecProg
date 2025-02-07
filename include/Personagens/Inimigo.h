@@ -17,7 +17,10 @@ class Inimigo : public Personagem{
     void andar(bool direita); //não vou levar para as classes filhas, porque todas vão se locomover do mesmo jeito.
     virtual void executar() = 0;
     virtual void salvar()=0;
+    virtual void desenhar()=0;
     virtual void danificar(Jogador* p)=0;
+    virtual void colisao(Entidade* outraEntidade,sf::Vector2f distancia)=0;
+
     // void salvarDataBuffer();
 };
 

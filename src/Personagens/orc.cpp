@@ -15,7 +15,15 @@ Orc :: ~Orc(){
 }
 
 void Orc :: executar(){
-
+    desenhar();
+}
+void Orc :: desenhar(){
+    if (pSprite){
+        pGG->desenhar(pSprite); //será que dá o this?
+    }
+    else{
+        throw std::runtime_error("o Sprite do Orc estava vazio");
+    }
 }
 void Orc :: danificar(Jogador* p){
      

@@ -2,13 +2,14 @@
 
 namespace Entidades{
 namespace Personagens{
-    Jogador::Jogador(){
+    Jogador::Jogador()
+    {
 
     }
+
     Jogador::Jogador(sf::Vector2f pos, sf::Vector2f tam, int ID):
-        Personagem(pos,tam,idJOGADOR) ,
+        Personagem(sf::Vector2f(pos.x, pos.y),tam,idJOGADOR) ,
         pontos(0),
-         // altura_pulo(1),
         pGC(Gerenciadores::Gerenciador_Colisoes::getInstancia())
     {
         
@@ -28,68 +29,75 @@ namespace Personagens{
     }
 
 
-    void Jogador::saltar(Jogador* pJog){
-
-      if(pGC && pJog){
+    void Jogador::saltar(){
+      if(pGC){
         
-            if(pGC->NoChao(pJog)){ ///checo pSprite na função NoChao
-                if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Left) &&!sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && !sf::Keyboard::isKeyPressed(sf::Keyboard::D) &&!sf::Keyboard::isKeyPressed(sf::Keyboard::A) ) {
-                    velocidade.x=0;
-                }
-                if(pSprite->getPosition().y>0){
-                    velocidade.y= - sqrtf(2.0f * gravidade * altura_pulo);
-                    velocidade.y*=0.8f; 
-                    pSprite -> move(velocidade.x,velocidade.y );
-            
-
-                    if(pGG){
-                        velocidade.y= gravidade*pGG->getDeltaTime();
-                    }
-
-                }
-                else{
-                }
-
-                    pSprite->setPosition(pSprite->getPosition());
-                //estava  pSprite->setPosition(pSprite->getPosicao());
+            if(1){
+                    velocidade.y= - sqrtf(gravidade * altura_pulo);
+                    velocidade.y*=10;                  
          }
             else{
-               // velocidade.y += gravidade * pGG->getDeltaTime();
-               // pSprite->move(velocidade.x, velocidade.y);  
                printf("Não estava no chão\n");
             }
         }
     }
         
     void Jogador:: executar(){
-        // printf("Vel em x: %.f\n",velocidade.x);
-        // printf("Vel em y: %.f\n",velocidade.y);
-        setPosicao (velocidade*pGG->getDeltaTime(),"Executar");
-    //    pSprite->setPosition(velocidade*pGG->getDeltaTime());
+        atualizaPosicao();
+        desenhar();
     }
 
-    void Entidades::Personagens::Jogador::andar(bool direita){
+    void Jogador :: desenhar(){
+         
+        if (pSprite){
+            setTamanho(sf::Vector2f(0.1,0.1));
+            pGG->desenhar(pSprite); //será que dá o this?
+            setTamanho(sf::Vector2f(16,16));
+        }
+        else{
+            throw std::runtime_error("o Sprite do jogador estava vazio");
+        }
+    }
+
+    void Jogador:: atualizaPosicao(){
+       pSprite->move(velocidade.x, velocidade.y);
+//ANTES ESTAVA SÓ COM O move
+// Agora, se você quiser acessar a posição para qualquer outra razão, você pode fazer assim:
+    sf::Vector2f novaPosicao = pSprite->getPosition();
+
+    // Se você quiser reposicionar o sprite para uma nova posição (absoluta)
+    
+    setPosicao(novaPosicao);
+
+
+    pSprite->setOrigin(pSprite->getLocalBounds().width / 2, pSprite->getLocalBounds().height / 2);
+
+
+    }
+
+    void Jogador::andar(bool direita){
         velocidade.y=0;
+     
         if (direita){
             velocidade.x = pGG->getDeltaTime() *0.03;
-            if (pSprite->getPosition().x < WIDTH) {
-                pSprite -> move(velocidade.x,velocidade.y );
+            
+            if (this->getPosicao().x < WIDTH) {
+                // pSprite -> move(velocidade.x,velocidade.y );
 
                 if(pSprite->getScale().x < 0){
                     pSprite->setOrigin(pSprite->getLocalBounds().width / 2, pSprite->getOrigin().y); 
                     pSprite->setScale(-1*pSprite->getScale().x,pSprite->getScale().y);
                 }
             }
- 
+
                 // ESSAS 2 LINHAS DE BAIXO FAZEM SUMIR O BONECO DA TELA.
                 velocidade.y=0;
-                // printf("Velocidades no andar: X: %f e Y: %f\n",velocidade.x,velocidade.y);
-                pSprite->setPosition(pSprite->getPosition());
+                // this->setPosicao(this->getPosicao());
         }
         else{
-            velocidade.x = -pGG->getDeltaTime() * 0.3;
-            if(pSprite->getPosition().x>0){
-                pSprite -> move(velocidade.x,velocidade.y );
+            velocidade.x = -pGG->getDeltaTime() *0.03;
+            if(this->getPosicao().x>0){
+                // pSprite -> move(velocidade.x,velocidade.y );
 
                 if(pSprite->getScale().x > 0){
                     pSprite->setOrigin(pSprite->getLocalBounds().width / 2, pSprite->getOrigin().y); 
@@ -97,13 +105,8 @@ namespace Personagens{
                 }
             }
 
-                pSprite->setPosition(pSprite->getPosition());
-                // pSprite->setPosition(getPosicaoMovel());
-                //  pSprite->setPosition(pSprite->getPosition());
 
         }
-        // printf("SPRITE em x: %.0f, em y: %.0f\n",pSprite->getPosition().x,pSprite->getPosition().y);
-        // printf("NORMAL em x: %.0f, em y: %.0f\n",getPosicao().x,getPosicao().y);
     }
         void Entidades::Personagens::Jogador::colisao(Entidade* outraEntidade,sf::Vector2f distancia){
             int opt = outraEntidade->getID();
@@ -111,22 +114,14 @@ namespace Personagens{
             {
             case (idOBSTACULO): 
                 {
-                     if(posicao.x > outraEntidade->getPosicaoEstatica().x){
-                            printf("Entrando na colisão horizontal\n");
-                    
-                         setPosicao(sf::Vector2f(posicao.x+distancia.x,posicao.y),"jogador");
-                        // printf("getPos em x: %.0f, em y: %.0f\n",getPosicao().x,getPosicao().y);
-                        // printf("setPos em X: %.0f e em Y: %.0f\n",posicao.x+distancia.x,posicao.y);
-
+                     if(posicao.x > outraEntidade->getPosicao().x){
+                        //    setPosicao(sf::Vector2f(posicao.x+distancia.x,getPosicao().y));
                     }
-                    if(getPosicaoMovel().y > outraEntidade->getPosicaoEstatica().y){
-                        // printf("ANTIGA POS: %.0f", getPosicaoMovel().y);
-                        printf("Entrando na colisão vertical\n");
-                        setPosicao(sf::Vector2f(getPosicaoMovel().x,getPosicaoMovel().y+distancia.y),"jogador");
-                        // setPosicao(sf::Vector2f(50,200),"jogador");
-                        
-                        // printf("NOVA POS: %.0f\n", getPosicaoMovel().y);
-                        
+                    
+                    if(getPosicao().y > outraEntidade->getPosicao().y){
+                        // printf("POS X:%.f");
+                         setPosicao(sf::Vector2f(getPosicao().x,getPosicao().y+distancia.y));
+
                      }
                                       
                 }
@@ -141,7 +136,6 @@ namespace Personagens{
             }
 
         }
-        //FALTA IMPLEMENTAR AINDA ^
 
     
     void Jogador :: salvar(){}

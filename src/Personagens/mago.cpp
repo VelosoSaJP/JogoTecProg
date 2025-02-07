@@ -16,8 +16,19 @@ Mago :: ~Mago(){
 }
 
 void Mago :: executar(){
-
+    desenhar();
 }
+
+void Mago:: desenhar(){
+    if (pSprite){
+        pGG->desenhar(pSprite); //será que dá o this?
+    }
+    else{
+        throw std::runtime_error("o Sprite do mago estava vazio");
+    }
+}
+
+
 void Mago :: danificar(Jogador* p){
      
 }

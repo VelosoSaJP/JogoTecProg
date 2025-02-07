@@ -9,6 +9,10 @@ namespace Obstaculos{
             Pedra(sf::Vector2f pos, sf::Vector2f tam, int ID);
             Pedra();
             ~Pedra();
+            void executar();
+            void salvar(); 
+            void colisao(Entidade* outraEntidade,sf::Vector2f distancia);
+
 
     };
 }

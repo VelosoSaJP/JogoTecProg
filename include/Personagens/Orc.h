@@ -12,6 +12,7 @@ class Orc : public Inimigo{
     Orc();
     ~Orc();
     void executar();
+    void desenhar();
     void danificar(Jogador* p);
     void salvar();
     void colisao(Entidade* outraEntidade,sf::Vector2f distancia);

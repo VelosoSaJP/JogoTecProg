@@ -13,5 +13,13 @@ Pedra :: Pedra(){
 Pedra :: ~Pedra(){
     
 }
+
+void Pedra::executar(){
+    
+}
+void Pedra::salvar(){
+    
+} 
+void Pedra::colisao(Entidade* outraEntidade,sf::Vector2f distancia){}
 }
 }

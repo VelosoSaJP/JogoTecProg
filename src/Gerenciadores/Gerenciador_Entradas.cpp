@@ -32,7 +32,7 @@ void Gerenciador_Entradas:: setJogador2(Entidades::Personagens::Jogador* pJog){
 void Gerenciador_Entradas:: teclaApertada(sf::Keyboard::Key tecla){
 
       if (tecla == sf::Keyboard::W){ 
-        if(pJog2!=nullptr){pJog2->saltar(pJog2);}
+        if(pJog2!=nullptr){pJog2->saltar();}
      }
     if (tecla == sf::Keyboard::A){
         if(pJog2!=nullptr){pJog2->andar(false);}
@@ -43,7 +43,7 @@ void Gerenciador_Entradas:: teclaApertada(sf::Keyboard::Key tecla){
     }
 
      if (tecla == sf::Keyboard::Up){ 
-        if(pJog1!=nullptr){pJog1->saltar(pJog1);}
+        if(pJog1!=nullptr){pJog1->saltar();}
     }
   
     if (tecla == sf::Keyboard::Left){

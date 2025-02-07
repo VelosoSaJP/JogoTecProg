@@ -12,70 +12,70 @@ namespace Fases
     Floresta::~Floresta()
     {
     }
-    void Floresta::criarFase(){
-        std::ifstream arquivo("/home/murilo/code/JogoTecProg/src/Fases/Fase1.json");
+    void Floresta::criarFase() {
+    std::ifstream arquivo("/home/murilo/code/JogoTecProg/src/Fases/Fase1.json");
 
+    if (!arquivo) {
+        std::cerr << "Erro ao abrir o arquivo JSON." << std::endl;
+        return;
+    }
 
-        using json = nlohmann::json; // alias para facilitar a compreensão da máquina
-        json matriz;
+    using json = nlohmann::json;
+    json matriz;
 
-std::stringstream buffer;
-buffer << arquivo.rdbuf();
-std::string conteudo = buffer.str();
+    std::stringstream buffer;
+    buffer << arquivo.rdbuf();
+    std::string conteudo = buffer.str();
 
-try {
-    matriz = nlohmann::json::parse(conteudo);
-} catch (const nlohmann::json::parse_error& e) {
-    std::cerr << "Erro ao analisar JSON: " << e.what() << std::endl;
-    return;
-}
+    try {
+        matriz = json::parse(conteudo);
+    } catch (const json::parse_error& e) {
+        std::cerr << "Erro ao analisar JSON: " << e.what() << std::endl;
+        return;
+    }
 
-        int sizeTiled = matriz["tilewidth"];
-        int width = matriz["width"];
-        int height = matriz["height"];
+    int sizeTiled = matriz["tilewidth"];
+    int width = matriz["width"];
+    int height = matriz["height"];
 
-        int indice = 0;
+    // Criar a matriz usando vector<vector<int>>
+    std::vector<std::vector<int>> tilemap(height, std::vector<int>(width));
 
-        // loop de entidades com tamanho fixo (sizeTiled x sizeTiled)
-        for (int y = 0; y < height; y++)
-        {
-            for (int x = 0; x < width; x++)
-            {
-                int tileId = matriz["layers"][0]["data"][indice++];
+    // Preenchendo a matriz com os valores do JSON
+    int indice = 0;
+    for (int y = 0; y < height; y++) {
+        for (int x = 0; x < width; x++) {
+            tilemap[y][x] = matriz["layers"][0]["data"][indice++];
+        }
+    }
 
-                if (tileId != 0){
-                    sf::Vector2f posicao(x * sizeTiled, y * sizeTiled);
-                    sf::Vector2f tamanho(sizeTiled, sizeTiled);
+    // Processar a matriz
+    for (int y = 0; y < height; y++) {
+        for (int x = 0; x < width; x++) {
+            int tileId = tilemap[y][x];
 
-                    if(tileId==337){
-                        criarJogadores(1,posicao,tamanho);
-                    }
+            if (tileId != 0) {
+                sf::Vector2f posicao(x * sizeTiled, y * sizeTiled);
+                sf::Vector2f tamanho(sizeTiled, sizeTiled);
 
-                    else if (tileId==336){
-                        criarJogadores(2,posicao,tamanho);
-                    }
-                    
-                    else if(tileId==335|| tileId==298||tileId== 334 || tileId==333){
-                        criarInimigos(tileId,posicao,tamanho);
-                    }
-                    
-                    else if(tileId==204 || tileId==407 || tileId==297 || tileId==224){//pedra os 2 primeiros e tileId=297;
-                        criarObstaculo(tileId,posicao,tamanho);
-                    }
-                    else if(tileId==231){
-                        criarPlataforma(posicao,tamanho,1);
-                    }
-                    
-                    else if(tileId==75){ //406 é a tocha que sinalizará o fim da fase e aí o boneco entrará no portal.
-                         
-                        criarPlataforma(posicao,tamanho,0); //tudo que será pisado.
-                    }
-                
-
+                if (tileId == 337) {
+                    criarJogadores(1, posicao, tamanho);
+                } else if (tileId == 336) {
+                    criarJogadores(2, posicao, tamanho);
+                } else if (tileId == 335 || tileId == 298 || tileId == 334 || tileId == 333) {
+                    criarInimigos(tileId, posicao, tamanho);
+                } else if (tileId == 204 || tileId == 407 || tileId == 297 || tileId == 224) {
+                    criarObstaculo(tileId, posicao, tamanho);
+                } else if (tileId == 231) {
+                    criarPlataforma(posicao, tamanho, 1);
+                } else if (tileId == 75) {
+                    criarPlataforma(posicao, tamanho, 0);
                 }
             }
         }
     }
+}
+
 
 
 void Floresta::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){

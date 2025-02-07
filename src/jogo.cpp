@@ -24,10 +24,10 @@ void Jogo::executar(){
     }*/
    
 
-    while (pGG->janelaAberta()){
+    while (pGG->janelaAberta()){    
         
         pGG->limpaJanela();
-        pGG->carregarMapa(pFaseAtual->getCaminhoMapa());
+         pGG->carregarMapa(pFaseAtual->getCaminhoMapa());
         pFaseAtual->executar();
         pGG->display();
         

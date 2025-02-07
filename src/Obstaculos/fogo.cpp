@@ -14,5 +14,15 @@ Fogo :: Fogo(){
 Fogo :: ~Fogo(){
     
 }
+
+void Fogo::executar(){
+    
+}
+void Fogo::salvar(){
+    
+} 
+
+void Fogo::colisao(Entidade* outraEntidade,sf::Vector2f distancia){}
+
 }
 }

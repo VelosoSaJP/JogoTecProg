@@ -45,8 +45,7 @@ namespace Lista{
                 }
                 
                     pPercorre->executar(); 
-                    pPercorre->desenhar();
-                
+                    //CONFERIR SE JÁ DESENHA, CASO NÃO: pPercorre->desenhar();
             }
             ++it; //sobrecarga do operator.
         

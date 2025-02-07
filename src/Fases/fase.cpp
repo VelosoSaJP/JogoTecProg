@@ -53,21 +53,18 @@ void Fase ::executar(){
                     {
                         pLEPersonagens->percorrer();
                     }
+                            pGColisor->executar();
                 } 
             }
             
         }
     }
-    if(pGColisor){
-        pGColisor->executar();
-    }
-        }
+}
 
 void Fase::criarJogadores(int jog,sf::Vector2f posicao, sf::Vector2f tamanho){
     if(jog==1){
-       
-        Entidades::Personagens::Jogador *pJog1 = new Entidades::Personagens::Jogador(posicao,  sf::Vector2f(3,3), idJOGADOR);
-        pJog1->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Jogador1/guerreiro_16x16(1).png");
+        Entidades::Personagens::Jogador *pJog1 = new Entidades::Personagens::Jogador(posicao,  sf::Vector2f(0.1,0.1), idJOGADOR);
+        pJog1->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Jogador1/guerreiro.png");
         pGEntradas->setJogador1(pJog1);
         pLEPersonagens->incluir(static_cast<Entidades::Entidade*>(pJog1));
     }
@@ -81,10 +78,11 @@ void Fase::criarJogadores(int jog,sf::Vector2f posicao, sf::Vector2f tamanho){
 }
 
 void Fase::criarPlataforma(sf::Vector2f posicao, sf::Vector2f tamanho,int id){
-        posicao.x-=40.0f;
-        posicao.y-=40.0f;
-        Entidades::Obstaculos::Plataforma* pPlataforma = new Entidades::Obstaculos::Plataforma(posicao,tamanho,idOBSTACULO);
         
+        Entidades::Obstaculos::Plataforma* pPlataforma = new Entidades::Obstaculos::Plataforma(posicao,tamanho,idOBSTACULO);
+        pPlataforma->setTextura("/home/murilo/code/JogoTecProg/assets/Fases/Fase2/Tiles_rock/tile5.png");
+        
+        pPlataforma->executar();
         pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pPlataforma));
 
         

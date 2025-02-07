@@ -17,7 +17,15 @@ Esqueleto :: ~Esqueleto(){
 }
 
 void Esqueleto :: executar(){
-
+    desenhar();
+}
+void Esqueleto :: desenhar(){
+    if (pSprite){
+        pGG->desenhar(pSprite); //será que dá o this?
+    }
+    else{
+        throw std::runtime_error("o Sprite do esqueleto estava vazio");
+    }
 }
 void Esqueleto :: danificar(Jogador* p){
      

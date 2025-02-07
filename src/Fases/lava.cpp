@@ -114,7 +114,6 @@ void Lava::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
 
 }
 void Lava::criarObstaculo(int id,sf::Vector2f posicao, sf::Vector2f tamanho){   
-    
         if(id == 269){
             Entidades::Obstaculos::Fogo* pFogo = new Entidades::Obstaculos::Fogo(posicao,tamanho,idDANOSO);
             pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pFogo));            
@@ -137,13 +136,13 @@ void Lava::criarObstaculo(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
         }
         else if(id == 224){
             Entidades::Obstaculos::Arvore* pArvore = new Entidades::Obstaculos::Arvore(posicao,tamanho,idOBSTACULO);
-            pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pArvore));    
+            pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pArvore)); 
         }
     }
 
 
 string Lava::getCaminhoMapa(){
-    return ("/home/murilo/code/JogoTecProg/assets/Fases/Fase2/Fase2.png");
+     return ("/home/murilo/code/JogoTecProg/assets/Fases/Fase2/Fase2.png");
 }
 
 }

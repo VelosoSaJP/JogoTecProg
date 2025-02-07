@@ -14,6 +14,7 @@ Gerenciador_Grafico* Gerenciador_Grafico ::getInstancia(){
 Gerenciador_Grafico :: Gerenciador_Grafico():
    pJanela(NULL)
 {
+    delta_time=0;
     setVideoMode();
     setJanela();
 }

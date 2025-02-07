@@ -10,6 +10,10 @@ class Arvore : public Obstaculo{
     Arvore(sf::Vector2f pos, sf::Vector2f tam, int ID);
     Arvore();
     ~Arvore();
+    void executar();
+    void salvar(); 
+    void colisao(Entidade* outraEntidade,sf::Vector2f distancia);
+
 };
 }
 }

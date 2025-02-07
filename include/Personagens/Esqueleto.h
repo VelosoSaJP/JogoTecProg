@@ -12,6 +12,7 @@ class Esqueleto : public Inimigo{
     Esqueleto(sf::Vector2f pos, sf::Vector2f tam, int ID);
     Esqueleto();
     ~Esqueleto();
+    void desenhar();
     void executar();
     void danificar(Jogador* p);
     void salvar();

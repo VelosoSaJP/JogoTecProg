@@ -10,24 +10,14 @@ namespace Personagens{
     {
     }
     Personagem::~Personagem(){
-
+        
     }      
 
     int const Personagem::getVidas(){
         return num_vidas;
     }
 
-    void Personagem::andar(bool direita){
-        
-    }
+    void Personagem :: colisao(Entidade* outraEntidade,sf::Vector2f distancia){}
+     void Personagem::andar(bool direita){}
 
-    // void Personagem::salvar (){}
-   // void Personagem::executar(){}
-    // Personagem:: salvarDataBuffer(){}
-    /*void Entidades::Entidade::mover(){
-        // aqui entra pos+=velocidade, tipo isso
-    }*/
-
-
-    
 }}

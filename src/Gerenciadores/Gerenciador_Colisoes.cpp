@@ -66,31 +66,50 @@ Gerenciador_Colisoes::~Gerenciador_Colisoes()
     // delete listaPersonagem;
 }
 
-const sf::Vector2f Gerenciador_Colisoes::gerenciaColisao(Entidades::Entidade* ent1, Entidades::Entidade* ent2){
-    if(ent1 && ent2){
-        sf::Vector2f pos1 = ent1->getPosicaoMovel()- ent1->getOrigem();      //ENTE 1 VAI SER SEMPRE ENTIDADE MÓVEL.  
-        sf::Vector2f pos2 = ent2->getPosicaoEstatica() - ent2->getOrigem();
+const sf::Vector2f Gerenciador_Colisoes::gerenciaColisao(Entidades::Entidade* ent1, Entidades::Entidade* ent2) {
+      if(ent1 && ent2){
+/*
+        sf::Vector2f posicao1 = ent1->getPosicao();
+        sf::Vector2f posicao2 = ent2->getPosicao();
+        sf::Vector2f tamanho1 = ent1->getTamanho();
+        sf::Vector2f tamanho2 = ent2->getTamanho();
 
-       /*// if(ent2->getID()==idJOGADOR || ent2->getID()==idESQUELETO|| ent2->getID()==idMAGO|| ent2->getID()==idORC){
-            sf::Vector2f pos2 = ent2->getPosicaoMovel() - ent2->getOrigem();
+        sf::Vector2f dcolisao(0,0);
+        dcolisao.x = tamanho1.x/2.0+tamanho2.x/2.0;
+        dcolisao.y = tamanho1.y/2.0+tamanho2.y/2.0;
+
+        sf::Vector2f distancia(0,0); //EU SETEI A MINHA ORIGEM NO CENTRO DO SPRITE.
+        distancia.x= fabs(ent1->getPosicao().x-ent2->getPosicao().y);
+        distancia.y= fabs(ent1->getPosicao().y-ent2->getPosicao().y);
+
+        // if(distancia.x){
+            // TAMANHO MUITO PEQUENO
+        // }
+        // printf("distancia: x= %f e y= %f\n",distancia.x,distancia.y);
+        // printf("colisao: x= %f e y= %f\n",dcolisao.x,dcolisao.y);
+
+        if(distancia.y<dcolisao.y && distancia.x<dcolisao.x){
+            printf("ENT1: x= %.1f e y= %.1f\n",ent1->getPosicao().x,ent1->getPosicao().y);
+            printf("ENT2: x= %.1f e y= %.1f\n",ent2->getPosicao().x,ent2->getPosicao().y);
+            exit(1);
+
         }
-        else{
-            sf::Vector2f pos2 = ent2->getPosicaoEstatica() - ent2->getOrigem();
-        }*/ 
-        // printf("ENT1 em x: %.0f, em y: %.0f\n",pos1.x,pos1.y);
-        // printf("ENT2 em x: %.0f, em y: %.0f\n",pos2.x,pos2.y);
+     
+     return distancia;*/
 
-        sf::Vector2f tam1 = ent1->getTam();
-        sf::Vector2f tam2 = ent2->getTam();
-        sf::Vector2f distanciaEntreCentros(
-            fabs((pos1.x + tam1.x/2.0f) - (pos2.x + tam2.x/2.0f)),
-            fabs((pos1.y + tam1.y/2.0f) - (pos2.y + tam2.y/2.0f))
-        );
+    
+        sf::Vector2f pos1 = ent1->getPosicao();
+        sf::Vector2f pos2 = ent2->getPosicao();
+        sf::Vector2f tam1 = ent1->getTamanho();
+        sf::Vector2f tam2 = ent2->getTamanho();
+        sf::Vector2f distanciaEntreCentros(fabs((pos1.x + tam1.x/2.0f) - (pos2.x + tam2.x/2.0f)),
+            fabs((pos1.y + tam1.y/2.0f) - (pos2.y + tam2.y/2.0f)));
 
         sf::Vector2f somaMetadeRetangulo(tam1.x/2.0f + tam2.x/2.0f, tam1.y/2.0f + tam2.y/2.0f);
         return sf::Vector2f(distanciaEntreCentros.x - somaMetadeRetangulo.x, distanciaEntreCentros.y - somaMetadeRetangulo.y);
 
-    }
+    
+}
 }
 
 void Gerenciador_Colisoes::executar(){
@@ -123,27 +142,36 @@ void Gerenciador_Colisoes::executar(){
     //PERSONAGEM COM OBSTÁCULO
     for(int i = 0; i < listaPersonagem->getTamanho(); i++){
         Entidades::Entidade* ent1 = listaPersonagem->getLista().operator[](i);
+        sf::Sprite* reposicionando1=nullptr;
+        sf::Sprite* reposicionando2=nullptr;
+        
+        if (ent1 && ent1->getID()==1){
+
+            sf::Sprite* reposicionando1 = ent1->getSprite();
+            reposicionando1->setOrigin(reposicionando1->getGlobalBounds().width / 2, reposicionando1->getGlobalBounds().height / 2);
+
+
         if (ent1 && ent1->getID()==1){
             for(int j = 0; j < listaObstaculo->getTamanho(); j++){
                 Entidades::Entidade* ent2 = listaObstaculo->getLista().operator[](j);
-                
+               sf::Sprite* reposicionando2 = ent2->getSprite();
+            reposicionando2->setOrigin(reposicionando2->getGlobalBounds().width / 2, reposicionando2->getGlobalBounds().height / 2);
+
                 if (ent2){
                     sf::Vector2f ds = gerenciaColisao(ent1, ent2);
 
-
-                    if(ds.x < 0.0f && ds.y < 0.0f){
-                    // printf("ENT2 em x: %.0f, em y: %.0f\n",ent2->getPosicaoEstatica().x,ent2->getPosicaoEstatica().y);
-                    // printf("ENT1 em x: %.0f, em y: %.0f\n",ent1->getPosicaoMovel().x,ent1->getPosicaoMovel().y);
-                    // printf("ds em x: %.0f, em y: %.0f\n",ds.x,ds.y);
-                        // exit(1);
-                        // printf("Entrou em ds\n");
-                        ent1->colisao(ent2, ds);
+                    if (ds.x < 0.0f && ds.y < 0.0f) {
+                        // printf("Tá colidindo\n");
+                        // ent1->setPosicao(sf::Vector2f(300,150));
+                        
+                         ent1->colisao(ent2, ds);
                     }
                 }
             }
         }
     }
  }
+}
 }
 
 

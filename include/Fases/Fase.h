@@ -1,6 +1,8 @@
 #pragma once
 #include "Ente.h"//útil para as classes herdadas
 #include "json.hpp"
+#include <sstream>
+#include <vector>
 #include "fstream"
 #include <string>
 #include "../Listas/ListaEntidade.h"
