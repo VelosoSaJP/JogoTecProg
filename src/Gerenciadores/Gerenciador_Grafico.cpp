@@ -102,6 +102,11 @@ void Gerenciador_Grafico::carregarMapa(string caminhoMapa){
 
 }
 
+void Gerenciador_Grafico :: desenhar(sf::RectangleShape colisao) const{
+    pJanela->draw(colisao);
+}
+
+
 
 
 }

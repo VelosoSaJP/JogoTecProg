@@ -16,13 +16,31 @@ Fogo :: ~Fogo(){
 }
 
 void Fogo::executar(){
-    
+    desenhar();
 }
+
+void Fogo::desenhar(){
+    if (pSprite){
+        sf::RectangleShape desenhaColisao;
+        desenhaColisao.setFillColor(sf::Color::Transparent);
+        desenhaColisao.setOutlineColor(sf::Color::Magenta);
+        sf::Vector2f posicaoColisao;
+        sf::Vector2f tamanhoColisao;
+    
+        posicaoColisao={pSprite->getGlobalBounds().left,pSprite->getGlobalBounds().top};
+        tamanhoColisao={pSprite->getGlobalBounds().width,pSprite->getGlobalBounds().height};
+        desenhaColisao.setSize(tamanhoColisao);
+        desenhaColisao.setPosition(posicaoColisao);
+        desenhaColisao.setOutlineThickness(1.f);
+        pGG->desenhar(pSprite); //será que dá o this?
+        pGG->desenhar(desenhaColisao);
+}}
 void Fogo::salvar(){
     
 } 
 
 void Fogo::colisao(Entidade* outraEntidade,sf::Vector2f distancia){}
+
 void Fogo::empuxo(){
     gravidade=0;
 }

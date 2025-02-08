@@ -7,7 +7,10 @@ namespace Personagens{
     Personagem::Personagem(sf::Vector2f pos, sf::Vector2f tam, int ID):
         Entidade(pos,tam, ID),
         num_vidas(0)
+
     {
+        hitbox();
+        
     }
     Personagem::~Personagem(){
         
@@ -18,5 +21,23 @@ namespace Personagens{
     }
 
      void Personagem::andar(bool direita){}
+
+     void Personagem :: hitbox(){
+        desenhaColisao.setFillColor(sf::Color::Transparent);
+        desenhaColisao.setOutlineColor(sf::Color::Green);
+        sf::Vector2f posicaoColisao;
+        sf::Vector2f tamanhoColisao;
+      
+        posicaoColisao={pSprite->getGlobalBounds().left,pSprite->getGlobalBounds().top};
+        tamanhoColisao={pSprite->getGlobalBounds().width,pSprite->getGlobalBounds().height};
+        tamanhoColisao.x*=0.6;
+        posicaoColisao.x += (pSprite->getGlobalBounds().width * (1 - 0.6)) / 2;
+        desenhaColisao.setSize(tamanhoColisao);
+        desenhaColisao.setPosition(posicaoColisao);
+        desenhaColisao.setOutlineThickness(1.f);
+        pGG->desenhar(desenhaColisao);
+
+     }
+
 
 }}

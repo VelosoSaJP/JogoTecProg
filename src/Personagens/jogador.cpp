@@ -31,28 +31,43 @@ namespace Personagens{
 
     void Jogador::saltar(){
       if(pGC){
-            printf("Tá vindo aqui\n");
+            // printf("Tá vindo aqui\n");
             if(pGC->NoChao(this)){
                     velocidade.y= - sqrtf(gravidade * altura_pulo);
                     velocidade.y*=10;                  
          }
             else{
-               printf("Não estava no chão\n");
+            //    printf("Não estava no chão\n");
             }
         }
     }
         
     void Jogador:: executar(){
         atualizaPosicao();
+        hitbox();
         desenhar();
+
     }
+
 
     void Jogador :: desenhar(){
          
         if (pSprite){
-            setTamanho(sf::Vector2f(0.1,0.1));
+            // sf::RectangleShape desenhaColisao;
+            // desenhaColisao.setFillColor(sf::Color::Transparent);
+            // desenhaColisao.setOutlineColor(sf::Color::Yellow);
+            // sf::Vector2f posicaoColisao;
+            // sf::Vector2f tamanhoColisao;
+        // 
+            // posicaoColisao={pSprite->getGlobalBounds().left,pSprite->getGlobalBounds().top};
+            // tamanhoColisao={pSprite->getGlobalBounds().width,pSprite->getGlobalBounds().height};
+            // desenhaColisao.setSize(tamanhoColisao*0.8f);
+            // desenhaColisao.setPosition(posicaoColisao);
+// 
+            // desenhaColisao.setOutlineThickness(1.f);
+            
             pGG->desenhar(pSprite); //será que dá o this?
-            setTamanho(sf::Vector2f(16,16));
+            // pGG->desenhar(desenhaColisao);
         }
         else{
             throw std::runtime_error("o Sprite do jogador estava vazio");
@@ -61,21 +76,15 @@ namespace Personagens{
 
     void Jogador:: atualizaPosicao(){
        pSprite->move(velocidade.x, velocidade.y);
-//ANTES ESTAVA SÓ COM O move
-// Agora, se você quiser acessar a posição para qualquer outra razão, você pode fazer assim:
+
     sf::Vector2f novaPosicao = pSprite->getPosition();
 
-    // Se você quiser reposicionar o sprite para uma nova posição (absoluta)
     if(passivelDeMovimento(novaPosicao)){
 
         setPosicao(novaPosicao);
     }
 
-
-    pSprite->setOrigin(pSprite->getLocalBounds().width / 2, pSprite->getLocalBounds().height / 2);
-
-
-    }
+}
 
     void Jogador::andar(bool direita){
         velocidade.y=0;
@@ -128,27 +137,31 @@ void Jogador::colisao(Entidade* outraEntidade, sf::Vector2f distancia) {
     int opt = outraEntidade->getID();
     switch (opt) {
         case (idOBSTACULO): {
+            sf::Sprite* pS=outraEntidade->getSprite();
+            
             sf::Vector2f novaPosicao = getPosicao(); // Posição atual do jogador
 
             // Se estiver colidindo no eixo X, ajusta a posição X
-
             if (distancia.y < 0) {
                 if (posicao.y > outraEntidade->getPosicao().y) {
-                    novaPosicao.y = outraEntidade->getPosicao().y + outraEntidade->getTamanho().y;
+                    novaPosicao.y = outraEntidade->getPosicao().y + pS->getGlobalBounds().height/2;
                 } else {
-                    novaPosicao.y = outraEntidade->getPosicao().y - getTamanho().y;
+                    novaPosicao.y = outraEntidade->getPosicao().y - pSprite->getGlobalBounds().height/2;
                 }
             }
 
             else if (distancia.x < 0) {
-                    printf("Veio aqui\n");
+                    
                 if (posicao.x > outraEntidade->getPosicao().x) {
-                    novaPosicao.x = outraEntidade->getPosicao().x + outraEntidade->getTamanho().x;
+                    novaPosicao.x = outraEntidade->getPosicao().x + pS->getGlobalBounds().width/2;
                 } else {
-                    novaPosicao.x = outraEntidade->getPosicao().x - getTamanho().x;
+                    novaPosicao.x = outraEntidade->getPosicao().x - pS->getGlobalBounds().width/2;
                 }
             }
 
+
+            novaPosicao.y-=25;
+             
             setPosicao(novaPosicao); // Atualiza a posição do jogador
 
             break;

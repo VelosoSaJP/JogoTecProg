@@ -13,6 +13,7 @@ pGColisor(Gerenciadores::Gerenciador_Colisoes::getInstancia())
 {
   pLEPersonagens=new Lista::ListaEntidade();
   pLEEstaticas=new Lista :: ListaEntidade();
+  
 
 }
 
@@ -22,7 +23,6 @@ Fase :: ~Fase(){
        
         if(pLEEstaticas){
             delete pLEEstaticas;
-
         }
     }
     pGG = nullptr;
@@ -35,7 +35,7 @@ Fase :: ~Fase(){
 
 
      
-void Fase ::executar(){
+void Fase::executar(){
     if (pGG)
     {
         pGG->atualizaDeltaTime();        
@@ -78,14 +78,10 @@ void Fase::criarJogadores(int jog,sf::Vector2f posicao, sf::Vector2f tamanho){
 }
 
 void Fase::criarPlataforma(sf::Vector2f posicao, sf::Vector2f tamanho,int id){
-        //aumentei o tamanho da plataforma para ficar mais bonita a colisão
-        Entidades::Obstaculos::Plataforma* pPlataforma = new Entidades::Obstaculos::Plataforma(posicao,tamanho,idOBSTACULO); 
+        Entidades::Obstaculos::Plataforma* pPlataforma = new Entidades::Obstaculos::Plataforma(posicao,sf::Vector2f(1,1),idOBSTACULO); 
         pPlataforma->setTextura("/home/murilo/code/JogoTecProg/assets/Fases/Fase2/Tiles_rock/tile5.png");
-        // pPlataforma->setPosicao(posicao);
         pPlataforma->executar();
         pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pPlataforma));
-
-        
     
 }
 

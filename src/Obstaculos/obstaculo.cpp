@@ -9,9 +9,6 @@ namespace Entidades{
             Entidade(pos,tam,idOBSTACULO),
             danoso(false)
         {
-            // cout<<"pSprite: "<<pSprite<<endl;
-            //   pSprite->setPosition(pos);
-;
         }
         Obstaculo::~Obstaculo(){
 

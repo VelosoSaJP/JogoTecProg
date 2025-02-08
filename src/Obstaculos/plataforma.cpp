@@ -20,13 +20,26 @@ void Plataforma :: executar(){
 void Plataforma :: desenhar(){
 
     if(pSprite){
-        //  printf("ANTES em Y: %1.f\n", posicao.y);
-        //    pSprite->setOrigin(pSprite->getLocalBounds().width / 2, pSprite->getLocalBounds().height / 2);
-        //    pSprite->setPosition(sf::Vector2f(posicao.x + pSprite->getOrigin().x, -10+posicao.y + pSprite->getOrigin().y));
+        sf::RectangleShape desenhaColisao;
+            desenhaColisao.setFillColor(sf::Color::Transparent);
+            desenhaColisao.setOutlineColor(sf::Color::Yellow);
+            sf::Vector2f posicaoColisao;
+            sf::Vector2f tamanhoColisao;
         
-        
-            // printf("DEPOIS em Y: %1.f\n", pSprite->getPosition().y);
-            pGG->desenhar(pSprite); //será que dá o this?
+            posicaoColisao={pSprite->getGlobalBounds().left,pSprite->getGlobalBounds().top};
+            tamanhoColisao={pSprite->getGlobalBounds().width,pSprite->getGlobalBounds().height};
+            desenhaColisao.setSize(tamanhoColisao);
+            desenhaColisao.setPosition(posicaoColisao);
+
+            desenhaColisao.setOutlineThickness(1.f);
+            
+            // printf("POS: x= %.1f e y= %.1f\n",desenhaColisao.getPosition().x,desenhaColisao.getPosition().y);
+            // printf("TAM: x= %.1f e y= %.1f\n",desenhaColisao.getSize().x,desenhaColisao.getSize().y);
+
+
+            pGG->desenhar(pSprite);
+
+            pGG->desenhar(desenhaColisao);
     }
     else{
         throw std::runtime_error("o Sprite da plataforma estava vazio");

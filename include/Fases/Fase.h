@@ -14,11 +14,11 @@
 #include "../Gerenciadores/Gerenciador_Eventos.h"
 #include "../Gerenciadores/Gerenciador_Entradas.h"
 #include "../Gerenciadores/Gerenciador_Colisoes.h"
-
 #include "../Obstaculos/Plataforma.h"
 #include "../Obstaculos/Pedra.h"
 #include "../Obstaculos/Fogo.h"
 #include "../Obstaculos/Arvore.h"
+
 using namespace std;
 
 
@@ -34,6 +34,7 @@ namespace Fases{
             Gerenciadores::Gerenciador_Eventos* pGE;
             Gerenciadores::Gerenciador_Entradas* pGEntradas;
             Gerenciadores::Gerenciador_Colisoes* pGColisor;
+           
 
         public:
             Fase();

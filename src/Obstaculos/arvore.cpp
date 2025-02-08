@@ -19,9 +19,21 @@ void Arvore::salvar(){
 } 
 void Arvore::desenhar(){
     if (pSprite){
-            setTamanho(sf::Vector2f(0.1,0.1));
+             sf::RectangleShape desenhaColisao;
+            desenhaColisao.setFillColor(sf::Color::Transparent);
+            desenhaColisao.setOutlineColor(sf::Color::Magenta);
+            sf::Vector2f posicaoColisao;
+            sf::Vector2f tamanhoColisao;
+        
+            posicaoColisao={pSprite->getGlobalBounds().left,pSprite->getGlobalBounds().top};
+            tamanhoColisao={pSprite->getGlobalBounds().width,pSprite->getGlobalBounds().height};
+            desenhaColisao.setSize(tamanhoColisao);
+            desenhaColisao.setPosition(posicaoColisao);
+
+            desenhaColisao.setOutlineThickness(1.f);
+
             pGG->desenhar(pSprite); //será que dá o this?
-            setTamanho(sf::Vector2f(16,16));
+            pGG->desenhar(desenhaColisao);
         }
 }
 void Arvore::colisao(Entidade* outraEntidade,sf::Vector2f distancia){}

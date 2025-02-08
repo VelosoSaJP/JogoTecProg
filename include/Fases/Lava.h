@@ -1,12 +1,12 @@
 #pragma once
 #include "Fase.h"
-
+#include "../include/Projetil.h"
 namespace Fases{
     class Lava : public Fase{
         private:
             int aux_arvore;
             bool cria_textura_arv;
-
+            Entidades::Projetil* pProjetil;
 
          public:
             Lava();

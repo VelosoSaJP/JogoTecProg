@@ -4,14 +4,17 @@ namespace Fases{
 Lava :: Lava():
     Fase(), //é precisso disso aqui?
     aux_arvore(rand()%2),
+    pProjetil(nullptr),
     cria_textura_arv(true)
 {
-    // pGG->carregarMapaa("/home/murilo/code/JogoTecProg/assets/Fases/Fase2/Fase2.png");
+    pProjetil = new Entidades::Projetil();    
     criarFase();
 }
 
 Lava :: ~Lava(){
-
+ if(pProjetil){
+    delete pProjetil;
+}
 }
 
 void Lava::criarFase(){
@@ -69,7 +72,8 @@ void Lava::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
     switch(id){
        case 149:{
             int aux = rand()%2;
-            if (aux){
+            if (aux){    
+                posicao.x-=16;            
                 Entidades::Personagens::Mago* pMago = new Entidades::Personagens::Mago(posicao,sf::Vector2f(0.06,0.06),idMAGO);
                 if (pMago){
                     pMago->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Mago/mago.png");
@@ -82,7 +86,8 @@ void Lava::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
        case 423:{
             int aux = rand()%2;
             if (aux){
-                Entidades::Personagens::Esqueleto* pEsq = new Entidades::Personagens::Esqueleto(posicao,sf::Vector2f(0.09,0.09),idESQUELETO);
+                
+                Entidades::Personagens::Esqueleto* pEsq = new Entidades::Personagens::Esqueleto(posicao,sf::Vector2f(0.075,0.075),idESQUELETO);
                 if(pEsq){
                     pEsq->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Esqueleto/esqueleto.png");
                     pLEPersonagens->incluir(static_cast<Entidades::Entidade *>(pEsq));
@@ -93,6 +98,7 @@ void Lava::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
         }
 
         case 424:{
+            
             Entidades::Personagens::Esqueleto* pEsq = new Entidades::Personagens::Esqueleto(posicao,sf::Vector2f(0.075,0.075),idESQUELETO);
             if(pEsq){
                 pEsq->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Esqueleto/esqueleto.png");
@@ -102,6 +108,7 @@ void Lava::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
 
         }
         case 425:{
+                posicao.x-=16;
             Entidades::Personagens::Mago* pMago = new Entidades::Personagens::Mago(posicao,sf::Vector2f(0.06,0.06),idMAGO);
             if (pMago){
                 pMago->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Mago/mago.png");
@@ -125,23 +132,25 @@ void Lava::criarObstaculo(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
                 pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pFogo));   
             }
         }
-        else if(id == 207){ //arvore fake
-            if (aux_arvore){
-                Entidades::Obstaculos::Arvore* pArvore = new Entidades::Obstaculos::Arvore(posicao,sf::Vector2f(0.65,0.65),idOBSTACULO);     
-                if(cria_textura_arv){ //Só o primeiro bloco cria a imagem.
-                    pArvore->setTextura("/home/murilo/code/JogoTecProg/assets/Fases/Fase1/props/tree01.png");  
-                    pArvore->executar();
-                    cria_textura_arv=false;
-                }
-            pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pArvore));
-        }
-        }
-        else if(id == 224){
-            Entidades::Obstaculos::Arvore* pArvore = new Entidades::Obstaculos::Arvore(posicao,tamanho,idOBSTACULO);
-            pArvore->setTextura("/home/murilo/code/JogoTecProg/assets/Fases/Fase1/props/tree01.png");  
-            pArvore->executar();
-            pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pArvore)); 
-        }
+        // else if(id == 207){ //arvore fake
+            // if (aux_arvore){
+                // Entidades::Obstaculos::Arvore* pArvore = new Entidades::Obstaculos::Arvore(posicao,sf::Vector2f(0.65,0.65),idOBSTACULO);     
+                // if(cria_textura_arv){ //Só o primeiro bloco cria a imagem.
+                    // pArvore->setTextura("/home/murilo/code/JogoTecProg/assets/Fases/Fase1/props/tree01.png");  
+                    // pArvore->executar();
+                    // cria_textura_arv=false;
+                // }
+            // pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pArvore));
+        // }
+        // }
+        // else if(id == 224){
+            // Entidades::Obstaculos::Arvore* pArvore = new Entidades::Obstaculos::Arvore(posicao,tamanho,idOBSTACULO);
+            // pArvore->setTextura("/home/murilo/code/JogoTecProg/assets/Fases/Fase1/props/tree01.png");  
+            // pArvore->executar();
+            // pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pArvore)); 
+        // }
+
+        
     }
 
 

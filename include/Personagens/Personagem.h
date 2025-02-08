@@ -7,6 +7,7 @@ namespace Personagens{
 class Personagem : public Entidade{
 protected:
     int num_vidas;
+    sf::RectangleShape desenhaColisao;
     
 public:
     Personagem();
@@ -17,9 +18,10 @@ public:
     virtual void executar()=0;
     virtual void andar(bool direita);
     virtual void desenhar()=0;
-
     int const getVidas();
-     virtual void colisao(Entidade* outraEntidade,sf::Vector2f distancia)=0;
+    virtual void colisao(Entidade* outraEntidade,sf::Vector2f distancia)=0;
+    void hitbox();
+
 
 };
 }
