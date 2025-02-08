@@ -105,7 +105,26 @@ namespace Personagens{
 
         }
     }
-       void Entidades::Personagens::Jogador::colisao(Entidade* outraEntidade, sf::Vector2f distancia) {
+
+    bool Jogador :: passivelDeMovimento(sf::Vector2f novaPosicao){
+        if (novaPosicao.x > WIDTH-12){
+            setPosicao(sf::Vector2f(WIDTH-15,getPosicao().y));
+            return false;
+        }
+        else if (novaPosicao.x<10){
+            setPosicao(sf::Vector2f(15,getPosicao().y));
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+
+    void Jogador :: salvar(){}
+
+
+void Jogador::colisao(Entidade* outraEntidade, sf::Vector2f distancia) {
     int opt = outraEntidade->getID();
     switch (opt) {
         case (idOBSTACULO): {
@@ -128,9 +147,6 @@ namespace Personagens{
                 } else {
                     novaPosicao.x = outraEntidade->getPosicao().x - getTamanho().x;
                 }
-                    printf("DIST em X: %1.f\n",distancia.x);
-                    printf("DIST em Y: %1.f\n",distancia.y);
-                    exit(1);
             }
 
             setPosicao(novaPosicao); // Atualiza a posição do jogador
@@ -148,22 +164,5 @@ namespace Personagens{
             }
 
         }
-
-    bool Jogador :: passivelDeMovimento(sf::Vector2f novaPosicao){
-        if (novaPosicao.x > WIDTH-12){
-            setPosicao(sf::Vector2f(WIDTH-15,getPosicao().y));
-            return false;
-        }
-        else if (novaPosicao.x<10){
-            setPosicao(sf::Vector2f(15,getPosicao().y));
-            return false;
-        }
-        else{
-            return true;
-        }
-    }
-
-
-    void Jogador :: salvar(){}
 }
 }

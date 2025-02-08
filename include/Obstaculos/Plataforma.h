@@ -13,6 +13,7 @@ namespace Obstaculos{
             void colisao(Entidade* outraEntidade,sf::Vector2f distancia);
             void salvar(); 
             void desenhar();
+            void empuxo();
     };
 }
 }

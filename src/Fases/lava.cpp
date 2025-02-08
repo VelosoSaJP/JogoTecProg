@@ -82,7 +82,7 @@ void Lava::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
        case 423:{
             int aux = rand()%2;
             if (aux){
-                Entidades::Personagens::Esqueleto* pEsq = new Entidades::Personagens::Esqueleto(posicao,sf::Vector2f(0.075,0.075),idESQUELETO);
+                Entidades::Personagens::Esqueleto* pEsq = new Entidades::Personagens::Esqueleto(posicao,sf::Vector2f(0.09,0.09),idESQUELETO);
                 if(pEsq){
                     pEsq->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Esqueleto/esqueleto.png");
                     pLEPersonagens->incluir(static_cast<Entidades::Entidade *>(pEsq));

@@ -40,9 +40,7 @@ namespace Lista{
                 if(pPercorre->getID()==2||pPercorre->getID()==3 || pPercorre->getID()==4){ //iD dos inimigos
                     pPercorre->andar(true);
                 }
-                else if(pPercorre->getID()==1){
                     pPercorre->efeitoGravidade();
-                }
                 
                     pPercorre->executar(); 
                     //CONFERIR SE JÁ DESENHA, CASO NÃO: pPercorre->desenhar();

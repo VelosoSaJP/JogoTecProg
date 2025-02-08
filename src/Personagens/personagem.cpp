@@ -17,7 +17,6 @@ namespace Personagens{
         return num_vidas;
     }
 
-    void Personagem :: colisao(Entidade* outraEntidade,sf::Vector2f distancia){}
      void Personagem::andar(bool direita){}
 
 }}

@@ -23,12 +23,12 @@ namespace Personagens{
          float limite_mov=(tam_plataforma/2)-tamanho.x;
          
       if (direita){
-            velocidade.x = pGG->getDeltaTime() *0.025;
+            velocidade.x = pGG->getDeltaTime() *0.02;
                 pSprite -> move(velocidade.x,velocidade.y );
        
         }
         else{
-             velocidade.x = pGG->getDeltaTime() *0.025;
+             velocidade.x = pGG->getDeltaTime() *0.02;
                 pSprite -> move(-velocidade.x,velocidade.y );
         }
         

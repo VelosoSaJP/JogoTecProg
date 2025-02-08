@@ -23,7 +23,6 @@ void Jogo::executar(){
     Fases::Lava* pFaseAtual = new Fases::Lava();
     }*/
    
-
     while (pGG->janelaAberta()){    
         
         pGG->limpaJanela();

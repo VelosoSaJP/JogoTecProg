@@ -33,5 +33,9 @@ void Orc :: salvar(){
 }
 void Orc::colisao(Entidade* outraEntidade,sf::Vector2f distancia){}
 
+void Orc::empuxo(){
+    gravidade=0;
+    velocidade.y=0;
+}
 }
 }

@@ -86,5 +86,4 @@ sf::Vector2f Entidade::getPosicao() const {
 
 void Entidade::andar(bool direita){}
 
-
 }

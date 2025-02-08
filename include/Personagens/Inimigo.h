@@ -20,6 +20,8 @@ class Inimigo : public Personagem{
     virtual void desenhar()=0;
     virtual void danificar(Jogador* p)=0;
     virtual void colisao(Entidade* outraEntidade,sf::Vector2f distancia)=0;
+    virtual void empuxo()=0;
+
 
     // void salvarDataBuffer();
 };

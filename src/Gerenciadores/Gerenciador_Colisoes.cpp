@@ -146,22 +146,19 @@ void Gerenciador_Colisoes::executar(){
         Entidades::Entidade* ent1 = listaPersonagem->getLista().operator[](i);
         sf::Sprite* reposicionando1=nullptr;
         sf::Sprite* reposicionando2=nullptr;
-        
-        if (ent1 && ent1->getID()==1){
+        if (ent1){
 
             sf::Sprite* reposicionando1 = ent1->getSprite();
             reposicionando1->setOrigin(reposicionando1->getGlobalBounds().width / 2, reposicionando1->getGlobalBounds().height / 2);
-
-
-        if (ent1 && ent1->getID()==1){
             for(int j = 0; j < listaObstaculo->getTamanho(); j++){
                 Entidades::Entidade* ent2 = listaObstaculo->getLista().operator[](j);
                 sf::Sprite* reposicionando2 = ent2->getSprite();
                 reposicionando2->setOrigin(reposicionando2->getGlobalBounds().width / 2, reposicionando2->getGlobalBounds().height / 2);
 
                if (ent2){
-                    sf::Vector2f ds = gerenciaColisao(ent1, ent2);
 
+                    sf::Vector2f ds = gerenciaColisao(ent1, ent2);
+                    
                     if (ds.x < 0.0f && ds.y < 0.0f) {
                         // printf("Tá colidindo\n");
                         // ent1->setPosicao(sf::Vector2f(300,150));
@@ -174,7 +171,7 @@ void Gerenciador_Colisoes::executar(){
     }
  }
 }
-}
+
 
 
 

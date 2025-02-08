@@ -4,7 +4,7 @@ namespace Obstaculos{
     Arvore::Arvore(sf::Vector2f pos, sf::Vector2f tam,int ID):
         Obstaculo(pos,tam, ID)
     {
-
+        empuxo();
     }
     Arvore::Arvore(){}
     Arvore:: ~Arvore(){
@@ -25,6 +25,10 @@ void Arvore::desenhar(){
         }
 }
 void Arvore::colisao(Entidade* outraEntidade,sf::Vector2f distancia){}
+
+void Arvore::empuxo(){
+    gravidade=0;
+}
 
 }
 }

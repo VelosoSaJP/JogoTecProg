@@ -5,9 +5,7 @@ namespace Obstaculos{
 Plataforma :: Plataforma(sf::Vector2f pos, sf::Vector2f tam, int ID):
     Obstaculo(pos,tam,ID)
 {
-            //  pSprite->setColor(sf::Color::Blue);
-            
-            //  printf("POSIÇÃO EM X DA PLATAFORMA: %.1f\n",pos.x);
+    empuxo();
 
 }
 Plataforma :: Plataforma(){
@@ -39,5 +37,9 @@ void Plataforma :: desenhar(){
 void Plataforma :: salvar(){}
 
 void Plataforma::colisao(Entidade* outraEntidade,sf::Vector2f distancia){}
+
+void Plataforma::empuxo(){
+    gravidade=0;
+}
 }
 }

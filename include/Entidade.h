@@ -33,7 +33,6 @@ void setPosicao(sf::Vector2f pos);
 virtual void colisao(Entidade* outraEntidade,sf::Vector2f distancia)=0;
 void setTamanho(sf::Vector2f tam);
 
-
 virtual void executar() = 0; //ERA PARA SER VIRTUAL AQUI HEIN
 virtual void salvar()=0; 
 /*útil para pegar a posição da entidade para fins de mudança/movimento.Acessa o Ente e busca a postion do sprite*/

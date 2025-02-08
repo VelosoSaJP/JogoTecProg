@@ -19,7 +19,7 @@ public:
     virtual void desenhar()=0;
 
     int const getVidas();
-    virtual void colisao(Entidade* outraEntidade,sf::Vector2f distancia)=0;
+     virtual void colisao(Entidade* outraEntidade,sf::Vector2f distancia)=0;
 
 };
 }

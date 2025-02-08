@@ -17,6 +17,7 @@ class Esqueleto : public Inimigo{
     void danificar(Jogador* p);
     void salvar();
     void colisao(Entidade* outraEntidade,sf::Vector2f distancia);
+    void empuxo();
 };
 
 }
