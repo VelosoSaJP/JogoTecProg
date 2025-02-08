@@ -16,23 +16,26 @@ Gerenciador_Colisoes::Gerenciador_Colisoes():
 }
  
  bool Gerenciador_Colisoes :: NoChao(Entidades::Entidade* ent1){
-   if(ent1){
+   if(ent1){         
+        for(int j = 0; j < listaObstaculo->getTamanho(); j++){
+                Entidades::Entidade* ent2 = listaObstaculo->getLista().operator[](j);
+                sf::Sprite* reposicionando2 = ent2->getSprite();
+                reposicionando2->setOrigin(reposicionando2->getGlobalBounds().width / 2, reposicionando2->getGlobalBounds().height / 2);
 
-    for(int j = 0; j < listaObstaculo->getTamanho(); j++){
-        Entidades::Entidade* ent2 = listaObstaculo->getLista().operator[](j);
-            
-        if (ent2){
-            sf::Vector2f ds = gerenciaColisao(ent1, ent2);
-            if(ds.y < 0.0f){
-                printf("TÁ NO CHÃO\n");
-                    return false;//está no chão.
-            }
-            else{
-                printf("Não tá no chão\n");
-                return true;
+               if (ent2){
+                    sf::Vector2f ds = gerenciaColisao(ent1, ent2);
+                    // printf("Pos em y: %.1f\n",ds.y);
+                    if (ds.y < 0.0f) {
+                        printf("Tá colidindo\n");
+                        return true;
+                    }
+
+                }   
             }
         }
-    }
+        return false;
+   }
+ 
 
 
    /* for(int j = 0; j < listaObstaculo->getTamanho(); j++){
@@ -45,8 +48,6 @@ Gerenciador_Colisoes::Gerenciador_Colisoes():
                 return false;
              }*/
   
- }
- }
 
 void Gerenciador_Colisoes::setListas(Lista::ListaEntidade* lPers, Lista::ListaEntidade* lObs){
    if (lPers){
@@ -106,6 +107,7 @@ const sf::Vector2f Gerenciador_Colisoes::gerenciaColisao(Entidades::Entidade* en
             fabs((pos1.y + tam1.y/2.0f) - (pos2.y + tam2.y/2.0f)));
 
         sf::Vector2f somaMetadeRetangulo(tam1.x/2.0f + tam2.x/2.0f, tam1.y/2.0f + tam2.y/2.0f);
+
         return sf::Vector2f(distanciaEntreCentros.x - somaMetadeRetangulo.x, distanciaEntreCentros.y - somaMetadeRetangulo.y);
 
     
@@ -154,10 +156,10 @@ void Gerenciador_Colisoes::executar(){
         if (ent1 && ent1->getID()==1){
             for(int j = 0; j < listaObstaculo->getTamanho(); j++){
                 Entidades::Entidade* ent2 = listaObstaculo->getLista().operator[](j);
-               sf::Sprite* reposicionando2 = ent2->getSprite();
-            reposicionando2->setOrigin(reposicionando2->getGlobalBounds().width / 2, reposicionando2->getGlobalBounds().height / 2);
+                sf::Sprite* reposicionando2 = ent2->getSprite();
+                reposicionando2->setOrigin(reposicionando2->getGlobalBounds().width / 2, reposicionando2->getGlobalBounds().height / 2);
 
-                if (ent2){
+               if (ent2){
                     sf::Vector2f ds = gerenciaColisao(ent1, ent2);
 
                     if (ds.x < 0.0f && ds.y < 0.0f) {

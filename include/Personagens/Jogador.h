@@ -22,6 +22,7 @@ public:
     void colisao(Entidade* outraEntidade,sf::Vector2f distancia);
     void saltar();
     void andar(bool direita);
+    bool passivelDeMovimento(sf::Vector2f novaPosicao);
 
 };
 

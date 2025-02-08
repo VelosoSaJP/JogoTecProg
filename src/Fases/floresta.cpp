@@ -122,13 +122,16 @@ void Floresta::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
 void Floresta::criarObstaculo(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
     
     if(id==224){//ESCADAS DAS ÁRVORES.
-            Entidades::Obstaculos::Arvore* pArvore = new Entidades::Obstaculos::Arvore(posicao,sf::Vector2f(1,1),idOBSTACULO);
-            pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pArvore));
+
+        criarPlataforma(posicao,tamanho,idOBSTACULO);
+            // Entidades::Obstaculos::Arvore* pArvore = new Entidades::Obstaculos::Arvore(posicao,sf::Vector2f(1,1),idOBSTACULO);
+            //  pArvore->executar();
+            // pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pArvore));
     }
     
     else if(id==297){
         
-        if (aux_arv_floresta){
+        if (1){
             Entidades::Obstaculos::Arvore* pArvore = new Entidades::Obstaculos::Arvore(posicao,sf::Vector2f(1,1),idOBSTACULO);     
             if(criaArvore_alteatoria){ //Só o primeiro bloco cria a imagem.
                 pArvore->setTextura("/home/murilo/code/JogoTecProg/assets/Fases/Fase1/props/arvore4.png");  

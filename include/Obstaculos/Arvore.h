@@ -12,6 +12,7 @@ class Arvore : public Obstaculo{
     ~Arvore();
     void executar();
     void salvar(); 
+    void desenhar();
     void colisao(Entidade* outraEntidade,sf::Vector2f distancia);
 
 };

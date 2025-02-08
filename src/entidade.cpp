@@ -8,7 +8,7 @@ Entidade::Entidade(sf::Vector2f pos, sf::Vector2f tam, int ID):
     Ente(ID),
     posicao(pos),
     tamanho(tam),
-    gravidade(0.0001f),
+    gravidade(0.0005f),
     altura_pulo(5),
     velocidade(0.0f,0.0f)
 {

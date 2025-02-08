@@ -31,8 +31,8 @@ namespace Personagens{
 
     void Jogador::saltar(){
       if(pGC){
-        
-            if(1){
+            printf("Tá vindo aqui\n");
+            if(pGC->NoChao(this)){
                     velocidade.y= - sqrtf(gravidade * altura_pulo);
                     velocidade.y*=10;                  
          }
@@ -66,8 +66,10 @@ namespace Personagens{
     sf::Vector2f novaPosicao = pSprite->getPosition();
 
     // Se você quiser reposicionar o sprite para uma nova posição (absoluta)
-    
-    setPosicao(novaPosicao);
+    if(passivelDeMovimento(novaPosicao)){
+
+        setPosicao(novaPosicao);
+    }
 
 
     pSprite->setOrigin(pSprite->getLocalBounds().width / 2, pSprite->getLocalBounds().height / 2);
@@ -79,10 +81,9 @@ namespace Personagens{
         velocidade.y=0;
      
         if (direita){
-            velocidade.x = pGG->getDeltaTime() *0.03;
+            velocidade.x = pGG->getDeltaTime() *0.05;
             
             if (this->getPosicao().x < WIDTH) {
-                // pSprite -> move(velocidade.x,velocidade.y );
 
                 if(pSprite->getScale().x < 0){
                     pSprite->setOrigin(pSprite->getLocalBounds().width / 2, pSprite->getOrigin().y); 
@@ -90,14 +91,10 @@ namespace Personagens{
                 }
             }
 
-                // ESSAS 2 LINHAS DE BAIXO FAZEM SUMIR O BONECO DA TELA.
-                velocidade.y=0;
-                // this->setPosicao(this->getPosicao());
         }
         else{
-            velocidade.x = -pGG->getDeltaTime() *0.03;
-            if(this->getPosicao().x>0){
-                // pSprite -> move(velocidade.x,velocidade.y );
+            velocidade.x = -pGG->getDeltaTime() *0.05;
+            if(passivelDeMovimento(this->getPosicao())){
 
                 if(pSprite->getScale().x > 0){
                     pSprite->setOrigin(pSprite->getLocalBounds().width / 2, pSprite->getOrigin().y); 
@@ -108,28 +105,43 @@ namespace Personagens{
 
         }
     }
-        void Entidades::Personagens::Jogador::colisao(Entidade* outraEntidade,sf::Vector2f distancia){
-            int opt = outraEntidade->getID();
-            switch (opt)
-            {
-            case (idOBSTACULO): 
-                {
-                     if(posicao.x > outraEntidade->getPosicao().x){
-                        //    setPosicao(sf::Vector2f(posicao.x+distancia.x,getPosicao().y));
-                    }
-                    
-                    if(getPosicao().y > outraEntidade->getPosicao().y){
-                        // printf("POS X:%.f");
-                         setPosicao(sf::Vector2f(getPosicao().x,getPosicao().y+distancia.y));
+       void Entidades::Personagens::Jogador::colisao(Entidade* outraEntidade, sf::Vector2f distancia) {
+    int opt = outraEntidade->getID();
+    switch (opt) {
+        case (idOBSTACULO): {
+            sf::Vector2f novaPosicao = getPosicao(); // Posição atual do jogador
 
-                     }
-                                      
+            // Se estiver colidindo no eixo X, ajusta a posição X
+
+            if (distancia.y < 0) {
+                if (posicao.y > outraEntidade->getPosicao().y) {
+                    novaPosicao.y = outraEntidade->getPosicao().y + outraEntidade->getTamanho().y;
+                } else {
+                    novaPosicao.y = outraEntidade->getPosicao().y - getTamanho().y;
                 }
-                break;
+            }
+
+            else if (distancia.x < 0) {
+                    printf("Veio aqui\n");
+                if (posicao.x > outraEntidade->getPosicao().x) {
+                    novaPosicao.x = outraEntidade->getPosicao().x + outraEntidade->getTamanho().x;
+                } else {
+                    novaPosicao.x = outraEntidade->getPosicao().x - getTamanho().x;
+                }
+                    printf("DIST em X: %1.f\n",distancia.x);
+                    printf("DIST em Y: %1.f\n",distancia.y);
+                    exit(1);
+            }
+
+            setPosicao(novaPosicao); // Atualiza a posição do jogador
+
+            break;
+        }
+
             
             case(idESQUELETO): 
                 {
-                    
+                        //SE FOR EM X-> ESQUELETO DA DANO NO JOG, SE FOR EM Y-> JOG DA DANO EM ESQUELETO.
                 }
             default:
                 break;
@@ -137,7 +149,21 @@ namespace Personagens{
 
         }
 
-    
+    bool Jogador :: passivelDeMovimento(sf::Vector2f novaPosicao){
+        if (novaPosicao.x > WIDTH-12){
+            setPosicao(sf::Vector2f(WIDTH-15,getPosicao().y));
+            return false;
+        }
+        else if (novaPosicao.x<10){
+            setPosicao(sf::Vector2f(15,getPosicao().y));
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+
     void Jogador :: salvar(){}
 }
 }

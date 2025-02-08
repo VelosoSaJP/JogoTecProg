@@ -69,19 +69,19 @@ void Fase::criarJogadores(int jog,sf::Vector2f posicao, sf::Vector2f tamanho){
         pLEPersonagens->incluir(static_cast<Entidades::Entidade*>(pJog1));
     }
     else{
-        // Entidades::Personagens::Jogador *pJog2 = new Entidades::Personagens::Jogador(posicao,  sf::Vector2f(0.1,0.1), idJOGADOR);
-        // pJog2->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Jogador2/guerreira.png");
-        // pGEntradas->setJogador2(pJog2);
-        // pLEPersonagens->incluir(static_cast<Entidades::Entidade*>(pJog2));
+        Entidades::Personagens::Jogador *pJog2 = new Entidades::Personagens::Jogador(posicao,  sf::Vector2f(0.1,0.1), idJOGADOR);
+        pJog2->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Jogador2/guerreira.png");
+        pGEntradas->setJogador2(pJog2);
+        pLEPersonagens->incluir(static_cast<Entidades::Entidade*>(pJog2));
 
     }
 }
 
 void Fase::criarPlataforma(sf::Vector2f posicao, sf::Vector2f tamanho,int id){
-        
-        Entidades::Obstaculos::Plataforma* pPlataforma = new Entidades::Obstaculos::Plataforma(posicao,tamanho,idOBSTACULO);
+        //aumentei o tamanho da plataforma para ficar mais bonita a colisão
+        Entidades::Obstaculos::Plataforma* pPlataforma = new Entidades::Obstaculos::Plataforma(posicao,tamanho,idOBSTACULO); 
         pPlataforma->setTextura("/home/murilo/code/JogoTecProg/assets/Fases/Fase2/Tiles_rock/tile5.png");
-        
+        // pPlataforma->setPosicao(posicao);
         pPlataforma->executar();
         pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pPlataforma));
 
