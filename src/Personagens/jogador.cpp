@@ -31,13 +31,14 @@ namespace Personagens{
 
     void Jogador::saltar(){
       if(pGC){
-            // printf("Tá vindo aqui\n");
             if(pGC->NoChao(this)){
+                //  printf("Tá vindo aqui\n");
                     velocidade.y= - sqrtf(gravidade * altura_pulo);
-                    velocidade.y*=10;                  
+                    velocidade.y*=10;     
+                             
          }
             else{
-            //    printf("Não estava no chão\n");
+                //    printf("Não estava no chão\n");
             }
         }
     }
@@ -143,6 +144,7 @@ void Jogador::colisao(Entidade* outraEntidade, sf::Vector2f distancia) {
 
             // Se estiver colidindo no eixo X, ajusta a posição X
             if (distancia.y < 0) {
+                setPodeSaltar(false);
                 if (posicao.y > outraEntidade->getPosicao().y) {
                     novaPosicao.y = outraEntidade->getPosicao().y + pS->getGlobalBounds().height/2;
                 } else {
@@ -177,5 +179,13 @@ void Jogador::colisao(Entidade* outraEntidade, sf::Vector2f distancia) {
             }
 
         }
+
+bool Jogador::getPodeSaltar(){
+    return pode_saltar;
+}
+
+ void Jogador::setPodeSaltar(bool permissao){
+     pode_saltar=permissao;
+}
 }
 }

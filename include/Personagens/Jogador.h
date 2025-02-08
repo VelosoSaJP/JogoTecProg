@@ -21,6 +21,8 @@ public:
     void parar(bool salto);
     void colisao(Entidade* outraEntidade,sf::Vector2f distancia);
     void saltar();
+    bool getPodeSaltar();
+    void setPodeSaltar(bool permissao);
     void andar(bool direita);
     bool passivelDeMovimento(sf::Vector2f novaPosicao);
 

@@ -15,26 +15,25 @@ Gerenciador_Colisoes::Gerenciador_Colisoes():
  listaObstaculo(nullptr){
 }
  
- bool Gerenciador_Colisoes :: NoChao(Entidades::Entidade* ent1){
-   if(ent1){         
-        for(int j = 0; j < listaObstaculo->getTamanho(); j++){
-                Entidades::Entidade* ent2 = listaObstaculo->getLista().operator[](j);
-                // sf::Sprite* reposicionando2 = ent2->getSprite();
-                // reposicionando2->setOrigin(reposicionando2->getGlobalBounds().width / 2, reposicionando2->getGlobalBounds().height / 2);
+ bool Gerenciador_Colisoes::NoChao(Entidades::Entidade* ent1) {
+    // if (ent1) {   
+// 
+        // for (int j = 0; j < listaObstaculo->getTamanho(); j++) {
+            // Entidades::Entidade* ent2 = listaObstaculo->getLista().operator[](j);
+// 
+            // if (ent2) {
+                // sf::Vector2f ds = gerenciaColisao(ent1, ent2);
+                // if (ds.x < 0.0f && ds.y < 0.0f) {  
+                    // ent1->setPodeSaltar(false);  // Só libera salto se houver colisão com o chão
+                    // return true;
+                // }
+            // }   
+        // }
+    // }
+    // ent1->setPodeSaltar(true);
+    // return false;  // Se nenhuma colisão foi detectada, retorna falso
+}
 
-               if (ent2){
-                    sf::Vector2f ds = gerenciaColisao(ent1, ent2);
-                    if (ds.y < 0.0f) {
-                        printf("ds.x: %.1f e ds.y= %.1f\n",ds.x,ds.y);
-                        return true;
-                    }
-
-                }   
-            }
-        }
-        return false;
-   }
- 
 
 
    /* for(int j = 0; j < listaObstaculo->getTamanho(); j++){
@@ -69,21 +68,29 @@ Gerenciador_Colisoes::~Gerenciador_Colisoes()
 const sf::Vector2f Gerenciador_Colisoes::gerenciaColisao(Entidades::Entidade* ent1, Entidades::Entidade* ent2) {
       if(ent1 && ent2){
 
-        sf::Sprite* pSprite1 = ent1->getSprite();
-        sf::Sprite* pSprite2 = ent2->getSprite();
-        
-    
-        sf::Vector2f pos1 {pSprite1->getGlobalBounds().left,pSprite1->getGlobalBounds().top};
-        sf::Vector2f pos2  {pSprite2->getGlobalBounds().left,pSprite2->getGlobalBounds().top};
-        sf::Vector2f tam1 = {pSprite1->getGlobalBounds().width,pSprite1->getGlobalBounds().height};
-        sf::Vector2f tam2 = {pSprite2->getGlobalBounds().width,pSprite2->getGlobalBounds().height};
+     sf::Sprite* pSprite1 = ent1->getSprite();
+     sf::Sprite* pSprite2 = ent2->getSprite();
 
-        sf::Vector2f distanciaEntreCentros(fabs((pos1.x + tam1.x/2.0f) - (pos2.x + tam2.x/2.0f)),
-            fabs((pos1.y + tam1.y/2.0f) - (pos2.y + tam2.y/2.0f)));
+    sf::Vector2f tam_hitbox1={pSprite1->getGlobalBounds().width, pSprite1->getGlobalBounds().height / 2};
+     sf::Vector2f pos_hitbox1 ={pSprite1->getGlobalBounds().left, pSprite1->getGlobalBounds().top + pSprite1->getGlobalBounds().height / 2};
 
+
+     sf::Vector2f pos_hitbox2 ={pSprite2->getGlobalBounds().left, pSprite2->getGlobalBounds().top};
+     sf::Vector2f tam_hitbox2 ={pSprite2->getGlobalBounds().width,pSprite2->getGlobalBounds().height};
+
+
+     tam_hitbox1.x*=0.5;
+
+     pos_hitbox1.x += (pSprite1->getGlobalBounds().width * (1 - 0.6)) / 2;
+
+
+
+        sf::Vector2f distanciaEntreCentros(fabs((pos_hitbox1.x + tam_hitbox1.x/2.0f) - (pos_hitbox2.x + tam_hitbox2.x/2.0f)),
+            fabs((pos_hitbox1.y + tam_hitbox1.y/2.0f) - (pos_hitbox2.y + tam_hitbox2.y/2.0f)));
+ 
        
-
-        sf::Vector2f somaMetadeRetangulo(tam1.x/2.0f + tam2.x/2.0f, tam1.y/2.0f + tam2.y/2.0f);
+ 
+        sf::Vector2f somaMetadeRetangulo(tam_hitbox1.x/2.0f + tam_hitbox2.x/2.0f, tam_hitbox1.y/2.0f + tam_hitbox2.y/2.0f);
 
         return sf::Vector2f(distanciaEntreCentros.x - somaMetadeRetangulo.x, distanciaEntreCentros.y - somaMetadeRetangulo.y);
 
@@ -127,11 +134,9 @@ void Gerenciador_Colisoes::executar(){
             for(int j = 0; j < listaObstaculo->getTamanho(); j++){
                 Entidades::Entidade* ent2 = listaObstaculo->getLista().operator[](j);
                 
-
                if (ent2){
 
                     sf::Vector2f ds = gerenciaColisao(ent1, ent2);
-                    
                     if (ds.x < 0.0f && ds.y < 0.0f) {
                          ent1->colisao(ent2, ds);
                     }

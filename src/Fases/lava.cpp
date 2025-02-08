@@ -123,32 +123,32 @@ void Lava::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
 void Lava::criarObstaculo(int id,sf::Vector2f posicao, sf::Vector2f tamanho){   
         if(id == 269){
             Entidades::Obstaculos::Fogo* pFogo = new Entidades::Obstaculos::Fogo(posicao,tamanho,idDANOSO);
-
+             pFogo->setTextura("/home/murilo/code/JogoTecProg/assets/transparent_16x16.png");
             pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pFogo));            
         }
         else if(id == 232){ //lava fake
             if(rand()%2){
                 Entidades::Obstaculos::Fogo* pFogo = new Entidades::Obstaculos::Fogo(posicao,tamanho,idDANOSO);
+                 pFogo->setTextura("/home/murilo/code/JogoTecProg/assets/transparent_16x16.png");
                 pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pFogo));   
             }
         }
-        // else if(id == 207){ //arvore fake
-            // if (aux_arvore){
-                // Entidades::Obstaculos::Arvore* pArvore = new Entidades::Obstaculos::Arvore(posicao,sf::Vector2f(0.65,0.65),idOBSTACULO);     
-                // if(cria_textura_arv){ //Só o primeiro bloco cria a imagem.
-                    // pArvore->setTextura("/home/murilo/code/JogoTecProg/assets/Fases/Fase1/props/tree01.png");  
-                    // pArvore->executar();
-                    // cria_textura_arv=false;
-                // }
-            // pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pArvore));
-        // }
-        // }
-        // else if(id == 224){
-            // Entidades::Obstaculos::Arvore* pArvore = new Entidades::Obstaculos::Arvore(posicao,tamanho,idOBSTACULO);
-            // pArvore->setTextura("/home/murilo/code/JogoTecProg/assets/Fases/Fase1/props/tree01.png");  
-            // pArvore->executar();
-            // pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pArvore)); 
-        // }
+         else if(id == 207){ //arvore fake
+             if (aux_arvore){
+                 Entidades::Obstaculos::Arvore* pArvore = new Entidades::Obstaculos::Arvore(posicao,sf::Vector2f(0.65,0.65),idOBSTACULO);     
+                 if(cria_textura_arv){ //Só o primeiro bloco cria a imagem.
+                    pArvore->setTextura("/home/murilo/code/JogoTecProg/assets/Fases/Fase1/props/tree01.png");  
+                    pArvore->executar();
+                    cria_textura_arv=false;
+                }
+            pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pArvore));
+        }
+        }
+         else if(id == 224){
+            Entidades::Obstaculos::Arvore* pArvore = new Entidades::Obstaculos::Arvore(posicao,sf::Vector2f(0.65,0.65),idOBSTACULO);
+             pArvore->setTextura("/home/murilo/code/JogoTecProg/assets/transparent_16x16.png");  
+             pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pArvore)); 
+         }
 
         
     }

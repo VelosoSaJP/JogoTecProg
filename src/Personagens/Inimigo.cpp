@@ -43,5 +43,7 @@ namespace Personagens{
     //    
      }
 
+     void Inimigo::empuxo(){}
+
 }
 }

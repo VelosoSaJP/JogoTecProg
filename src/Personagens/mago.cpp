@@ -37,6 +37,7 @@ void Mago :: salvar(){
     
 }
 void Mago::colisao(Entidade* outraEntidade,sf::Vector2f distancia){}
+
 void Mago::empuxo(){
     gravidade=0;
     velocidade.y=0;

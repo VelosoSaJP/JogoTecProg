@@ -1,3 +1,3 @@
-/home/murilo/Desktop/JogoTecProg - 8_fev/build/CMakeFiles/JogoTecProg.dir
-/home/murilo/Desktop/JogoTecProg - 8_fev/build/CMakeFiles/edit_cache.dir
-/home/murilo/Desktop/JogoTecProg - 8_fev/build/CMakeFiles/rebuild_cache.dir
+/home/murilo/code/JogoTecProg/build/CMakeFiles/JogoTecProg.dir
+/home/murilo/code/JogoTecProg/build/CMakeFiles/edit_cache.dir
+/home/murilo/code/JogoTecProg/build/CMakeFiles/rebuild_cache.dir

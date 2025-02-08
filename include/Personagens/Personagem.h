@@ -21,7 +21,9 @@ public:
     int const getVidas();
     virtual void colisao(Entidade* outraEntidade,sf::Vector2f distancia)=0;
     void hitbox();
-
+    virtual void empuxo();
+    virtual bool getPodeSaltar();
+    virtual void setPodeSaltar(bool permissao);
 
 };
 }

@@ -10,7 +10,8 @@ Entidade::Entidade(sf::Vector2f pos, sf::Vector2f tam, int ID):
     tamanho(tam),
     gravidade(0.0005f),
     altura_pulo(5),
-    velocidade(0.0f,0.0f)
+    velocidade(0.0f,0.0f),
+    pode_saltar(true)
 {
     pText= new sf::Texture(); 
     pSprite = new sf::Sprite();   
@@ -83,7 +84,8 @@ sf::Vector2f Entidade::getPosicao() const {
 }
 
 
-
 void Entidade::andar(bool direita){}
-
+bool Entidade::getPodeSaltar(){}
+void Entidade::setPodeSaltar(bool permissao){}
+void Entidade::empuxo(){}
 }

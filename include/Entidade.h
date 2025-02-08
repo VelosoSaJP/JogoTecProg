@@ -12,6 +12,7 @@ protected:
         sf::Vector2f posicao;
         sf::Sprite* pSprite; //equivalente ao Figura*
         sf::Texture* pText;
+        bool pode_saltar;
 public:
 Entidade();
 Entidade(sf::Vector2f pos, sf::Vector2f tam, int ID);
@@ -32,8 +33,11 @@ sf::Vector2f getPosicao() const;
 void setPosicao(sf::Vector2f pos);
 virtual void colisao(Entidade* outraEntidade,sf::Vector2f distancia)=0;
 void setTamanho(sf::Vector2f tam);
+virtual bool getPodeSaltar();
+virtual void setPodeSaltar(bool permissao);
+virtual void empuxo();
 
-virtual void executar() = 0; //ERA PARA SER VIRTUAL AQUI HEIN
+virtual void executar() = 0;
 virtual void salvar()=0; 
 /*útil para pegar a posição da entidade para fins de mudança/movimento.Acessa o Ente e busca a postion do sprite*/
 };

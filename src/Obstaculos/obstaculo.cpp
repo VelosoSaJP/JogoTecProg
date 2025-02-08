@@ -14,10 +14,15 @@ namespace Entidades{
 
         }
         void Obstaculo :: executar(){
+            desenhar();
         }
+
+        void Obstaculo :: desenhar(){
+       }
         void Obstaculo :: salvar(){
 
         }
+         void Obstaculo::empuxo(){}
 
 
 
