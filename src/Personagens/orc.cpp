@@ -16,6 +16,7 @@ Orc :: ~Orc(){
 
 void Orc :: executar(){
     desenhar();
+    empuxo();
 }
 void Orc :: desenhar(){
     if (pSprite){

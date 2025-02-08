@@ -15,11 +15,16 @@ Pedra :: ~Pedra(){
 }
 
 void Pedra::executar(){
-    
+    desenhar();
 }
 void Pedra::salvar(){
     
 } 
+
+void Pedra::desenhar(){
+    
+}
+
 void Pedra::colisao(Entidade* outraEntidade,sf::Vector2f distancia){}
 
 void Pedra::empuxo(){

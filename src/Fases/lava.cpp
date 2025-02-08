@@ -123,8 +123,9 @@ void Lava::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
 void Lava::criarObstaculo(int id,sf::Vector2f posicao, sf::Vector2f tamanho){   
         if(id == 269){
             Entidades::Obstaculos::Fogo* pFogo = new Entidades::Obstaculos::Fogo(posicao,tamanho,idDANOSO);
-             pFogo->setTextura("/home/murilo/code/JogoTecProg/assets/transparent_16x16.png");
-            pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pFogo));            
+            pFogo->setTextura("/home/murilo/code/JogoTecProg/assets/transparent_16x16.png");
+            pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pFogo));
+ 
         }
         else if(id == 232){ //lava fake
             if(rand()%2){

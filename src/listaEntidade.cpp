@@ -15,7 +15,9 @@ namespace Lista{
 
     void ListaEntidade::incluir(Entidades::Entidade* pE){
         if(pE){
+            // printf("antes do fogo: %d \n",getTamanho());
             LEs.incluir(pE);
+            // printf("depois do fogo: %d \n",getTamanho());
         }
         else{
             cout<<"Erro no ponteiro de entidade para incluir na lista"<< endl;
@@ -41,9 +43,8 @@ namespace Lista{
                     pPercorre->andar(true);
                 }
                     pPercorre->efeitoGravidade();
-                
-                    pPercorre->executar(); 
-                    //CONFERIR SE JÁ DESENHA, CASO NÃO: pPercorre->desenhar();
+                    pPercorre->executar();  
+                                      
             }
             ++it; //sobrecarga do operator.
         

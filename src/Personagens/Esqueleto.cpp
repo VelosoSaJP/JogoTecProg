@@ -22,9 +22,7 @@ void Esqueleto :: executar(){
 }
 void Esqueleto :: desenhar(){
     if (pSprite){
-        // sf::Vector2f tam_original=getTamanho();
-        pGG->desenhar(pSprite); //será que dá o this?
-        // setTamanho(sf::Vector2f(16,16));
+        pGG->desenhar(pSprite); 
     }
     else{
         throw std::runtime_error("o Sprite do esqueleto estava vazio");

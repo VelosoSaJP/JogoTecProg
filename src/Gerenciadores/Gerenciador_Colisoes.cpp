@@ -137,7 +137,12 @@ void Gerenciador_Colisoes::executar(){
                if (ent2){
 
                     sf::Vector2f ds = gerenciaColisao(ent1, ent2);
+    
                     if (ds.x < 0.0f && ds.y < 0.0f) {
+                        if(ent2->getID()==idDANOSO){
+                             printf("posicao x= %.1f e y=%.1f\n",ent2->getPosicao().x,ent2->getPosicao().y);
+                        //    printf("Entrando em danoso\n");
+                        }
                          ent1->colisao(ent2, ds);
                     }
                 }

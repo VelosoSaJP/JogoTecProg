@@ -67,6 +67,8 @@ void Fase::criarJogadores(int jog,sf::Vector2f posicao, sf::Vector2f tamanho){
          pJog1->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Jogador1/guerreiro.png");
          pGEntradas->setJogador1(pJog1);
          pLEPersonagens->incluir(static_cast<Entidades::Entidade*>(pJog1));
+        
+       
     }
     else{
          Entidades::Personagens::Jogador *pJog2 = new Entidades::Personagens::Jogador(posicao,  sf::Vector2f(0.1,0.1), idJOGADOR);
