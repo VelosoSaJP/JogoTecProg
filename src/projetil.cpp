@@ -15,6 +15,7 @@ Projetil :: ~Projetil(){
     
 }
 void Projetil :: executar(){
+    arremesado();
     desenhar();
 }
 void Projetil :: desenhar(){
@@ -28,5 +29,15 @@ void Projetil :: colisao(Entidade* outraEntidade,sf::Vector2f distancia){
 void Projetil :: salvar(){
 
 } 
+
+void Projetil :: arremesado(){
+        float limite_mov=80-pSprite->getGlobalBounds().width/2;
+         
+         
+            velocidade.x = pGG->getDeltaTime() *0.01;
+            pSprite -> move(velocidade.x,velocidade.y );
+       
+  
+}
 
 }

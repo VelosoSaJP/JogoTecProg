@@ -8,11 +8,13 @@ pGE (Gerenciadores::Gerenciador_Eventos::getInstancia()),
 pGEntradas(Gerenciadores::Gerenciador_Entradas::getInstancia()),
 pLEPersonagens(nullptr),
 pLEEstaticas(nullptr),
+pMago(nullptr),
 pGColisor(Gerenciadores::Gerenciador_Colisoes::getInstancia())
 
 {
   pLEPersonagens=new Lista::ListaEntidade();
   pLEEstaticas=new Lista :: ListaEntidade();
+  pMago= new Entidades::Personagens::Mago();
   
 
 }
@@ -24,6 +26,9 @@ Fase :: ~Fase(){
         if(pLEEstaticas){
             delete pLEEstaticas;
         }
+            if(pMago){
+                delete pMago;
+            }
     }
     pGG = nullptr;
     pGE = nullptr;
@@ -40,9 +45,11 @@ void Fase ::executar(){
     {
         pGG->atualizaDeltaTime();        
     
-        if(pGColisor)
+        if(pGColisor && pMago)
         {
               pGColisor->setListas(pLEPersonagens,pLEEstaticas);
+              pMago->setLista(pLEPersonagens);
+           
             if (pGE)
             {
                 pGE->executar();
@@ -54,6 +61,7 @@ void Fase ::executar(){
                         pGG->carregarMapa(getCaminhoMapa());
                         pLEPersonagens->percorrer();
                     }
+
                 } 
             }
             

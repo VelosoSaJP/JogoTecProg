@@ -22,6 +22,7 @@ class Inimigo : public Personagem{
     virtual void danificar(Jogador* p)=0;
     virtual void colisao(Entidade* outraEntidade,sf::Vector2f distancia)=0;
     virtual void empuxo();
+    virtual void atacar(sf::Vector2f pos, sf::Vector2f tam, int ID);
 
 
     // void salvarDataBuffer();

@@ -56,6 +56,7 @@ void Pedra::empuxo(){
 
 void Pedra::obstacular(Personagens::Jogador* pjog){
     if(pjog){
+        
         pjog->setVida(pjog->getVida()-danar);
     }
     else{

@@ -46,10 +46,12 @@ namespace Personagens{
     void Jogador:: executar(){
         atualizaPosicao();
         hitbox();
+        checarMorte();
         desenhar();
 
-    }
 
+
+    }
 
     void Jogador :: desenhar(){
          

@@ -21,6 +21,7 @@ public:
     virtual void colisao(Entidade* outraEntidade,sf::Vector2f distancia)=0;
     void hitbox();
     virtual void empuxo();
+    bool checarMorte();
     virtual bool getPodeSaltar();
     virtual void setPodeSaltar(bool permissao);
     void setVida(int vida);

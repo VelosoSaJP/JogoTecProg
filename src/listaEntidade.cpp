@@ -1,5 +1,5 @@
 #include "../include/Listas/ListaEntidade.h" 
-#include "Entidade.h" 
+
 
 namespace Lista{
 
@@ -15,9 +15,12 @@ namespace Lista{
 
     void ListaEntidade::incluir(Entidades::Entidade* pE){
         if(pE){
-            // printf("antes do fogo: %d \n",getTamanho());
+            printf("TAM: %d \n",getTamanho());
+            cout<<"endereço:  "<<pE<<endl;
+            cout<<"em x: "<<pE->getPosicao().x<<"em y: "<<pE->getPosicao().y<<endl;
+            cout<<"ID:  "<<pE->getID()<<endl;
+    
             LEs.incluir(pE);
-            // printf("depois do fogo: %d \n",getTamanho());
         }
         else{
             cout<<"Erro no ponteiro de entidade para incluir na lista"<< endl;
@@ -40,14 +43,19 @@ namespace Lista{
             Entidades::Entidade* pPercorre = *it;
             if(pPercorre){
                 if(pPercorre->getID()==2||pPercorre->getID()==3 || pPercorre->getID()==4){ //iD dos inimigos
-                    printf("ANTES: x= %.1f e y = %.1f\n",pPercorre->getPosicao().x,pPercorre->getPosicao().y);
                       pPercorre->andar(true);
-                                          printf("DEPOIS: x= %.1f e y = %.1f\n",pPercorre->getPosicao().x,pPercorre->getPosicao().y);
-
+                }
+                 if(pPercorre->getID()==idJOGADOR){ //DEPOIS VOU PERCORRER INIMIGOS TAMBÉM.
+                    Entidades::Personagens::Personagem* pPersonagem = dynamic_cast<Entidades::Personagens::Personagem*>(pPercorre);
+                    if(pPersonagem->checarMorte()){
+                        // excluir(pPercorre);
+                        // printf("passou de excluir\n");
+                    }
                 }
               
                     pPercorre->efeitoGravidade();
-                    pPercorre->executar();  
+                    pPercorre->executar();
+                    
                                       
             }
             ++it; //sobrecarga do operator.

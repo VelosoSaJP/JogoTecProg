@@ -28,6 +28,7 @@ namespace Fases{
     {
         protected:
 
+
             Lista::ListaEntidade* pLEPersonagens;
             Lista::ListaEntidade* pLEEstaticas;
             Gerenciadores::Gerenciador_Grafico* pGG;
@@ -35,6 +36,8 @@ namespace Fases{
             Gerenciadores::Gerenciador_Entradas* pGEntradas;
             Gerenciadores::Gerenciador_Colisoes* pGColisor;
             Estado::EstadoJogar* pEstadoJogar;
+            Entidades::Personagens::Mago* pMago;
+
             
 
         public:

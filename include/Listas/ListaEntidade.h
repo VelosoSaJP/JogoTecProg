@@ -1,6 +1,7 @@
 #pragma once
 #include"Lista.h"
 #include"Entidade.h"
+#include "../Personagens/Personagem.h"
 
 /*Em todas as entidades o executar desenha a entidade e as demais coisas que ela deve fazer. Ex: se ela é um inimigo e ele se move sozinho, 
 o executar faz ele se mover (a partir de um método, como "movimenta()").

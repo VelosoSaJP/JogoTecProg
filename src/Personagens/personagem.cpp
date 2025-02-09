@@ -41,8 +41,15 @@ namespace Personagens{
 void Personagem::setVida(int vida){
     num_vidas=vida;
 }
+
 int  Personagem::getVida(){
     return num_vidas;
+}
+
+bool Personagem::checarMorte(){
+    if (getVida()<0){
+        return true;
+    }
 }
 
 bool Personagem::getPodeSaltar(){}

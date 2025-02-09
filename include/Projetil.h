@@ -13,6 +13,7 @@ namespace Entidades{
             void desenhar();
              void colisao(Entidade* outraEntidade,sf::Vector2f distancia);
              void salvar(); 
+             void arremesado();
 
 
     };
