@@ -15,10 +15,10 @@ namespace Lista{
 
     void ListaEntidade::incluir(Entidades::Entidade* pE){
         if(pE){
-            printf("TAM: %d \n",getTamanho());
-            cout<<"endereço:  "<<pE<<endl;
-            cout<<"em x: "<<pE->getPosicao().x<<"em y: "<<pE->getPosicao().y<<endl;
-            cout<<"ID:  "<<pE->getID()<<endl;
+            // printf("TAM: %d \n",getTamanho());
+            // cout<<"endereço:  "<<pE<<endl;
+            // cout<<"em x: "<<pE->getPosicao().x<<"em y: "<<pE->getPosicao().y<<endl;
+            // cout<<"ID:  "<<pE->getID()<<endl;
     
             LEs.incluir(pE);
         }

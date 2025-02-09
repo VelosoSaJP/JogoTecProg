@@ -97,7 +97,7 @@ const sf::Vector2f Gerenciador_Colisoes::gerenciaColisao(Entidades::Entidade* en
 }
 
 void Gerenciador_Colisoes::executar(){
-   /*      //PERSONAGEM COM PERSONAGEM
+        //PERSONAGEM COM PERSONAGEM
     for(int i = 0; i < listaPersonagem->getTamanho() - 1; i++){
         Entidades::Entidade* ent1 = listaPersonagem->getLista().operator[](i);
         //  printf("%d\n",ent1->getID());
@@ -107,22 +107,18 @@ void Gerenciador_Colisoes::executar(){
             
                 Entidades::Entidade* ent2 = listaPersonagem->getLista().operator[](j);
          
-                //  printf("ent 1: %d e ent2: %d\n",ent1->getID(),ent2->getID());
                 if(ent2){
                     sf::Vector2f ds = gerenciaColisao(ent1, ent2);
-                    // if(ent1->getID()==1){
-                    //      printf("em x: %f e em y: %f\n",ds.x,ds.y);
-                    //      cout<<"ds.x: "<<ds.x->getPosicao().x<<"ds.y: "<<ds.y->getPosicao().y<<endl;
-                    // }
+ 
                         if(ds.x < 0.0f && ds.y < 0.0f){
-                            // printf("Entrou no primeiro for\n");
+                            printf("ID ent1: %d e ID ent2: %d\n", ent1->getID(), ent2->getID());
                             ent1->colisao(ent2, ds);
                         } 
                 }
             }
         }
     }
-  */
+  
     //PERSONAGEM COM OBSTÁCULO
     for(int i = 0; i < listaPersonagem->getTamanho(); i++){
         Entidades::Entidade* ent1 = listaPersonagem->getLista().operator[](i);

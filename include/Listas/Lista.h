@@ -134,15 +134,12 @@ namespace Lista
      void Lista<TL>::incluir(TL* p){
         if(p!=nullptr){
 
-        printf("VEIO ATÉ Aqui\n");
         Elemento<TL>* pNode = new Elemento<TL> ();
 
         pNode->setInfo(p);
 
 
-        printf("PASSOU DO NODE\n");
         if(pUlt){
-            printf("ENTROU NO ÚLTIMO\n");
             pUlt->setProx(pNode);
             pUlt = pNode;
         }
