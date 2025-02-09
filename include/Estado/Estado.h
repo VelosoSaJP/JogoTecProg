@@ -1,41 +1,31 @@
 #pragma once
 
-namespace Estados{
+#include "../Ente.h"
 
-    class MaquinaEstados;
 
-    enum IDestado{
-        none = -1,
-        menuPrincipal = 0,
-        jogando,
-        menuPausa,
-        config,
-        leaderboard,
-        fimDeJogo
-    };
+    namespace Estado {
+        
+        enum stateID{
+                unknown = -1,
+                menuPrincipal = 0,
+                jogar_floresta,
+                jogar_lava
 
-    class Estado{
-    
-    protected:
-        MaquinaEstados* pMaqEstado;
-        IDestado id;
+            };
 
-    public:
-        Estado(MaquinaEstados* pMaqEstado = nullptr, Estados::IDestado ID = none);
+        class Estado /*: public Ente*/ {
+        private:
+            bool remover; //state
+        public:
+            Estado();
+            Estado(stateID ID);
+            virtual ~Estado();
+            virtual void executar() = 0;
+            virtual void desenhar();
+            void setRemover(const bool remover = true);
+            const bool getRemover() const;
+            //virtual void mudarEstadoObservador() = 0;
+            stateID ID;
+        };
 
-        virtual ~Estado();
-
-        void setMaquinaEstado(MaquinaEstados* pMaqEStado);
-
-        void mudaEstado(Estados::IDestado novoEstado);
-
-        IDestado getID() const;
-
-        virtual void update(const float dt) = 0;
-
-        virtual void render() = 0;
-
-        virtual void resetaEstado() = 0;
-
-    };
-}
+    }

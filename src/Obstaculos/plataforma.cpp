@@ -33,12 +33,9 @@ void Plataforma :: desenhar(){
 
             desenhaColisao.setOutlineThickness(1.f);
             
-            // printf("POS: x= %.1f e y= %.1f\n",desenhaColisao.getPosition().x,desenhaColisao.getPosition().y);
-            // printf("TAM: x= %.1f e y= %.1f\n",desenhaColisao.getSize().x,desenhaColisao.getSize().y);
 
 
             pGG->desenhar(pSprite);
-
             pGG->desenhar(desenhaColisao);
     }
     else{

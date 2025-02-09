@@ -4,9 +4,6 @@
 #include "../Listas/ListaEntidade.h"
 #include "../Listas/Lista.h"
 #include <math.h>
-#include <list>
-#include <vector>
-#include <set>
 #include <Ente.h>
 #include "../Obstaculos/Fogo.h"
 #include "../Obstaculos/Pedra.h"
@@ -19,7 +16,6 @@ private:
     Lista::ListaEntidade* listaPersonagem;
     Lista::ListaEntidade* listaObstaculo; 
     Lista::Lista<Entidades::Entidade> ListaEntidade;
-    std::list<Entidades::Entidade*> LP;   
 
 private:
     Gerenciador_Colisoes();

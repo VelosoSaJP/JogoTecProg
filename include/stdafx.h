@@ -8,4 +8,3 @@
 #define idPEDRA 6
 #define idFOGO 7
 #define idPROJETIL 8
-

@@ -1,4 +1,6 @@
 #include "../include/Gerenciadores/Gerenciador_Eventos.h"
+#include "../include/Gerenciadores/Gerenciador_Entradas.h"
+
 namespace Gerenciadores{
 
 Gerenciador_Eventos* Gerenciador_Eventos::instancia(NULL);
@@ -26,10 +28,10 @@ Gerenciador_Eventos* Gerenciador_Eventos::getInstancia(){
 
 void Gerenciador_Eventos::executar(){
     sf::Event evento;
+    if(!pGE){pGE = Gerenciadores::Gerenciador_Entradas::getInstancia();}
 
     if(pGG){
-         if(pGG->janelaAberta()){
-
+        if(pGG->janelaAberta()){
         while (pGG->eventoJanela(evento)){
         
             if(evento.type== sf :: Event:: Closed){
@@ -37,11 +39,12 @@ void Gerenciador_Eventos::executar(){
             }
             if(evento.type== sf:: Event:: KeyPressed){
                  pGE->teclaApertada(evento.key.code);
+
             }
             if(evento.type == sf:: Event :: KeyReleased){
                  pGE->teclaLiberada(evento.key.code);
             }
-                
+            
         }
       }
     }

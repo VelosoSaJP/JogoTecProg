@@ -35,7 +35,7 @@ Fase :: ~Fase(){
 
 
      
-void Fase::executar(){
+void Fase ::executar(){
     if (pGG)
     {
         pGG->atualizaDeltaTime();        
@@ -51,13 +51,16 @@ void Fase::executar(){
                    pLEEstaticas->percorrer();
                     if(pLEPersonagens != NULL)
                     {
+                        pGG->carregarMapa(getCaminhoMapa());
                         pLEPersonagens->percorrer();
                     }
-                            pGColisor->executar();
                 } 
             }
             
         }
+    }
+    if(pGColisor){
+        pGColisor->executar();
     }
 }
 
@@ -70,7 +73,7 @@ void Fase::criarJogadores(int jog,sf::Vector2f posicao, sf::Vector2f tamanho){
         
        
     }
-    else{
+    else if(pGEntradas->getEhDois()){
          Entidades::Personagens::Jogador *pJog2 = new Entidades::Personagens::Jogador(posicao,  sf::Vector2f(0.1,0.1), idJOGADOR,10000);
          pJog2->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Jogador2/guerreira.png");
          pGEntradas->setJogador2(pJog2);
@@ -90,6 +93,5 @@ void Fase::criarPlataforma(sf::Vector2f posicao, sf::Vector2f tamanho,int id){
 void Fase::gerenciarColisoes(){}
 
 }
-
 
 

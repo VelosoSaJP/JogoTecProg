@@ -1,9 +1,13 @@
 #pragma once
 #include <iostream>
 //#include "Ente.h"
-#include "Gerenciador_Entradas.h"
+//#include "Gerenciador_Entradas.h"
 #include "Gerenciador_Grafico.h"
 
+
+namespace Gerenciadores {
+    class Gerenciador_Entradas; // Declaração antecipada
+}
 
 namespace Gerenciadores{
 class Gerenciador_Eventos{

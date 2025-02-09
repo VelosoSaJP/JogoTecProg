@@ -14,7 +14,6 @@ Gerenciador_Grafico* Gerenciador_Grafico ::getInstancia(){
 Gerenciador_Grafico :: Gerenciador_Grafico():
    pJanela(NULL)
 {
-    delta_time=0;
     setVideoMode();
     setJanela();
 }
@@ -22,6 +21,7 @@ Gerenciador_Grafico :: Gerenciador_Grafico():
 Gerenciador_Grafico :: ~Gerenciador_Grafico(){
 
         pJanela=NULL;
+        delete instancia;
 }
 
 bool Gerenciador_Grafico :: janelaAberta() const{
@@ -90,11 +90,10 @@ void Gerenciador_Grafico::atualizaDeltaTime(){
 }
 
 void Gerenciador_Grafico::carregarMapa(string caminhoMapa){
+   //cout<<"entre carregarmapa"<<endl;
     sf::Texture mapaTexture;
     sf::Sprite mapaSprite;
- 
     
-   
     mapaTexture.loadFromFile(caminhoMapa);
 
     mapaSprite.setTexture(mapaTexture);
@@ -106,8 +105,16 @@ void Gerenciador_Grafico :: desenhar(sf::RectangleShape colisao) const{
     pJanela->draw(colisao);
 }
 
+void Gerenciador_Grafico::desenhaElemento(sf::RectangleShape corpo){
+    pJanela->draw(corpo);
+    }
 
-
+void Gerenciador_Grafico::desenhaElemento(sf::Text texto){
+    pJanela->draw(texto);
+    }
+void Gerenciador_Grafico::desenhaElemento(sf::Sprite fundo){
+    pJanela->draw(fundo);
+}
 
 }
 

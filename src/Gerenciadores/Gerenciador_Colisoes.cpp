@@ -61,8 +61,7 @@ Gerenciador_Colisoes::~Gerenciador_Colisoes()
 {
      listaPersonagem=nullptr;
      listaObstaculo=nullptr;
-    // delete listaObstaculo; //vai direto para o método limpar das listas.
-    // delete listaPersonagem;
+    delete instancia;
 }
 
 const sf::Vector2f Gerenciador_Colisoes::gerenciaColisao(Entidades::Entidade* ent1, Entidades::Entidade* ent2) {
@@ -163,7 +162,6 @@ void Gerenciador_Colisoes::executar(){
     }
  }
 }
-
 
 
 

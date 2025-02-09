@@ -40,7 +40,6 @@ void carregarMapa(string caminhoMapa);
 
 void setVideoMode();
 
-void desenhar(sf::RectangleShape colisao) const;
 
 
 void desenhar (sf::Sprite* pS) const ; //monitor Lucas Skora
@@ -51,6 +50,12 @@ void atualizaDeltaTime();
 
 void display();
 
+void desenhar(sf::RectangleShape colisao) const;
+
+
+void desenhaElemento(sf::RectangleShape corpo);
+void desenhaElemento(sf::Text texto);
+void desenhaElemento(sf::Sprite);
 
 };
 }

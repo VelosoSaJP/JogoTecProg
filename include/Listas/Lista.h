@@ -198,6 +198,9 @@ void Lista<TL>::remover(TL* p) {
 
      template <class TL>
      int Lista <TL> :: getTamanho() const{
+        if(tam){
+           // //printf("tam: %d\n",tam);
+        }
          return tam;
      }
 
