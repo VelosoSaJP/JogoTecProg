@@ -1,10 +1,12 @@
 #pragma once
 #include "Obstaculo.h"
-
+#include "../include/Personagens/Jogador.h"
 namespace Entidades{
 namespace Obstaculos{
     class Pedra : public Obstaculo{
-
+        private:
+            int danar;
+        
         public:
             Pedra(sf::Vector2f pos, sf::Vector2f tam, int ID);
             Pedra();
@@ -14,6 +16,7 @@ namespace Obstaculos{
             void desenhar();
             void colisao(Entidade* outraEntidade,sf::Vector2f distancia);
             void empuxo();
+            void obstacular(Personagens::Jogador* jog);
 
 
     };

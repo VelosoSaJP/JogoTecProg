@@ -1,18 +1,22 @@
 #pragma once
 #include "Personagem.h"
-#include "../Gerenciadores/Gerenciador_Colisoes.h"
 #include <math.h>
+
+namespace Gerenciadores {
+    class Gerenciador_Colisoes; //forward declaration
+}
+
+
 namespace Entidades{
 namespace Personagens{
 
 class Jogador : public Personagem{
 private:
-    int pontos;
     Gerenciadores::Gerenciador_Colisoes* pGC;
    
 public:
     Jogador();
-    Jogador(sf::Vector2f pos, sf::Vector2f tam, int ID);
+    Jogador(sf::Vector2f pos, sf::Vector2f tam, int ID, int vida);
     ~Jogador();
     void executar();
     void atualizaPosicao();

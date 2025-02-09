@@ -3,9 +3,9 @@
 
 namespace Entidades{
 namespace Personagens{
-    Inimigo::Inimigo(sf::Vector2f pos, sf::Vector2f tam, int ID):
-        Personagem(pos,tam,ID),
-        nivel_maldade(0),
+    Inimigo::Inimigo(sf::Vector2f pos, sf::Vector2f tam, int ID, int vida, int dano):
+        Personagem(pos,tam,ID,vida),
+       quantidade_dano(dano),
         pos_inicialX(pos.x),
         tam_plataforma(80),
         direita(false)

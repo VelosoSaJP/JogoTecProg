@@ -74,7 +74,7 @@ void Lava::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
             int aux = rand()%2;
             if (aux){    
                 posicao.x-=16;            
-                Entidades::Personagens::Mago* pMago = new Entidades::Personagens::Mago(posicao,sf::Vector2f(0.06,0.06),idMAGO);
+                Entidades::Personagens::Mago* pMago = new Entidades::Personagens::Mago(posicao,sf::Vector2f(0.06,0.06),idMAGO, 3000, 300);
                 if (pMago){
                     pMago->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Mago/mago.png");
                     pLEPersonagens->incluir(static_cast<Entidades::Entidade *>(pMago));
@@ -87,7 +87,7 @@ void Lava::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
             int aux = rand()%2;
             if (aux){
                 
-                Entidades::Personagens::Esqueleto* pEsq = new Entidades::Personagens::Esqueleto(posicao,sf::Vector2f(0.075,0.075),idESQUELETO);
+                Entidades::Personagens::Esqueleto* pEsq = new Entidades::Personagens::Esqueleto(posicao,sf::Vector2f(0.075,0.075),idESQUELETO,300,30);
                 if(pEsq){
                     pEsq->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Esqueleto/esqueleto.png");
                     pLEPersonagens->incluir(static_cast<Entidades::Entidade *>(pEsq));
@@ -99,7 +99,7 @@ void Lava::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
 
         case 424:{
             
-            Entidades::Personagens::Esqueleto* pEsq = new Entidades::Personagens::Esqueleto(posicao,sf::Vector2f(0.075,0.075),idESQUELETO);
+            Entidades::Personagens::Esqueleto* pEsq = new Entidades::Personagens::Esqueleto(posicao,sf::Vector2f(0.075,0.075),idESQUELETO,300,30);
             if(pEsq){
                 pEsq->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Esqueleto/esqueleto.png");
                 pLEPersonagens->incluir(static_cast<Entidades::Entidade *>(pEsq));
@@ -109,7 +109,7 @@ void Lava::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
         }
         case 425:{
                 posicao.x-=16;
-            Entidades::Personagens::Mago* pMago = new Entidades::Personagens::Mago(posicao,sf::Vector2f(0.06,0.06),idMAGO);
+            Entidades::Personagens::Mago* pMago = new Entidades::Personagens::Mago(posicao,sf::Vector2f(0.06,0.06),idMAGO,3000,300);
             if (pMago){
                 pMago->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Mago/mago.png");
                 pLEPersonagens->incluir(static_cast<Entidades::Entidade *>(pMago));
@@ -122,14 +122,14 @@ void Lava::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
 }
 void Lava::criarObstaculo(int id,sf::Vector2f posicao, sf::Vector2f tamanho){   
         if(id == 269){
-            Entidades::Obstaculos::Fogo* pFogo = new Entidades::Obstaculos::Fogo(posicao,tamanho,idDANOSO);
+            Entidades::Obstaculos::Fogo* pFogo = new Entidades::Obstaculos::Fogo(posicao,tamanho,idFOGO);
             pFogo->setTextura("/home/murilo/code/JogoTecProg/assets/transparent_16x16.png");
             pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pFogo));
  
         }
         else if(id == 232){ //lava fake
             if(rand()%2){
-                Entidades::Obstaculos::Fogo* pFogo = new Entidades::Obstaculos::Fogo(posicao,tamanho,idDANOSO);
+                Entidades::Obstaculos::Fogo* pFogo = new Entidades::Obstaculos::Fogo(posicao,tamanho,idFOGO);
                  pFogo->setTextura("/home/murilo/code/JogoTecProg/assets/transparent_16x16.png");
                 pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pFogo));   
             }

@@ -127,7 +127,7 @@ void Gerenciador_Colisoes::executar(){
     //PERSONAGEM COM OBSTÁCULO
     for(int i = 0; i < listaPersonagem->getTamanho(); i++){
         Entidades::Entidade* ent1 = listaPersonagem->getLista().operator[](i);
-
+    
         if (ent1 && ent1->getID()==1){//SE EU TIRAR O ID, O BONECO PARA DE FICAR PRESO EM LAVA
 
             for(int j = 0; j < listaObstaculo->getTamanho(); j++){
@@ -141,9 +141,20 @@ void Gerenciador_Colisoes::executar(){
 
                         //   printf("PEDRA posicao x= %.1f e y=%.1f\n",ent1->getPosicao().x,ent1->getPosicao().y);
                     if (ds.x < 0.0f && ds.y < 0.0f) {
-                        if(ent2->getID()==idDANOSO){
-                         printf("Entrando em danoso\n");
+                       
+                        if(ent2->getID()==idFOGO){
+                            printf("Entrando\n");
+                            Entidades::Obstaculos::Fogo* fogo = dynamic_cast< Entidades::Obstaculos::Fogo*>(ent2);
+                            Entidades::Personagens::Jogador* jogador = dynamic_cast<Entidades::Personagens::Jogador*>(ent1);
+                            fogo->obstacular(jogador);
                         }
+                        if(ent2->getID()==idPEDRA){
+                            Entidades::Obstaculos::Pedra* pedra = dynamic_cast< Entidades::Obstaculos::Pedra*>(ent2);
+                            Entidades::Personagens::Jogador* jogador = dynamic_cast<Entidades::Personagens::Jogador*>(ent1);
+                            pedra->obstacular(jogador);
+                        }
+
+                        
                          ent1->colisao(ent2, ds);
                     }
                 }

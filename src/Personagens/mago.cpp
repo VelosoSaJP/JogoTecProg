@@ -2,9 +2,9 @@
 namespace Entidades{
 namespace Personagens{
 
-Mago :: Mago(sf::Vector2f pos, sf::Vector2f tam, int ID):
-    Inimigo(pos,tam,idMAGO),
-    vida(1000){
+Mago :: Mago(sf::Vector2f pos, sf::Vector2f tam, int ID, int vida,int dano):
+    Inimigo(pos,tam,idMAGO,vida, dano)
+{
 }
 
 Mago :: Mago(){

@@ -3,7 +3,8 @@
 namespace Entidades{
 namespace Obstaculos{
 Pedra :: Pedra(sf::Vector2f pos, sf::Vector2f tam, int ID):
-    Obstaculo(pos,tam,ID)
+    Obstaculo(pos,tam,ID),
+    danar(100)
 {
     executar();
 }
@@ -52,5 +53,16 @@ void Pedra::colisao(Entidade* outraEntidade,sf::Vector2f distancia){}
 void Pedra::empuxo(){
     gravidade=0;
 }
+
+void Pedra::obstacular(Personagens::Jogador* pjog){
+    if(pjog){
+        pjog->setVida(pjog->getVida()-danar);
+    }
+    else{
+        printf("Ponteiro nulo de jogador dentro de obstacular da pedra\n");
+    }
+}
+
+
 }
 }

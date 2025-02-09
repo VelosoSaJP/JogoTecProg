@@ -63,15 +63,15 @@ void Fase::executar(){
 
 void Fase::criarJogadores(int jog,sf::Vector2f posicao, sf::Vector2f tamanho){
     if(jog==1){
-        //  Entidades::Personagens::Jogador *pJog1 = new Entidades::Personagens::Jogador(posicao,  sf::Vector2f(0.1,0.1), idJOGADOR);
-        //  pJog1->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Jogador1/guerreiro.png");
-        //  pGEntradas->setJogador1(pJog1);
-        //  pLEPersonagens->incluir(static_cast<Entidades::Entidade*>(pJog1));
+          Entidades::Personagens::Jogador *pJog1 = new Entidades::Personagens::Jogador(posicao,  sf::Vector2f(0.1,0.1), idJOGADOR,10000);
+          pJog1->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Jogador1/guerreiro.png");
+          pGEntradas->setJogador1(pJog1);
+          pLEPersonagens->incluir(static_cast<Entidades::Entidade*>(pJog1));
         
        
     }
     else{
-         Entidades::Personagens::Jogador *pJog2 = new Entidades::Personagens::Jogador(posicao,  sf::Vector2f(0.1,0.1), idJOGADOR);
+         Entidades::Personagens::Jogador *pJog2 = new Entidades::Personagens::Jogador(posicao,  sf::Vector2f(0.1,0.1), idJOGADOR,10000);
          pJog2->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Jogador2/guerreira.png");
          pGEntradas->setJogador2(pJog2);
          pLEPersonagens->incluir(static_cast<Entidades::Entidade*>(pJog2));

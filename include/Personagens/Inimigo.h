@@ -5,13 +5,15 @@ namespace Entidades{
 namespace Personagens{
 class Inimigo : public Personagem{
     private:
-        int nivel_maldade;
         float pos_inicialX;
         float tam_plataforma;
         bool direita;
+    
+    protected:
+        int quantidade_dano;
         
     public:
-    Inimigo(sf::Vector2f pos, sf::Vector2f tam, int ID);
+    Inimigo(sf::Vector2f pos, sf::Vector2f tam, int ID, int vida, int dano);
     Inimigo();
     ~Inimigo();
     void andar(bool direita); //não vou levar para as classes filhas, porque todas vão se locomover do mesmo jeito.

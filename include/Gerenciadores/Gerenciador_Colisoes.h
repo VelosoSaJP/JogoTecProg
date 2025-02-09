@@ -8,6 +8,8 @@
 #include <vector>
 #include <set>
 #include <Ente.h>
+#include "../Obstaculos/Fogo.h"
+#include "../Obstaculos/Pedra.h"
 
 namespace Gerenciadores{
 class Gerenciador_Colisoes

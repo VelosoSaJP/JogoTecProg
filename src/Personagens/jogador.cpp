@@ -1,15 +1,15 @@
 #include "../include/Personagens/Jogador.h"
-
+#include "../include/Gerenciadores/Gerenciador_Colisoes.h"
 namespace Entidades{
 namespace Personagens{
+    
     Jogador::Jogador()
     {
 
     }
 
-    Jogador::Jogador(sf::Vector2f pos, sf::Vector2f tam, int ID):
-        Personagem(sf::Vector2f(pos.x, pos.y),tam,idJOGADOR) ,
-        pontos(0),
+    Jogador::Jogador(sf::Vector2f pos, sf::Vector2f tam, int ID, int vida):
+        Personagem(sf::Vector2f(pos.x, pos.y),tam,idJOGADOR, vida),
         pGC(Gerenciadores::Gerenciador_Colisoes::getInstancia())
     {
         

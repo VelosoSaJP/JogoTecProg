@@ -5,6 +5,7 @@
 #define idORC 3 
 #define idMAGO 4
 #define idOBSTACULO 5 
-#define idDANOSO 6
-#define idPROJETIL 7
+#define idPEDRA 6
+#define idFOGO 7
+#define idPROJETIL 8
 

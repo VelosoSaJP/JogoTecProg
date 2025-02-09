@@ -6,10 +6,9 @@ namespace Entidades{
 namespace Personagens{
 class Esqueleto : public Inimigo{
     private:
-        int vida;
 
     public:
-    Esqueleto(sf::Vector2f pos, sf::Vector2f tam, int ID);
+    Esqueleto(sf::Vector2f pos, sf::Vector2f tam, int ID, int vida, int dano);
     Esqueleto();
     ~Esqueleto();
     void desenhar();

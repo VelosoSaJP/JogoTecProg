@@ -17,12 +17,8 @@ Jogo::~Jogo(){
 
 void Jogo::executar(){
     
-    //if(menu==1){
-    Fases::Floresta* pFaseAtual = new Fases::Floresta();
-    /*{else
     Fases::Lava* pFaseAtual = new Fases::Lava();
-    }*/
-   
+ 
     while (pGG->janelaAberta()){    
         
         pGG->limpaJanela();

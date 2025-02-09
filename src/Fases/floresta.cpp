@@ -83,7 +83,7 @@ void Floresta::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
         case 333:{
             int aux = rand()%2;
             if(aux){
-                Entidades::Personagens::Orc* pOrc = new Entidades::Personagens::Orc(posicao, sf::Vector2f(0.1,0.1),idORC);
+                Entidades::Personagens::Orc* pOrc = new Entidades::Personagens::Orc(posicao, sf::Vector2f(0.1,0.1),idORC,1000,100);
                 pOrc->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Orc/orc.png");
                 pLEPersonagens->incluir(static_cast<Entidades::Entidade *>(pOrc));
 
@@ -94,21 +94,21 @@ void Floresta::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
         case 149:{
             int aux = rand()%2;
             if(aux){
-                Entidades::Personagens::Esqueleto* pEsq = new Entidades::Personagens::Esqueleto(posicao,sf::Vector2f(0.075,0.075),idESQUELETO);
+                Entidades::Personagens::Esqueleto* pEsq = new Entidades::Personagens::Esqueleto(posicao,sf::Vector2f(0.075,0.075),idESQUELETO,300,30);
                 pEsq->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Esqueleto/esqueleto.png");
                 pLEPersonagens->incluir(static_cast<Entidades::Entidade *>(pEsq));
             }
             break;
         }
         case 331:{
-            Entidades::Personagens::Orc* pOrc = new Entidades::Personagens::Orc(posicao, sf::Vector2f(0.1,0.1),idORC);
+            Entidades::Personagens::Orc* pOrc = new Entidades::Personagens::Orc(posicao, sf::Vector2f(0.1,0.1),idORC,1000,100);
             pOrc->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Orc/orc.png");
             pLEPersonagens->incluir(static_cast<Entidades::Entidade *>(pOrc));
 
             break;
         }
         case 332:{
-            Entidades::Personagens::Esqueleto* pEsq = new Entidades::Personagens::Esqueleto(posicao,sf::Vector2f(0.075,0.075),idESQUELETO);
+            Entidades::Personagens::Esqueleto* pEsq = new Entidades::Personagens::Esqueleto(posicao,sf::Vector2f(0.075,0.075),idESQUELETO,300,30);
             pEsq->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Esqueleto/esqueleto.png");
             pLEPersonagens->incluir(static_cast<Entidades::Entidade *>(pEsq));
 
@@ -142,7 +142,7 @@ void Floresta::criarObstaculo(int id,sf::Vector2f posicao, sf::Vector2f tamanho)
     else if(id==407){  //PEDRA ALEATÓRIA
         int aux = rand()%2;
         if (aux){
-            Entidades::Obstaculos::Pedra* pPedra = new Entidades::Obstaculos::Pedra(posicao,sf::Vector2f(1,1),idDANOSO);
+            Entidades::Obstaculos::Pedra* pPedra = new Entidades::Obstaculos::Pedra(posicao,sf::Vector2f(1,1),idPEDRA);
             pPedra->setTextura("/home/murilo/code/JogoTecProg/assets/Fases/Fase1/props/rocks1.png");  
             pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pPedra));
             
@@ -153,7 +153,7 @@ void Floresta::criarObstaculo(int id,sf::Vector2f posicao, sf::Vector2f tamanho)
     
     
     else if (id==298){
-        Entidades::Obstaculos::Pedra* pPedra = new Entidades::Obstaculos::Pedra(posicao,sf::Vector2f(1,1),idDANOSO);
+        Entidades::Obstaculos::Pedra* pPedra = new Entidades::Obstaculos::Pedra(posicao,sf::Vector2f(1,1),idPEDRA);
         pPedra->setTextura("/home/murilo/code/JogoTecProg/assets/transparent_16x16.png");
         pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pPedra));
         sf::Sprite* pS= pPedra->getSprite();

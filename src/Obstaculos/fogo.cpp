@@ -4,7 +4,8 @@
 namespace Entidades{
 namespace Obstaculos{
 Fogo :: Fogo(sf::Vector2f pos, sf::Vector2f tam,int ID):
-    Obstaculo(pos,tam,idDANOSO)
+    Obstaculo(pos,tam,idFOGO),
+    danar(300)
 {
     empuxo();
 }
@@ -51,6 +52,15 @@ void Fogo::colisao(Entidade* outraEntidade,sf::Vector2f distancia){}
 
 void Fogo::empuxo(){
     gravidade=0;
+}
+
+void Fogo::obstacular(Personagens::Jogador* pjog){
+    if(pjog){
+        pjog->setVida(pjog->getVida()-danar);
+    }
+    else{
+        printf("Ponteiro nulo de jogador dentro de fogo\n");
+    }
 }
 
 }

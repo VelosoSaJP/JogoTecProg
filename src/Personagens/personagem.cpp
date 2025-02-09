@@ -4,9 +4,9 @@ namespace Personagens{
     Personagem::Personagem(){
 
     }
-    Personagem::Personagem(sf::Vector2f pos, sf::Vector2f tam, int ID):
+    Personagem::Personagem(sf::Vector2f pos, sf::Vector2f tam, int ID, int vida):
         Entidade(pos,tam, ID),
-        num_vidas(0)
+        num_vidas(vida)
 
     {
         hitbox();
@@ -16,9 +16,6 @@ namespace Personagens{
         
     }      
 
-    int const Personagem::getVidas(){
-        return num_vidas;
-    }
 
      void Personagem::andar(bool direita){}
 
@@ -40,6 +37,13 @@ namespace Personagens{
         pGG->desenhar(desenhaColisao);
 
      }
+
+void Personagem::setVida(int vida){
+    num_vidas=vida;
+}
+int  Personagem::getVida(){
+    return num_vidas;
+}
 
 bool Personagem::getPodeSaltar(){}
 void Personagem::setPodeSaltar(bool permissao){}

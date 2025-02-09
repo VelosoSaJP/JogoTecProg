@@ -1,9 +1,9 @@
 #include "../include/Personagens/Orc.h"
 namespace Entidades{
 namespace Personagens{
-Orc :: Orc(sf::Vector2f pos, sf::Vector2f tam, int ID):
-    Inimigo(pos,tam,idORC),
-    vida(300){
+Orc :: Orc(sf::Vector2f pos, sf::Vector2f tam, int ID, int vida,int dano):
+    Inimigo(pos,tam,idORC, vida, dano)
+{
 }
 
 Orc :: Orc(){
