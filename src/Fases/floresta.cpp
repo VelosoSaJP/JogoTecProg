@@ -64,7 +64,7 @@ namespace Fases
                     criarJogadores(2, posicao, tamanho);
                 } else if (tileId == 331 || tileId == 332 || tileId == 149 || tileId == 333) {
                     criarInimigos(tileId, posicao, tamanho);
-                } else if (tileId == 204 || tileId == 407 || tileId == 297 || tileId == 224) {
+                } else if (tileId == 298 || tileId == 407 || tileId == 297 || tileId == 224) {
                     criarObstaculo(tileId, posicao, tamanho);
                 } else if (tileId == 231) {
                     criarPlataforma(posicao, tamanho, 1);
@@ -129,8 +129,8 @@ void Floresta::criarObstaculo(int id,sf::Vector2f posicao, sf::Vector2f tamanho)
     }
     
     else if(id==297){
-        
-        if (1){
+        int aux = rand()%2;
+        if (aux){
             Entidades::Obstaculos::Arvore* pArvore = new Entidades::Obstaculos::Arvore(posicao,sf::Vector2f(1,1),idOBSTACULO);     
             if(criaArvore_alteatoria){ //Só o primeiro bloco cria a imagem.
                 pArvore->setTextura("/home/murilo/code/JogoTecProg/assets/Fases/Fase1/props/arvore4.png");  
@@ -146,16 +146,19 @@ void Floresta::criarObstaculo(int id,sf::Vector2f posicao, sf::Vector2f tamanho)
             pPedra->setTextura("/home/murilo/code/JogoTecProg/assets/Fases/Fase1/props/rocks1.png");  
             pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pPedra));
             
+            
         }
 
     }
     
     
-    else{
+    else if (id==298){
         Entidades::Obstaculos::Pedra* pPedra = new Entidades::Obstaculos::Pedra(posicao,sf::Vector2f(1,1),idDANOSO);
         pPedra->setTextura("/home/murilo/code/JogoTecProg/assets/transparent_16x16.png");
         pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pPedra));
         sf::Sprite* pS= pPedra->getSprite();
+        sf::Vector2f pos={pS->getGlobalBounds().left,pS->getGlobalBounds().top};
+        printf("%.1f e %.1f\n",pos.x,pos.y);
 
 
     }

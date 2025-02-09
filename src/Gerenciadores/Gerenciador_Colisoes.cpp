@@ -84,7 +84,6 @@ const sf::Vector2f Gerenciador_Colisoes::gerenciaColisao(Entidades::Entidade* en
      pos_hitbox1.x += (pSprite1->getGlobalBounds().width * (1 - 0.6)) / 2;
 
 
-
         sf::Vector2f distanciaEntreCentros(fabs((pos_hitbox1.x + tam_hitbox1.x/2.0f) - (pos_hitbox2.x + tam_hitbox2.x/2.0f)),
             fabs((pos_hitbox1.y + tam_hitbox1.y/2.0f) - (pos_hitbox2.y + tam_hitbox2.y/2.0f)));
  
@@ -129,7 +128,7 @@ void Gerenciador_Colisoes::executar(){
     for(int i = 0; i < listaPersonagem->getTamanho(); i++){
         Entidades::Entidade* ent1 = listaPersonagem->getLista().operator[](i);
 
-        if (ent1){
+        if (ent1 && ent1->getID()==1){//SE EU TIRAR O ID, O BONECO PARA DE FICAR PRESO EM LAVA
 
             for(int j = 0; j < listaObstaculo->getTamanho(); j++){
                 Entidades::Entidade* ent2 = listaObstaculo->getLista().operator[](j);
@@ -138,10 +137,12 @@ void Gerenciador_Colisoes::executar(){
 
                     sf::Vector2f ds = gerenciaColisao(ent1, ent2);
     
+                             
+
+                        //   printf("PEDRA posicao x= %.1f e y=%.1f\n",ent1->getPosicao().x,ent1->getPosicao().y);
                     if (ds.x < 0.0f && ds.y < 0.0f) {
                         if(ent2->getID()==idDANOSO){
-                             printf("posicao x= %.1f e y=%.1f\n",ent2->getPosicao().x,ent2->getPosicao().y);
-                        //    printf("Entrando em danoso\n");
+                         printf("Entrando em danoso\n");
                         }
                          ent1->colisao(ent2, ds);
                     }
