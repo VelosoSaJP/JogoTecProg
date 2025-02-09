@@ -40,8 +40,12 @@ namespace Lista{
             Entidades::Entidade* pPercorre = *it;
             if(pPercorre){
                 if(pPercorre->getID()==2||pPercorre->getID()==3 || pPercorre->getID()==4){ //iD dos inimigos
-                    pPercorre->andar(true);
+                    printf("ANTES: x= %.1f e y = %.1f\n",pPercorre->getPosicao().x,pPercorre->getPosicao().y);
+                      pPercorre->andar(true);
+                                          printf("DEPOIS: x= %.1f e y = %.1f\n",pPercorre->getPosicao().x,pPercorre->getPosicao().y);
+
                 }
+              
                     pPercorre->efeitoGravidade();
                     pPercorre->executar();  
                                       

@@ -8,7 +8,6 @@ class Inimigo : public Personagem{
         float pos_inicialX;
         float tam_plataforma;
         bool direita;
-    
     protected:
         int quantidade_dano;
         

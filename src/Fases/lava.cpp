@@ -73,11 +73,13 @@ void Lava::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
        case 149:{
             int aux = rand()%2;
             if (aux){    
-                posicao.x-=16;            
+                // posicao.x-=16;            
                 Entidades::Personagens::Mago* pMago = new Entidades::Personagens::Mago(posicao,sf::Vector2f(0.06,0.06),idMAGO, 3000, 300);
                 if (pMago){
                     pMago->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Mago/mago.png");
                     pLEPersonagens->incluir(static_cast<Entidades::Entidade *>(pMago));
+                       
+
                 }
                 
             break;
@@ -108,11 +110,12 @@ void Lava::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
 
         }
         case 425:{
-                posicao.x-=16;
+                //  posicao.x-=16;
             Entidades::Personagens::Mago* pMago = new Entidades::Personagens::Mago(posicao,sf::Vector2f(0.06,0.06),idMAGO,3000,300);
             if (pMago){
                 pMago->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Mago/mago.png");
                 pLEPersonagens->incluir(static_cast<Entidades::Entidade *>(pMago));
+                      
             }
             break;
         }

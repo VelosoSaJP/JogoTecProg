@@ -31,7 +31,7 @@ namespace Personagens{
 
     void Jogador::saltar(){
       if(pGC){
-            if(pGC->NoChao(this)){
+            if(1){
                 //  printf("Tá vindo aqui\n");
                     velocidade.y= - sqrtf(gravidade * altura_pulo);
                     velocidade.y*=10;     
