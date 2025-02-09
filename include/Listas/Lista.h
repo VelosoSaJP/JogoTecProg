@@ -158,42 +158,42 @@ namespace Lista
 
 template <class TL>
 void Lista<TL>::remover(TL* p) {  
-    if (!pPrim || !p) {
-        return; // Lista vazia ou parâmetro inválido
-    }
-
-    Elemento<TL>* pNode = pPrim;
-    Elemento<TL>* pAnterior = nullptr;
-
-    while (pNode != nullptr) {
-       
-        if (pNode->getInfo() == p) {  // Encontrou o elemento
-            Elemento<TL>* pTemp = pNode->getProx(); // Guarda o próximo nó
-
-            if (pNode == pPrim) {
-                pPrim = pTemp; // Se for o primeiro, ajusta o início
-            } else {
-                pAnterior->setProx(pTemp);
-            }
-
-            if (pNode == pUlt) {
-                pUlt = pAnterior; // Se for o último, ajusta o ponteiro final
-            }
-
-            delete pNode; // Libera a memória do elemento removido
-            tam--;
-
-            if (tam == 0) { // Se a lista ficou vazia, zera os ponteiros
-                pPrim = nullptr;
-                pUlt = nullptr;
-            }
-
-            return;  // Sai da função após remover
-        }
-
-        pAnterior = pNode;
-        pNode = pNode->getProx();
-    }
+    Iterator it = getInicio();
+    // Iterator anterior = getFinal();
+    // while (it!=getFinal() ** it != p){
+        // anterior = it;
+        // ++it;
+    // }
+//  
+    // while (pNode != getFinal) {
+    //    
+        // if (pNode->getInfo() == p) {  // Encontrou o elemento
+            // Elemento<TL>* pTemp = pNode->getProx(); // Guarda o próximo nó
+// 
+            // if (pNode == pPrim) {
+                // pPrim = pTemp; // Se for o primeiro, ajusta o início
+            // } else {
+                // pAnterior->setProx(pTemp);
+            // }
+// 
+            // if (pNode == pUlt) {
+                // pUlt = pAnterior; // Se for o último, ajusta o ponteiro final
+            // }
+// 
+            // delete pNode; // Libera a memória do elemento removido
+            // tam--;
+// 
+            // if (tam == 0) { // Se a lista ficou vazia, zera os ponteiros
+                // pPrim = nullptr;
+                // pUlt = nullptr;
+            // }
+// 
+            // return;  // Sai da função após remover
+        // }
+// 
+        // pAnterior = pNode;
+        // pNode = pNode->getProx();
+    // }
 }
 
 

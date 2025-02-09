@@ -7,6 +7,8 @@
 #include <Ente.h>
 #include "../Obstaculos/Fogo.h"
 #include "../Obstaculos/Pedra.h"
+#include "../Obstaculos/Arvore.h"
+#include "../Obstaculos/Plataforma.h"
 
 namespace Gerenciadores{
 class Gerenciador_Colisoes

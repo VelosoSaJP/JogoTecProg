@@ -122,16 +122,15 @@ void Floresta::criarObstaculo(int id,sf::Vector2f posicao, sf::Vector2f tamanho)
     
     if(id==224){//ESCADAS DAS ÁRVORES.
 
-        criarPlataforma(posicao,tamanho,idOBSTACULO);
-            // Entidades::Obstaculos::Arvore* pArvore = new Entidades::Obstaculos::Arvore(posicao,sf::Vector2f(1,1),idOBSTACULO);
-            //  pArvore->executar();
-            // pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pArvore));
+            Entidades::Obstaculos::Arvore* pArvore = new Entidades::Obstaculos::Arvore(posicao,sf::Vector2f(1,1),idARVORE);
+              pArvore->setTextura("/home/murilo/code/JogoTecProg/assets/transparent_16x16.png");  
+            pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pArvore));
     }
     
     else if(id==297){
         int aux = rand()%2;
         if (aux){
-            Entidades::Obstaculos::Arvore* pArvore = new Entidades::Obstaculos::Arvore(posicao,sf::Vector2f(1,1),idOBSTACULO);     
+            Entidades::Obstaculos::Arvore* pArvore = new Entidades::Obstaculos::Arvore(posicao,sf::Vector2f(1,1),idARVORE);     
             if(criaArvore_alteatoria){ //Só o primeiro bloco cria a imagem.
                 pArvore->setTextura("/home/murilo/code/JogoTecProg/assets/Fases/Fase1/props/arvore4.png");  
                 criaArvore_alteatoria=false;
@@ -158,7 +157,6 @@ void Floresta::criarObstaculo(int id,sf::Vector2f posicao, sf::Vector2f tamanho)
         pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pPedra));
         sf::Sprite* pS= pPedra->getSprite();
         sf::Vector2f pos={pS->getGlobalBounds().left,pS->getGlobalBounds().top};
-        printf("%.1f e %.1f\n",pos.x,pos.y);
 
 
     }

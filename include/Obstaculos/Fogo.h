@@ -1,6 +1,5 @@
 #pragma once
 #include "Obstaculo.h"
-#include "/home/murilo/code/JogoTecProg/include/Personagens/Jogador.h"
 
 namespace Entidades{
 namespace Obstaculos{
@@ -15,7 +14,7 @@ namespace Obstaculos{
             void salvar(); 
             void colisao(Entidade* outraEntidade,sf::Vector2f distancia);
             void empuxo();
-            void obstacular(Personagens::Jogador* jog);
+            void obstacular(Personagens::Jogador* p);
 
 
 

@@ -22,10 +22,9 @@ public:
     void hitbox();
     virtual void empuxo();
     bool checarMorte();
-    virtual bool getPodeSaltar();
-    virtual void setPodeSaltar(bool permissao);
-    void setVida(int vida);
+    void tomarDano(int dano_sofrido);
     int getVida();
+    
 
 };
 }

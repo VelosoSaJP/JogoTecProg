@@ -5,7 +5,7 @@ namespace Entidades{
 namespace Personagens{
 class Orc : public Inimigo{
     private:
-    //sem atributos ainda
+        int facada;
     public:
     Orc(sf::Vector2f pos, sf::Vector2f tam, int ID, int vida,int dano);
     Orc();

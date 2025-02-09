@@ -3,7 +3,8 @@ namespace Entidades{
 namespace Personagens{
 
 Esqueleto :: Esqueleto(sf::Vector2f pos, sf::Vector2f tam, int ID, int vida, int dano):
-    Inimigo(pos,tam,idESQUELETO, vida, dano)
+    Inimigo(pos,tam,idESQUELETO, vida, dano),
+    mordida(dano)
 {
 }
 
@@ -18,6 +19,7 @@ Esqueleto :: ~Esqueleto(){
 void Esqueleto :: executar(){
     desenhar();
     empuxo();
+    checarMorte();
 }
 void Esqueleto :: desenhar(){
     if (pSprite){
@@ -28,7 +30,9 @@ void Esqueleto :: desenhar(){
     }
 }
 void Esqueleto :: danificar(Jogador* p){
-     
+     if(p){
+        p->tomarDano(getVida()-mordida);
+     }
 }
 
 void Esqueleto::salvar(){
@@ -41,6 +45,8 @@ void Esqueleto:: empuxo(){
     velocidade.y=0;
 
 }
+
+
 
 }
 }

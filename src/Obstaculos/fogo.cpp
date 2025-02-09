@@ -54,10 +54,9 @@ void Fogo::empuxo(){
     gravidade=0;
 }
 
-void Fogo::obstacular(Personagens::Jogador* pjog){
-    if(pjog){
-        pjog->setVida(pjog->getVida()-danar);
-       
+void Fogo::obstacular(Personagens::Jogador* p){
+    if(p){
+        p->tomarDano(danar);
     }
     else{
         printf("Ponteiro nulo de jogador dentro de fogo\n");

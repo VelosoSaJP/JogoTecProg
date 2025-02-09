@@ -10,7 +10,8 @@ namespace Personagens{
 
     Jogador::Jogador(sf::Vector2f pos, sf::Vector2f tam, int ID, int vida):
         Personagem(sf::Vector2f(pos.x, pos.y),tam,idJOGADOR, vida),
-        pGC(Gerenciadores::Gerenciador_Colisoes::getInstancia())
+        pGC(Gerenciadores::Gerenciador_Colisoes::getInstancia()),
+        pode_saltar(true)
     {
         
     }
@@ -30,16 +31,10 @@ namespace Personagens{
 
 
     void Jogador::saltar(){
-      if(pGC){
-            if(1){
-                //  printf("Tá vindo aqui\n");
-                    velocidade.y= - sqrtf(gravidade * altura_pulo);
-                    velocidade.y*=10;     
-                             
-         }
-            else{
-                //    printf("Não estava no chão\n");
-            }
+      if(pode_saltar){
+            velocidade.y= - sqrtf(gravidade * altura_pulo);
+            velocidade.y*=10;   
+            pode_saltar=false;                     
         }
     }
         
@@ -49,28 +44,12 @@ namespace Personagens{
         checarMorte();
         desenhar();
 
-
-
     }
 
     void Jogador :: desenhar(){
          
         if (pSprite){
-            // sf::RectangleShape desenhaColisao;
-            // desenhaColisao.setFillColor(sf::Color::Transparent);
-            // desenhaColisao.setOutlineColor(sf::Color::Yellow);
-            // sf::Vector2f posicaoColisao;
-            // sf::Vector2f tamanhoColisao;
-        // 
-            // posicaoColisao={pSprite->getGlobalBounds().left,pSprite->getGlobalBounds().top};
-            // tamanhoColisao={pSprite->getGlobalBounds().width,pSprite->getGlobalBounds().height};
-            // desenhaColisao.setSize(tamanhoColisao*0.8f);
-            // desenhaColisao.setPosition(posicaoColisao);
-// 
-            // desenhaColisao.setOutlineThickness(1.f);
-            
             pGG->desenhar(pSprite); //será que dá o this?
-            // pGG->desenhar(desenhaColisao);
         }
         else{
             throw std::runtime_error("o Sprite do jogador estava vazio");
@@ -90,7 +69,7 @@ namespace Personagens{
 }
 
     void Jogador::andar(bool direita){
-        velocidade.y=0;
+        // velocidade.y=0;
      
         if (direita){
             velocidade.x = pGG->getDeltaTime() *0.05;
@@ -102,7 +81,6 @@ namespace Personagens{
                     pSprite->setScale(-1*pSprite->getScale().x,pSprite->getScale().y);
                 }
             }
-
         }
         else{
             velocidade.x = -pGG->getDeltaTime() *0.05;
@@ -113,8 +91,6 @@ namespace Personagens{
                     pSprite->setScale(-1*pSprite->getScale().x,pSprite->getScale().y);
                 }
             }
-
-
         }
     }
 
@@ -131,22 +107,16 @@ namespace Personagens{
             return true;
         }
     }
-
-
     void Jogador :: salvar(){}
 
 
 void Jogador::colisao(Entidade* outraEntidade, sf::Vector2f distancia) {
     int opt = outraEntidade->getID();
-    switch (opt) {
-        case (idOBSTACULO): {
-            sf::Sprite* pS=outraEntidade->getSprite();
-            
-            sf::Vector2f novaPosicao = getPosicao(); // Posição atual do jogador
 
-            // Se estiver colidindo no eixo X, ajusta a posição X
+    if (opt==idPLATAFORMA || opt==idARVORE) {
+            sf::Sprite* pS=outraEntidade->getSprite();
+            sf::Vector2f novaPosicao = getPosicao(); 
             if (distancia.y < 0) {
-                setPodeSaltar(false);
                 if (posicao.y > outraEntidade->getPosicao().y) {
                     novaPosicao.y = outraEntidade->getPosicao().y + pS->getGlobalBounds().height/2;
                 } else {
@@ -155,39 +125,56 @@ void Jogador::colisao(Entidade* outraEntidade, sf::Vector2f distancia) {
             }
 
             else if (distancia.x < 0) {
-                    
                 if (posicao.x > outraEntidade->getPosicao().x) {
                     novaPosicao.x = outraEntidade->getPosicao().x + pS->getGlobalBounds().width/2;
                 } else {
                     novaPosicao.x = outraEntidade->getPosicao().x - pS->getGlobalBounds().width/2;
                 }
             }
-
-
             novaPosicao.y-=25;
-             
-            setPosicao(novaPosicao); // Atualiza a posição do jogador
+            setPosicao(novaPosicao);
+    }
 
-            break;
+
+    else if(opt==idESQUELETO){
+                if (distancia.x<distancia.y){
+                    if(outraEntidade->getPosicao().y>=posicao.y+40){
+                        printf("esqueleto toma dano\n");
+                    }
+                    else{
+                        printf("jogador toma dano\n");
+                    }
+            }
         }
 
-            
-            case(idESQUELETO): 
-                {
-                        //SE FOR EM X-> ESQUELETO DA DANO NO JOG, SE FOR EM Y-> JOG DA DANO EM ESQUELETO.
-                }
-            default:
-                break;
+    else if(opt==idORC){
+                if (distancia.x<distancia.y){
+                    if(outraEntidade->getPosicao().y>=posicao.y+40){
+                        printf("orc toma dano\n");
+                    }
+                    else{
+                        printf("jogador toma dano\n");
+                    }
+            }
+    }
+
+
+     else if (opt==idMAGO){
+                 if (distancia.x<distancia.y){
+                    if(outraEntidade->getPosicao().y>=posicao.y+40){
+                        printf("mago toma dano\n");
+                    }
+                    else{
+                        printf("jogador toma dano\n");
+                    }
             }
 
-        }
-
-bool Jogador::getPodeSaltar(){
-    return pode_saltar;
+     }      
 }
 
- void Jogador::setPodeSaltar(bool permissao){
-     pode_saltar=permissao;
+
+void Jogador::setPodeSaltar(bool permissao){
+    pode_saltar=permissao;
 }
 }
 }

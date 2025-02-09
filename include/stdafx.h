@@ -4,7 +4,8 @@
 #define idESQUELETO 2 
 #define idORC 3 
 #define idMAGO 4
-#define idOBSTACULO 5 
+#define idARVORE 5 
 #define idPEDRA 6
 #define idFOGO 7
 #define idPROJETIL 8
+#define idPLATAFORMA 9

@@ -5,7 +5,9 @@ namespace Personagens{
 Mago :: Mago(sf::Vector2f pos, sf::Vector2f tam, int ID, int vida,int dano):
     Inimigo(pos,tam,idMAGO,vida, dano),
     pProjetil(nullptr),
-     pLE(nullptr)
+     pLE(nullptr),
+     poder(dano) //o mago ataca fisicamente também.
+
 {   
    
 }
@@ -30,6 +32,7 @@ void Mago :: setLista(Lista::ListaEntidade* pLista){
 void Mago :: executar(){
     desenhar();
     empuxo();
+    checarMorte();
 }
 
 void Mago:: desenhar(){
@@ -43,7 +46,9 @@ void Mago:: desenhar(){
 
 
 void Mago :: danificar(Jogador* p){
-     
+      if(p){
+        p->tomarDano(getVida()-poder);
+      }
 }
 void Mago :: salvar(){
     

@@ -3,7 +3,8 @@
 namespace Entidades{
 namespace Obstaculos{
 Plataforma :: Plataforma(sf::Vector2f pos, sf::Vector2f tam, int ID):
-    Obstaculo(pos,tam,ID)
+    Obstaculo(pos,tam,ID),
+    venenosa(1)
 {
     empuxo();
 
@@ -50,6 +51,16 @@ void Plataforma::colisao(Entidade* outraEntidade,sf::Vector2f distancia){}
 
 void Plataforma::empuxo(){
     gravidade=0;
+}
+
+void Plataforma::obstacular(Personagens::Jogador* p){
+    if(p){
+        p->tomarDano(p->getVida()*venenosa);
+    }
+    else{
+        printf("Ponteiro falso em obstacular de  plataforma");
+    }
+
 }
 }
 }

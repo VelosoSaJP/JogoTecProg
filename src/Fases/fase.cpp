@@ -91,7 +91,8 @@ void Fase::criarJogadores(int jog,sf::Vector2f posicao, sf::Vector2f tamanho){
 }
 
 void Fase::criarPlataforma(sf::Vector2f posicao, sf::Vector2f tamanho,int id){
-        Entidades::Obstaculos::Plataforma* pPlataforma = new Entidades::Obstaculos::Plataforma(posicao,sf::Vector2f(1,1),idOBSTACULO); 
+        posicao.y+=5;
+        Entidades::Obstaculos::Plataforma* pPlataforma = new Entidades::Obstaculos::Plataforma(posicao,sf::Vector2f(1,1),idPLATAFORMA); 
         pPlataforma->setTextura("/home/murilo/code/JogoTecProg/assets/Fases/Fase2/Tiles_rock/tile5.png");
         pPlataforma->executar();
         pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pPlataforma));

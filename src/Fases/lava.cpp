@@ -100,7 +100,7 @@ void Lava::criarInimigos(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
         }
 
         case 424:{
-            
+
             Entidades::Personagens::Esqueleto* pEsq = new Entidades::Personagens::Esqueleto(posicao,sf::Vector2f(0.075,0.075),idESQUELETO,300,30);
             if(pEsq){
                 pEsq->setTextura("/home/murilo/code/JogoTecProg/assets/Bonecos/Esqueleto/esqueleto.png");
@@ -139,7 +139,7 @@ void Lava::criarObstaculo(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
         }
          else if(id == 207){ //arvore fake
              if (aux_arvore){
-                 Entidades::Obstaculos::Arvore* pArvore = new Entidades::Obstaculos::Arvore(posicao,sf::Vector2f(0.65,0.65),idOBSTACULO);     
+                 Entidades::Obstaculos::Arvore* pArvore = new Entidades::Obstaculos::Arvore(posicao,sf::Vector2f(0.65,0.65),idARVORE);     
                  if(cria_textura_arv){ //Só o primeiro bloco cria a imagem.
                     pArvore->setTextura("/home/murilo/code/JogoTecProg/assets/Fases/Fase1/props/tree01.png");  
                     pArvore->executar();
@@ -149,7 +149,7 @@ void Lava::criarObstaculo(int id,sf::Vector2f posicao, sf::Vector2f tamanho){
         }
         }
          else if(id == 224){
-            Entidades::Obstaculos::Arvore* pArvore = new Entidades::Obstaculos::Arvore(posicao,sf::Vector2f(0.65,0.65),idOBSTACULO);
+            Entidades::Obstaculos::Arvore* pArvore = new Entidades::Obstaculos::Arvore(posicao,sf::Vector2f(0.65,0.65),idARVORE);
              pArvore->setTextura("/home/murilo/code/JogoTecProg/assets/transparent_16x16.png");  
              pLEEstaticas->incluir(static_cast<Entidades::Entidade *>(pArvore)); 
          }

@@ -54,10 +54,9 @@ void Pedra::empuxo(){
     gravidade=0;
 }
 
-void Pedra::obstacular(Personagens::Jogador* pjog){
-    if(pjog){
-        
-        pjog->setVida(pjog->getVida()-danar);
+void Pedra::obstacular(Personagens::Jogador* p){
+    if(p){
+        p->tomarDano(danar);
     }
     else{
         printf("Ponteiro nulo de jogador dentro de obstacular da pedra\n");

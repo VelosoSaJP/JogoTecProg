@@ -27,7 +27,9 @@ void Orc :: desenhar(){
     }
 }
 void Orc :: danificar(Jogador* p){
-     
+    if(p){
+         p->tomarDano(getVida()-facada);
+    }
 }
 void Orc :: salvar(){
     

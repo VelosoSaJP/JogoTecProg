@@ -1,5 +1,6 @@
 #pragma once
 #include "../Entidade.h"
+#include "../Personagens/Jogador.h"
 
 namespace Entidades{
 namespace Obstaculos{
@@ -16,7 +17,7 @@ namespace Obstaculos{
             void salvar();
             void desenhar();
             virtual void empuxo();
-            //virtual void obstacular(Jogador*p)=0;
+            virtual void obstacular(Personagens::Jogador* p)=0;
         };
     }
 }

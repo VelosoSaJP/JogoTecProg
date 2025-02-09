@@ -1,6 +1,5 @@
 #pragma once
 #include "Obstaculo.h"
-#include "../include/Personagens/Jogador.h"
 namespace Entidades{
 namespace Obstaculos{
     class Pedra : public Obstaculo{
@@ -16,7 +15,7 @@ namespace Obstaculos{
             void desenhar();
             void colisao(Entidade* outraEntidade,sf::Vector2f distancia);
             void empuxo();
-            void obstacular(Personagens::Jogador* jog);
+            void obstacular(Personagens::Jogador* p);
 
 
     };

@@ -9,6 +9,7 @@ class Mago : public Inimigo{
     private:
         Entidades::Projetil* pProjetil;
         Lista::ListaEntidade* pLE;
+        int poder; //o mago ataca fisicamente também.
 
     public:
     Mago(sf::Vector2f pos, sf::Vector2f tam, int ID, int vida, int dano);

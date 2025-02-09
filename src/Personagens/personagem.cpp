@@ -38,8 +38,8 @@ namespace Personagens{
 
      }
 
-void Personagem::setVida(int vida){
-    num_vidas=vida;
+void Personagem::tomarDano(int dano_sofrido){
+    num_vidas-=dano_sofrido;
 }
 
 int  Personagem::getVida(){
@@ -48,11 +48,9 @@ int  Personagem::getVida(){
 
 bool Personagem::checarMorte(){
     if (getVida()<0){
-        return true;
+        return true; //TENHO QUE REMOVER AQUI
     }
 }
 
-bool Personagem::getPodeSaltar(){}
-void Personagem::setPodeSaltar(bool permissao){}
 void Personagem::empuxo(){}
 }}
