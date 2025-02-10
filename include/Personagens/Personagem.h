@@ -13,7 +13,6 @@ public:
     Personagem();
     Personagem(sf::Vector2f pos, sf::Vector2f tam, int ID, int vida);
     ~Personagem();      
-    // salvarDataBuffer();
     virtual void salvar()=0;
     virtual void executar()=0;
     virtual void andar(bool direita);

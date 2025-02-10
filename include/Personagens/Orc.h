@@ -1,6 +1,7 @@
 #pragma once
 #include "Inimigo.h"
 
+
 namespace Entidades{
 namespace Personagens{
 class Orc : public Inimigo{

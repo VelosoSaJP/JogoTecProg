@@ -1,4 +1,5 @@
 #include "../include/Personagens/Esqueleto.h"
+#include "../include/Personagens/Jogador.h"
 namespace Entidades{
 namespace Personagens{
 

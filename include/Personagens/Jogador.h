@@ -1,5 +1,8 @@
 #pragma once
 #include "Personagem.h"
+#include "Mago.h"
+#include "Esqueleto.h"
+#include "Orc.h"
 #include <math.h>
 
 namespace Gerenciadores {

@@ -3,6 +3,8 @@
 #include "../Projetil.h"
 #include "../Listas/ListaEntidade.h"
 
+
+
 namespace Entidades{
 namespace Personagens{
 class Mago : public Inimigo{

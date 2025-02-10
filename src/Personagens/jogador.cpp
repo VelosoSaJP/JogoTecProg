@@ -139,6 +139,9 @@ void Jogador::colisao(Entidade* outraEntidade, sf::Vector2f distancia) {
                 if (distancia.x<distancia.y){
                     if(outraEntidade->getPosicao().y>=posicao.y+20){
                         printf("esqueleto toma dano\n");
+                        Esqueleto* pEsq = dynamic_cast<Esqueleto*>(outraEntidade);
+                        pEsq->danificar(this);
+
                     }
                     else{
                         printf("jogador toma dano\n");
@@ -150,6 +153,8 @@ void Jogador::colisao(Entidade* outraEntidade, sf::Vector2f distancia) {
                 if (distancia.x<distancia.y){
                     if(outraEntidade->getPosicao().y>=posicao.y+20){
                         printf("orc toma dano\n");
+                        Orc* pOrc = dynamic_cast<Orc*>(outraEntidade);
+                        pOrc->danificar(this);
                     }
                     else{
                         printf("jogador toma dano\n");
@@ -162,6 +167,8 @@ void Jogador::colisao(Entidade* outraEntidade, sf::Vector2f distancia) {
                  if (distancia.x<distancia.y){
                     if(outraEntidade->getPosicao().y>=posicao.y+20){
                         printf("mago toma dano\n");
+                        Mago* pMago = dynamic_cast<Mago*>(outraEntidade);
+                        pMago->danificar(this);
                     }
                     else{
                         printf("jogador toma dano\n");

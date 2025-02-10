@@ -1,4 +1,6 @@
 #include "../include/Personagens/Mago.h"
+#include "../include/Personagens/Jogador.h"
+
 namespace Entidades{
 namespace Personagens{
 

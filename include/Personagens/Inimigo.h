@@ -1,8 +1,10 @@
 #pragma once
 #include "Personagem.h"
-#include "Jogador.h"
+
 namespace Entidades{
 namespace Personagens{
+    
+class Jogador;  // Forward declaration
 class Inimigo : public Personagem{
     private:
         float pos_inicialX;
