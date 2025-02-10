@@ -14,38 +14,6 @@ Gerenciador_Colisoes::Gerenciador_Colisoes():
  listaPersonagem(nullptr),
  listaObstaculo(nullptr){
 }
- 
-//  bool Gerenciador_Colisoes::NoChao(Entidades::Entidade* ent1) {
-    // if (ent1) {   
-// 
-        // for (int j = 0; j < listaObstaculo->getTamanho(); j++) {
-            // Entidades::Entidade* ent2 = listaObstaculo->getLista().operator[](j);
-// 
-            // if (ent2) {
-                // sf::Vector2f ds = gerenciaColisao(ent1, ent2);
-                // if (ds.x < 0.0f && ds.y < 0.0f) {  
-                    // ent1->setPodeSaltar(false);  // Só libera salto se houver colisão com o chão
-                    // return true;
-                // }
-            // }   
-        // }
-    // }
-    // ent1->setPodeSaltar(true);
-    // return false;  // Se nenhuma colisão foi detectada, retorna falso
-// }
-
-
-
-   /* for(int j = 0; j < listaObstaculo->getTamanho(); j++){
-         Entidades::Entidade* ent2 = listaObstaculo->getLista().operator[](j);
-         sf::Vector2f ds = gerenciaColisao(ent1, ent2);
-             if(ds.y < 0){ //225 é um valor que vale para ambas as fases. O boneco não começa em 0, pois há um altura do chão.
-               return true;//tá no chão
-             }
-             else{
-                return false;
-             }*/
-  
 
 void Gerenciador_Colisoes::setListas(Lista::ListaEntidade* lPers, Lista::ListaEntidade* lObs){
    if (lPers){
@@ -54,7 +22,6 @@ void Gerenciador_Colisoes::setListas(Lista::ListaEntidade* lPers, Lista::ListaEn
     if(lObs){
         listaObstaculo = lObs;
     }
-    
 }
 
 Gerenciador_Colisoes::~Gerenciador_Colisoes()
@@ -90,27 +57,29 @@ const sf::Vector2f Gerenciador_Colisoes::gerenciaColisao(Entidades::Entidade* en
         sf::Vector2f somaMetadeRetangulo(tam_hitbox1.x/2.0f + tam_hitbox2.x/2.0f, tam_hitbox1.y/2.0f + tam_hitbox2.y/2.0f);
 
         return sf::Vector2f(distanciaEntreCentros.x - somaMetadeRetangulo.x, distanciaEntreCentros.y - somaMetadeRetangulo.y);
-
-    
-}
+    }
 }
 
 void Gerenciador_Colisoes::executar(){
         //PERSONAGEM COM PERSONAGEM
     for(int i = 0; i < listaPersonagem->getTamanho() - 1; i++){
         Entidades::Entidade* ent1 = listaPersonagem->getLista().operator[](i);
-        //  printf("%d\n",ent1->getID());
             
-        if (ent1 && ent1->getID()==idJOGADOR){
+        if (ent1){
             for(int j = i + 1; j < listaPersonagem->getTamanho(); j++){
             
                 Entidades::Entidade* ent2 = listaPersonagem->getLista().operator[](j);
          
                 if(ent2 ){
                     sf::Vector2f ds = gerenciaColisao(ent1, ent2);
- 
+
                         if(ds.x < 0.0f && ds.y < 0.0f){
-                            ent1->colisao(ent2, ds);
+                            if(ent1->getID()==idJOGADOR){
+                                ent1->colisao(ent2, ds);
+                            }
+                            else{
+                                ent2->colisao(ent1,ds);
+                            }
                         } 
                 }
             }
@@ -121,7 +90,7 @@ void Gerenciador_Colisoes::executar(){
     for(int i = 0; i < listaPersonagem->getTamanho(); i++){
         Entidades::Entidade* ent1 = listaPersonagem->getLista().operator[](i);
     
-        if (ent1 && ent1->getID()==1){//SE EU TIRAR O ID, O BONECO PARA DE FICAR PRESO EM LAVA
+        if (ent1 && ent1->getID()==1){
 
             for(int j = 0; j < listaObstaculo->getTamanho(); j++){
                 Entidades::Entidade* ent2 = listaObstaculo->getLista().operator[](j);
@@ -129,9 +98,6 @@ void Gerenciador_Colisoes::executar(){
                if (ent2){
 
                     sf::Vector2f ds = gerenciaColisao(ent1, ent2);
-    
-                             
-
                         //   printf("PEDRA posicao x= %.1f e y=%.1f\n",ent1->getPosicao().x,ent1->getPosicao().y);
                     if (ds.x < 0.0f && ds.y < 0.0f) {
                             Entidades::Personagens::Jogador* jogador = dynamic_cast<Entidades::Personagens::Jogador*>(ent1);

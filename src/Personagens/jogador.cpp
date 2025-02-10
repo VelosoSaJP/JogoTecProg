@@ -69,7 +69,6 @@ namespace Personagens{
 }
 
     void Jogador::andar(bool direita){
-        // velocidade.y=0;
      
         if (direita){
             velocidade.x = pGG->getDeltaTime() *0.05;
@@ -112,7 +111,6 @@ namespace Personagens{
 
 void Jogador::colisao(Entidade* outraEntidade, sf::Vector2f distancia) {
     int opt = outraEntidade->getID();
-
     if (opt==idPLATAFORMA || opt==idARVORE) {
             sf::Sprite* pS=outraEntidade->getSprite();
             sf::Vector2f novaPosicao = getPosicao(); 
@@ -134,7 +132,6 @@ void Jogador::colisao(Entidade* outraEntidade, sf::Vector2f distancia) {
             novaPosicao.y-=25;
             setPosicao(novaPosicao);
     }
-
 
     else if(opt==idESQUELETO){
                 if (distancia.x<distancia.y){
@@ -159,7 +156,7 @@ void Jogador::colisao(Entidade* outraEntidade, sf::Vector2f distancia) {
     }
 
 
-     else if (opt==idMAGO){
+    else if (opt==idMAGO){
                  if (distancia.x<distancia.y){
                     if(outraEntidade->getPosicao().y>=posicao.y+40){
                         printf("mago toma dano\n");
@@ -171,7 +168,6 @@ void Jogador::colisao(Entidade* outraEntidade, sf::Vector2f distancia) {
 
      }      
 }
-
 
 void Jogador::setPodeSaltar(bool permissao){
     pode_saltar=permissao;
