@@ -111,6 +111,7 @@ namespace Personagens{
 
 void Jogador::colisao(Entidade* outraEntidade, sf::Vector2f distancia) {
     int opt = outraEntidade->getID();
+    
     if (opt==idPLATAFORMA || opt==idARVORE) {
             sf::Sprite* pS=outraEntidade->getSprite();
             sf::Vector2f novaPosicao = getPosicao(); 
@@ -134,8 +135,9 @@ void Jogador::colisao(Entidade* outraEntidade, sf::Vector2f distancia) {
     }
 
     else if(opt==idESQUELETO){
+        // printf("ESQ: %.1f e Jogador: %.1f\n",outraEntidade->getPosicao().y,posicao.y+20);
                 if (distancia.x<distancia.y){
-                    if(outraEntidade->getPosicao().y>=posicao.y+40){
+                    if(outraEntidade->getPosicao().y>=posicao.y+20){
                         printf("esqueleto toma dano\n");
                     }
                     else{
@@ -146,7 +148,7 @@ void Jogador::colisao(Entidade* outraEntidade, sf::Vector2f distancia) {
 
     else if(opt==idORC){
                 if (distancia.x<distancia.y){
-                    if(outraEntidade->getPosicao().y>=posicao.y+40){
+                    if(outraEntidade->getPosicao().y>=posicao.y+20){
                         printf("orc toma dano\n");
                     }
                     else{
@@ -158,7 +160,7 @@ void Jogador::colisao(Entidade* outraEntidade, sf::Vector2f distancia) {
 
     else if (opt==idMAGO){
                  if (distancia.x<distancia.y){
-                    if(outraEntidade->getPosicao().y>=posicao.y+40){
+                    if(outraEntidade->getPosicao().y>=posicao.y+20){
                         printf("mago toma dano\n");
                     }
                     else{
